@@ -1,0 +1,10 @@
+--- # Target and Task Playbook
+- hosts: demo
+  user: vinaym
+  become: yes
+  connection: ssh
+
+
+  tasks:
+    - name: install httpd on Linux
+      action: yum name=httpd state=installed
