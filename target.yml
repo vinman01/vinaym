@@ -1,0 +1,6 @@
+--- # Target file for Playbook
+- hosts: demo
+  user: vinaym
+  become: yes
+  connection: ssh
+  gather_facts: yes

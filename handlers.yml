@@ -5,7 +5,7 @@
   connection: ssh
   
   tasks:
-    - name: install httpd on Linux
+    - name: install httpd on AWS EC2 Linux nodes
       action: yum name=httpd state=installed
       notify: restart httpd
         
