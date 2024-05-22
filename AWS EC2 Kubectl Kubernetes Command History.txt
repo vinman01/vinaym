@@ -1,0 +1,182 @@
+root@aws-ec2-kube-master-node:/home/ubuntu# history
+    1  sudo hostnamectl set-hostname aws-ec2-kube-master-node
+    2  adduser vinaym
+    3  reboot
+    4  sudo apt update -y
+    5  sudo apt-get update -y
+    6  sudo apt install docker.io -y
+    7  sudo systemctl enable docker
+    8  apt-get install -y apt-transport-https
+    9  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/kubernetes-archive-keyring.gpg
+   10  echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+   11  curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+   12  sudo apt update -y
+   13  sudo apt-get update -y
+   14  sudo apt install kubeadm kubelet kubectl -y
+   15  kubectl version
+   16  sudo swapoff -a
+   17  sudo  kubeadm init
+   18  mkdir -p $HOME/.kube
+   19  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   20  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   21  kubectl get nodes'
+   22  kubectl get nodes
+   23  kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
+   24  kubectl get nodes
+   25  sudo systemctl daemon-reload
+   26  sudo systemctl restart docker
+   27  sudo systemctl restart kubelet
+   28  kubectl get nodes
+   29  kubectl get nodes -o wide
+   30  kubectl get pods
+   31  vi testpod.yml
+   32  cat testpod.yml
+   33  kubectl apply -f testpod.yml
+   34  kubectl get pods
+   35  kubectl get nodes -o wide
+   36  kubectl get pods -o wide
+   37  sudo apt-get install -y apt-transport-https ca-certificates curl
+   38  kubectl get pods -o wide
+   39  kubectl get pods
+   40  kubectl get nodes -o wide
+   41  kubectl get nodes
+   42  kubectl get nodes -o wide
+   43  kubectl get podes
+   44  kubectl get pods
+   45  ls -la
+   46  kubectl delete -f testpod.yml
+   47  vi testpod.yml
+   48  rm -rf testpod.yml
+   49  vi testpod.yml
+   50  kubectl apply -f testpod.yml
+   51  kubectl get pods
+   52  docker ps
+   53  docker ps -a
+   54  kubectl get pods
+   55  kubectl describe nodes
+   56  kubectl get nodes -o wide
+   57  kubectl describe node 172.31.39.218
+   58  kubectl describe nodes 172.31.39.218
+   59  kubecl get nodes
+   60  kubectl get nodes
+   61  kubectl describe node aws-ec2-kube-worker-node2
+   62  ls -la
+   63  rm -rf testpod.yml
+   64  kubectl delete -f testpod.yml
+   65  kubectl get pods
+   66  kubectl delete pod testpod
+   67  kubectl get pods
+   68  vi testpod.yml
+   69  cat testpod.yml
+   70  kubectl apply -f testpod.yml
+   71  kubectl get pods
+   72  kubectl describe pod testpod
+   73  kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+   74  kubectl describe pod testpod
+   75  kubectl get pods
+   76  kubectl describe pod testpod
+   77  docker ps
+   78  docker ps -a
+   79  kubectl get pods
+   80  kubectl get pods wide -o
+   81  kubectl get nodes -o wide
+   82  kubectl get pods -o wide
+   83  kubectl get pods
+   84  ls -la
+   85  cat testpod.yml
+   86  kubectl delete pod testpod
+   87  kubectl delete -f testpod.yml
+   88  kubectl get pods
+   89  vi testpod.yml
+   90  cat testpod.yml
+   91  kubectl get pods
+   92  kubectl delete -f testpod.yml
+   93  kubectl delete pod "testpod"
+   94  kubectl delete pod testpod
+   95  vi pod1.yml
+   96  kubectl get pods
+   97  kubectl apply -f pod1.yml
+   98  vi pod1.yml
+   99  ls -la
+  100  rm -rf pod1.yml
+  101  rm -rf testpod.yml
+  102  vi pod1.yml
+  103  ls -la
+  104  cat pod1.yml
+  105  kubectl get pods
+  106  kubectl apply -f pod1.yml
+  107  vi pod1.yml
+  108  kubectl apply -f pod1.yml
+  109  kubectl get pods
+  110  kubectl get pods -o wide
+  111  cat pod1.yml
+  112  kubectl describe pod/testpod1
+  113  kubectl logs -f testpod1
+  114  kubectl logs -f testpod
+  115  kubectl get pods
+  116  kubectl get pods -o wide
+  117  kubectl logs -f testpod1 c00
+  118  kubectl logs -f testpod1 c01
+  119  kubectl logs -f testpod c00
+  120  kubectl get pods
+  121  kubectl get pods -o wide
+  122  kubectl delete pod testpod
+  123  kubectl get pods -o wide
+  124  ls -la
+  125  cat pod1.yml
+  126  vi pod2.yml
+  127  kubectl apply -f pod2.yml
+  128  vi pod2.yml
+  129  kubectl apply -f pod2.yml
+  130  vi pod2.yml
+  131  kubectl apply -f pod2.yml
+  132  cat pod2.yml
+  133  kubectl get pods -o wide
+  134  kubectl describe pod/testpod2
+  135  kubectl describe pod/testpod2 -o wide
+  136  kubectl describe pod/testpod2
+  137  kubectl logs -f pod/testpod2
+  138  kubectl describe pod/testpod2
+  139  kubectl get pods
+  140  kubectl get pods -o wide
+  141  kubectl get nods -o wide
+  142  kubectl get nodes -o wide
+  143  kubectl describe pod/testpod2
+  144  vi pod2.yml
+  145  cat pod2.yml
+  146  kubectl get pods -o wide
+  147  vi pod2.yml
+  148  ls -la
+  149  cat pod2.yml
+  150  cat pod1.yml
+  151  kubectl get pods -o wide
+  152  kubectl describe pod/testpod1
+  153  kubectl describe pod/testpod2
+  154  kubectl get pods -o wide
+
+  166  kubectl get podes -o wide
+  167  kubectl get pods -o wide
+  168  kubectl get nodes -o wide
+
+  187  kunectl logs -f testpod3 -c c01
+  188  kubectl logs -f testpod3 -c c01
+  189  kubectl logs -f testpod3 -c c00
+  190  kubectl logs -f testpod3
+  191  kubectl logs -f testpod3 -c c01
+  192  kubectl exec testpod3 -it -c c01  /bin/bash
+  193  kubectl exec testpod3 -it -c c00  /bin/bash
+  194  kubectl exec testpod3 -it -c c00  -- hostname -i
+  195  kubectl exec testpod3 -it -c c01  -- hostname -i
+  196  kubectl exec testpod2 -it -c c01  -- hostname -i
+  197  kubectl exec testpod2 -it -c c00  -- hostname -i
+  198  kubectl exec testpod1 -it -c c00  -- hostname -i
+  199  kubectl get pods -o wide
+  200  kubectl exec testpod3 -it -c c00  -- /bin/bash
+  201  kubectl exec testpod3 -it -c c01  -- /bin/bash
+  202  kubectl exec testpod2 -it -c c01  -- /bin/bash
+  203  kubectl exec testpod2 -it -c c00  -- /bin/bash
+  204  kubectl exec testpod1 -it -c c00  -- /bin/bash
+  205  kubectl get pods -o wide
+  206  kubectl exec testpod1 -it -c c00  -- /bin/bash
+  207  kubectl exec testpod -it -c c00  -- /bin/bash
+  208  kubectl delete pod testpod
