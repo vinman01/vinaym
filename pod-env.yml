@@ -1,0 +1,13 @@
+--- # POD ENVIRONMENT  VARIABLES
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-env-variable
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello-vinaym; sleep 5 ; done"]
+      env:                        # List of environment variables to be used inside the pod
+      - name: MYNAME
+        value: vinaym
