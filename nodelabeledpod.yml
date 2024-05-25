@@ -1,0 +1,14 @@
+--- # Manifest file for labeled nodes for selecting pod creation based on labeled node
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodelabeledpod
+  labels: 
+      env: development
+spec:
+     containers:
+        - name: c00
+          image: ubuntu
+          command: ["/bin/bash", "-c", "while true; do echo Hello-vinaym; sleep 5 ; done"]
+     nodeSelector: 
+         hardware: t2-medium
