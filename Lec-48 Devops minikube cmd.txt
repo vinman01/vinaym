@@ -50,13 +50,11 @@ spec:
 
 
 *********************************************************************************************************************************
-POD ENVIRONMENT  VARIABLES
-
-
+--- # POD ENVIRONMENT  VARIABLES
 kind: Pod
 apiVersion: v1
 metadata:
-  name: podwithenvironmentvariab
+  name: pod-env-variable
 spec:
   containers:
     - name: c00
@@ -67,12 +65,12 @@ spec:
         value: vinaym
 
 ************************************************************************************************************************************
-POD WITH PORTS
+--- # POD WITH PORTS
 
 kind: Pod
 apiVersion: v1
 metadata:
-  name: testpod1
+  name: httpdpod
 spec:
   containers:
     - name: c00

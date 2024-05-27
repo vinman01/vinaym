@@ -1,5 +1,9 @@
-sudo hostnamectl set-hostname aws-ec2-kube-master-node
+﻿sudo hostnamectl set-hostname aws-ec2-kube-master-node
 sudo hostnamectl set-hostname aws-ec2-kube-worker-node
+
+visudo
+
+vinaym   ALL=(ALL) NOPASSWD:ALL
 
 Step 3: Installing Docker
 
