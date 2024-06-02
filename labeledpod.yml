@@ -1,0 +1,16 @@
+--- # manifest file for Labeled test pod
+kind: Pod
+apiVersion: v1
+metadata:
+  name: labeledpod
+  labels:
+    env: development
+    class: pod
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello-vinaym; sleep 5 ; done"]
+    - name: c01
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo vinaym doing test; sleep 5 ; done"]

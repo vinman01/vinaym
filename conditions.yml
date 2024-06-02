@@ -1,0 +1,13 @@
+--- # Platbook with conditions
+- hosts: demo
+  user: vinaym
+  become: yes
+  connection: ssh
+
+  tasks: 
+        - name: install apache server for debian family
+          command: apt-get -y install apache2
+          when: ansible_os_family == "Debian"
+          name: Install apache server for redhat family
+          command: yum -y install httpd
+          when: ansible_os_family == "RedHat"

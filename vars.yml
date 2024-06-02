@@ -1,0 +1,10 @@
+--- # My variable file for testing purpose
+- hosts: demo
+  user: vinaym
+  become: yes
+  connection: ssh
+  vars:
+       pkgname: tree
+  tasks:
+              - name: installed variable defined package on AWS Linux Nodes
+                action: yum name='{{pkgname}}' state=installed

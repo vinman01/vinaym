@@ -1,0 +1,12 @@
+--- # manifest file to create nginx pob
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginxpod
+spec:
+  containers:
+    - name: c00
+      image: nginx
+      command: ["/bin/bash", "-c", "while true; do echo Hello-VinayM playing on AWS ec2 cloud to get hands on Kubernetes; sleep 5 ; done"]
+      ports:
+       - containerPort: 80

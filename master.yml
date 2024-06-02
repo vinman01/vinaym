@@ -1,0 +1,7 @@
+--- # Platbook with conditions
+- hosts: demo
+  user: vinaym
+  become: yes
+  connection: ssh
+  roles: 
+        - webserver

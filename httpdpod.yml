@@ -1,0 +1,12 @@
+--- # manifest file to create HTTPD POD
+kind: Pod
+apiVersion: v1
+metadata:
+  name: httpdpod
+spec:
+  containers:
+    - name: c00
+      image: httpd
+      ports:
+       - containerPort: 80
+

@@ -1,0 +1,17 @@
+--- # Playbook for Installing Nginx on AWS EC2 Linux nodes
+ - hosts: demo
+   user: vinaym
+   become: yes
+   connection: ssh
+   tasks:
+        - name: enable nginx
+          shell: amazon-linux-extras enable nginx1
+        - name: install nginx
+          yum:
+             name: nginx
+             state: latest
+             update_cache: yes
+        - name: start nginx
+          service:
+              name: nginx
+              state: started

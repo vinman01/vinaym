@@ -1,0 +1,3 @@
+--- # main yaml file for playbook
+- name: install apache on AWS EC2 Linux Nodes
+  yum: pkg=httpd state=latest

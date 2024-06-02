@@ -1,0 +1,39 @@
+--- # Manifest file for Replication Controllers 
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: myreplica
+spec:
+  replicas: 2
+  Selector: 
+  myname : vinaym
+  template:
+    metadata:
+     name: testpod-rc
+     labels:
+       myname : VinayM
+  spec:
+    containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello-vinaym; sleep 5 ; done"]
+
+--- # Manifest file for Replication Controllers 
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: mypodreplica
+spec:
+  replicas: 3
+  selector:
+    myname: vinaym
+  template:
+    metadata:
+      name: replicapod
+      labels:
+        myname: vinaym
+    spec:
+      containers:
+      - name: c00
+        image: ubuntu
+        command: ["/bin/bash", "-c", "while true; do echo Hello-vinaym; sleep 5 ; done"]
