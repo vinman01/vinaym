@@ -1,0 +1,11 @@
+--- # kubectl manifst file to define to claim persistent volume mapped with AWS EBS
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: myebsvolclaim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi

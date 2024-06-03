@@ -1,0 +1,14 @@
+-- # maifest file which define persistent volume with AWS EBS storage
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: myebsvol
+spec:
+  capacity:
+    storage: 3Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  awsElasticBlockStore:
+    volumeID: vol-057b5c4af8fc0d924           # YAHAN APNI EBS VOLUME ID DAALO
+    fsType: ext4
