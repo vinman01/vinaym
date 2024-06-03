@@ -11,5 +11,5 @@ spec:
     - name: MYENV         # env name in which value of the key is stored
       valueFrom:
         configMapKeyRef:
-          name: mymap      # name of the config created
+          name: myconfigmap      # name of the config created
           key: sample.conf

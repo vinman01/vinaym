@@ -23,4 +23,4 @@ spec:
       volumes:
         - name: mypd
           persistentVolumeClaim:
-            claimName: myebsvolclaim
+            claimName: aws-pv-claim
