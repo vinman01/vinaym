@@ -1,0 +1,14 @@
+--- # manifest file to create nginx pob with port
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginxpod
+  labels: 
+     appname: nginx
+     type: web-server
+spec:
+  containers:
+    - name: c00
+      image: nginx
+      ports:
+       - containerPort: 8080
