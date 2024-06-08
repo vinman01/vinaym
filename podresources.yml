@@ -1,0 +1,17 @@
+--- # kubectl manifest file with cpu and memory limit resourcs defined for pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resources
+spec:
+  containers:
+  - name: resource
+    image: centos
+    command: ["/bin/bash", "-c", "while true; do echo Vinay M doing Kubernetes hands on AWS EC2; sleep 5 ; done"]
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "100m"
+      limits:
+        memory: "128Mi"
+        cpu: "200m"

@@ -1,0 +1,7 @@
+--- # kubectl manifest file to define namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+   name: awstest-env
+   labels:
+     name: awstest-env

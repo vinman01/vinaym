@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:      # tells the controller which pods to watch/belong to
     matchLabels:
-     app: mypv
+     app: aws-pv
   template:
     metadata:
       labels:
-        app: mypv
+        app: aws-pv
     spec:
       containers:
       - name: shell

@@ -2,13 +2,13 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: nginxpod
+  name: nginx-pod
   labels: 
      appname: nginx
      type: web-server
 spec:
   containers:
-    - name: c00
-      image: nginx
+    - name: nginx-c
+      image: nginx:latest
       ports:
        - containerPort: 8080
