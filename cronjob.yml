@@ -1,0 +1,16 @@
+--- # kubernetes manifest file to define cronjob
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+ name: vinaym
+spec:
+ schedule: "* * * * *"
+ jobTemplate:
+   spec:
+     template:
+       spec:
+         containers:
+         - image: ubuntu
+           name: vinaym-c01
+           command: ["/bin/bash", "-c", "echo VinayM-AWS-Testlab; sleep 5"]
+         restartPolicy: Never

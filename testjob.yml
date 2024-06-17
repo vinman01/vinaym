@@ -1,0 +1,17 @@
+--- # kubectl manifest file to define and run test job in parallel
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: testjob2
+spec:
+  parallelism: 5                           # Runs for pods in parallel
+  activeDeadlineSeconds: 10  # Timesout after 30 sec
+  template:
+    metadata:
+      name: testjob2
+    spec:
+      containers:
+      - name: counter
+        image: centos:7
+        command: ["bin/bash", "-c", "echo VinayM-AWS-Testlab; sleep 20"]
+      restartPolicy: Never
