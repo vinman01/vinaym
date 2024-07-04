@@ -1,0 +1,501 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2024.07.02 11:22:17 =~=~=~=~=~=~=~=~=~=~=~=
+login as: ubuntu
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-1009-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Jul  1 06:08:48 UTC 2024
+
+  System load:  0.96              Processes:             121
+  Usage of /:   9.5% of 16.39GB   Users logged in:       0
+  Memory usage: 6%                IPv4 address for enX0: 172.31.2.7
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+37 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Tue Jul  2 04:40:36 2024 from 91.214.5.86
+[?2004h]0;ubuntu@aws-ec2-kube-master-node: ~ubuntu@aws-ec2-kube-master-node:~$ [K]0;ubuntu@aws-ec2-kube-master-node: ~ubuntu@aws-ec2-kube-master-node:~$ sudo[K[K - vinaym
+[?2004lPassword: 
+su: Authentication failure
+[?2004h]0;ubuntu@aws-ec2-kube-master-node: ~ubuntu@aws-ec2-kube-master-node:~$ su - vinaym
+[?2004lPassword: 
+[?2004h]0;vinaym@aws-ec2-kube-master-node: ~vinaym@aws-ec2-kube-master-node:~$ sudo su
+[?2004l[sudo] password for vinaym: 
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubevk[K[Kctl get nodes
+[?2004lNAME                        STATUS   ROLES           AGE   VERSION
+aws-ec2-kube-master-node    Ready    control-plane   27h   v1.28.11
+aws-ec2-kube-worker-node1   Ready    <none>          27h   v1.28.11
+aws-ec2-kube-worker-node2   Ready    <none>          27h   v1.28.11
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe node [7maws-ec2-kube-master-node[27maws-ec2-kube-master-node | grep Taint
+[?2004l[01;31m[KTaint[m[Ks:             node-role.kubernetes.io/control-plane:NoSchedule
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# [7mkubectl describe node[27mkubectl describe node [7maws-ec2-kube-worker-node1[27maws-ec2-kube-worker-node1 [7m| grep Taint[27m| grep Taint
+[?2004l[01;31m[KTaint[m[Ks:             <none>
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl taint node [7maws-ec2-kube-worker-node1[27maws-ec2-kube-worker-node1 k[Kkey=spray:NoSchedule[1P:NoSchedule[1P:NoSchedule[1P:NoSchedule[1P:NoSchedule[1P:NoSchedule[1P:NoSchedule[1P:NoSchedule[1P:NoSchedule[1P:NoSchedules:NoSchedulep:NoScheduler:NoSchedulea:NoScheduley:NoSchedule=:NoSchedulem:NoScheduleo:NoScheduler:NoSchedulet:NoSchedulei:NoSchedulee:NoSchedulen:NoSchedule[1P:NoSchedule[1P:NoSchedule[1P:NoSchedulee:NoSchedulei:NoSchedulen:NoSchedule
+[?2004lnode/aws-ec2-kube-worker-node1 tainted
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl taint node aws-ec2-kube-worker-node1 spray=mortein:NoSchedule[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9Pdescribe node aws-ec2-kube-worker-node1 | grep Taint
+[?2004l[01;31m[KTaint[m[Ks:             spray=mortein:NoSchedule
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubec[K[K[K[K[Kkubectl get pods
+[?2004lNAME                      READY   STATUS    RESTARTS        AGE
+busybox                   1/1     Running   3 (5m36s ago)   23h
+custom-ngnix              1/1     Running   2 (4m25s ago)   27h
+httpd-pod                 1/1     Running   2 (5m36s ago)   26h
+nginx-pod                 1/1     Running   2 (5m36s ago)   27h
+nginx-pod2                1/1     Running   1 (4m25s ago)   5h25m
+redis                     1/1     Running   2 (5m36s ago)   27h
+webapp-799f6b587f-2v8hs   1/1     Running   2 (5m36s ago)   27h
+webapp-799f6b587f-nqsjm   1/1     Running   2 (5m36s ago)   27h
+webapp-799f6b587f-pqbnx   1/1     Running   2 (4m25s ago)   27h
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl run mosquito --image=nginx
+[?2004lpod/mosquito created
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                      READY   STATUS    RESTARTS        AGE
+busybox                   1/1     Running   3 (6m5s ago)    23h
+custom-ngnix              1/1     Running   2 (4m54s ago)   27h
+httpd-pod                 1/1     Running   2 (6m5s ago)    27h
+mosquito                  1/1     Running   0               4s
+nginx-pod                 1/1     Running   2 (6m5s ago)    27h
+nginx-pod2                1/1     Running   1 (4m54s ago)   5h26m
+redis                     1/1     Running   2 (6m5s ago)    27h
+webapp-799f6b587f-2v8hs   1/1     Running   2 (6m5s ago)    27h
+webapp-799f6b587f-nqsjm   1/1     Running   2 (6m5s ago)    27h
+webapp-799f6b587f-pqbnx   1/1     Running   2 (4m54s ago)   27h
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods -o wide
+[?2004lNAME                      READY   STATUS    RESTARTS        AGE     IP                NODE                        NOMINATED NODE   READINESS GATES
+busybox                   1/1     Running   3 (6m50s ago)   23h     192.168.210.93    aws-ec2-kube-worker-node1   <none>           <none>
+custom-ngnix              1/1     Running   2 (5m39s ago)   27h     192.168.121.151   aws-ec2-kube-worker-node2   <none>           <none>
+httpd-pod                 1/1     Running   2 (6m50s ago)   27h     192.168.210.95    aws-ec2-kube-worker-node1   <none>           <none>
+mosquito                  1/1     Running   0               49s     192.168.121.152   aws-ec2-kube-worker-node2   <none>           <none>
+nginx-pod                 1/1     Running   2 (6m50s ago)   27h     192.168.210.97    aws-ec2-kube-worker-node1   <none>           <none>
+nginx-pod2                1/1     Running   1 (5m39s ago)   5h26m   192.168.121.148   aws-ec2-kube-worker-node2   <none>           <none>
+redis                     1/1     Running   2 (6m50s ago)   27h     192.168.210.99    aws-ec2-kube-worker-node1   <none>           <none>
+webapp-799f6b587f-2v8hs   1/1     Running   2 (6m50s ago)   27h     192.168.210.96    aws-ec2-kube-worker-node1   <none>           <none>
+webapp-799f6b587f-nqsjm   1/1     Running   2 (6m50s ago)   27h     192.168.210.98    aws-ec2-kube-worker-node1   <none>           <none>
+webapp-799f6b587f-pqbnx   1/1     Running   2 (5m39s ago)   27h     192.168.121.150   aws-ec2-kube-worker-node2   <none>           <none>
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe pod [7mmosquito[27mmosquito
+[?2004lName:             mosquito
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             aws-ec2-kube-worker-node2/172.31.4.73
+Start Time:       Tue, 02 Jul 2024 10:27:13 +0000
+Labels:           run=mosquito
+Annotations:      cni.projectcalico.org/containerID: db0968b98c57e5b5ed32e5dabb4d37c42cd3c1f9c35fd7f664c586d03d85589b
+                  cni.projectcalico.org/podIP: 192.168.121.152/32
+                  cni.projectcalico.org/podIPs: 192.168.121.152/32
+Status:           Running
+IP:               192.168.121.152
+IPs:
+  IP:  192.168.121.152
+Containers:
+  mosquito:
+    Container ID:   containerd://59b70fa3bff2134393c50808bb1be93a72649c069e0c7932ea41c1c0de1f5e89
+    Image:          nginx
+    Image ID:       docker.io/library/nginx@sha256:fbb3fa1321fa981aa83728a7b6c666d03e6f025334e806c02ba6d82c2a3f68da
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Tue, 02 Jul 2024 10:27:15 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-r8qs5 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-r8qs5:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  73s   default-scheduler  Successfully assigned default/mosquito to aws-ec2-kube-worker-node2
+  Normal  Pulling    73s   kubelet            Pulling image "nginx"
+  Normal  Pulled     71s   kubelet            Successfully pulled image "nginx" in 1.523s (1.523s including waiting)
+  Normal  Created    71s   kubelet            Created container mosquito
+  Normal  Started    71s   kubelet            Started container mosquito
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe pod mosquito | in grep Taint
+[?2004lbash: syntax error near unexpected token `in'
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe pod mosquito | in grep Taint[K[K[K[K[Ktaint
+[?2004lbash: syntax error near unexpected token `in'
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe pod mosquito | in grep taint[1P[1P
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe pod mosquito |  grep taint[2@in[C[C[C[C[C[C[C[C[C[C[CTaint[K[5Pget pods -o wide[Krun mosquito --image=nginxget pods[Kdescribe node aws-ec2-kube-worker-node1 | grep Taint^C[?2004l[?2004h[?2004l
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods -o wide
+[?2004lNAME                      READY   STATUS    RESTARTS        AGE     IP                NODE                        NOMINATED NODE   READINESS GATES
+busybox                   1/1     Running   3 (8m20s ago)   23h     192.168.210.93    aws-ec2-kube-worker-node1   <none>           <none>
+custom-ngnix              1/1     Running   2 (7m9s ago)    27h     192.168.121.151   aws-ec2-kube-worker-node2   <none>           <none>
+httpd-pod                 1/1     Running   2 (8m20s ago)   27h     192.168.210.95    aws-ec2-kube-worker-node1   <none>           <none>
+mosquito                  1/1     Running   0               2m19s   192.168.121.152   aws-ec2-kube-worker-node2   <none>           <none>
+nginx-pod                 1/1     Running   2 (8m20s ago)   27h     192.168.210.97    aws-ec2-kube-worker-node1   <none>           <none>
+nginx-pod2                1/1     Running   1 (7m9s ago)    5h28m   192.168.121.148   aws-ec2-kube-worker-node2   <none>           <none>
+redis                     1/1     Running   2 (8m20s ago)   27h     192.168.210.99    aws-ec2-kube-worker-node1   <none>           <none>
+webapp-799f6b587f-2v8hs   1/1     Running   2 (8m20s ago)   27h     192.168.210.96    aws-ec2-kube-worker-node1   <none>           <none>
+webapp-799f6b587f-nqsjm   1/1     Running   2 (8m20s ago)   27h     192.168.210.98    aws-ec2-kube-worker-node1   <none>           <none>
+webapp-799f6b587f-pqbnx   1/1     Running   2 (7m9s ago)    27h     192.168.121.150   aws-ec2-kube-worker-node2   <none>           <none>
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl run bee --image=nginx --dry-run=cline[K[Kent -o yaml
+[?2004lapiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: bee
+  name: bee
+spec:
+  containers:
+  - image: nginx
+    name: bee
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl run bee --image=nginx --dry-run=client -o yaml> [K[K ?[K> bee.yaml
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# ls -la
+[?2004ltotal 64
+drwxr-x--- 3 vinaym vinaym 4096 Jul  2 10:31 [0m[01;34m.[0m
+drwxr-xr-x 4 root   root   4096 Jul  1 06:09 [01;34m..[0m
+-rw------- 1 vinaym vinaym   54 Jul  2 06:37 .bash_history
+-rw-r--r-- 1 vinaym vinaym  220 Jul  1 06:09 .bash_logout
+-rw-r--r-- 1 vinaym vinaym 3771 Jul  1 06:09 .bashrc
+-rw-r--r-- 1 vinaym vinaym  807 Jul  1 06:09 .profile
+-rw-r--r-- 1 vinaym vinaym    0 Jul  1 06:57 .sudo_as_admin_successful
+-rw-r--r-- 1 root   root    158 Jul  2 04:50 1
+-rw-r--r-- 1 root   root    226 Jul  2 10:31 bee.yaml
+-rw-r--r-- 1 root   root    229 Jul  1 10:53 busybox-pod-definition.yaml
+drwxr-xr-x 3 root   root   4096 Jul  1 10:56 [01;34mgitdir[0m
+-rw-r--r-- 1 root   root    384 Jul  1 07:30 nginx-deployment.yaml
+-rw-r--r-- 1 root   root    265 Jul  2 05:50 nginx-pod.yml
+-rw-r--r-- 1 root   root    205 Jul  2 05:01 nginx.yaml
+-rw-r--r-- 1 root   root    166 Jul  1 08:15 pod-definition.yaml
+-rw-r--r-- 1 root   root    241 Jul  1 08:46 redis123.yaml
+-rw-r--r-- 1 root   root    285 Jul  1 09:44 replicaset-definition-1.yaml
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# vi [7mbee.yaml[27mbee.yaml
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;56r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[56;1H"bee.yaml" 15L, 226B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H[36mapiVersion[m[35m:[m v1
+[36mkind[m[35m:[m Pod[2;10H[K[3;1H[36mmetadata[m[35m:[m[3;10H[K[4;3H[36mcreationTimestamp[m[35m:[m [31mnull[m
+  [36mlabels[m[35m:[m
+    [36mrun[m[35m:[m bee
+  [36mname[m[35m:[m bee
+[36mspec[m[35m:[m
+  [36mcontainers[m[35m:[m
+  [33m- [m[36mimage[m[35m:[m nginx
+    [36mname[m[35m:[m bee
+    [36mresources[m[35m:[m [35m{}[m
+  [36mdnsPolicy[m[35m:[m ClusterFirst
+  [36mrestartPolicy[m[35m:[m Always
+[36mstatus[m[35m:[m [35m{}[m
+[1m[34m~                                                                                                                                                                                                                                                             [17;1H~                                                                                                                                                                                                                                                             [18;1H~                                                                                                                                                                                                                                                             [19;1H~                                                                                                                                                                                                                                                             [20;1H~                                                                                                                                                                                                                                                             [21;1H~                                                                                                                                                                                                                                                             [22;1H~                                                                                                                                                                                                                                                             [23;1H~                                                                                                                                                                                                                                                             [24;1H~                                                                                                                                                                                                                                                             [25;1H~                                                                                                                                                                                                                                                             [26;1H~                                                                                                                                                                                                                                                             [27;1H~                                                                                                                                                                                                                                                             [28;1H~                                                                                                                                                                                                                                                             [29;1H~                                                                                                                                                                                                                                                             [30;1H~                                                                                                                                                                                                                                                             [31;1H~                                                                                                                                                                                                                                                             [32;1H~                                                                                                                                                                                                                                                             [33;1H~                                                                                                                                                                                                                                                             [34;1H~                                                                                                                                                                                                                                                             [35;1H~                                                                                                                                                                                                                                                             [36;1H~                                                                                                                                                                                                                                                             [37;1H~                                                                                                                                                                                                                                                             [38;1H~                                                                                                                                                                                                                                                             [39;1H~                                                                                                                                                                                                                                                             [40;1H~                                                                                                                                                                                                                                                             [41;1H~                                                                                                                                                                                                                                                             [42;1H~                                                                                                                                                                                                                                                             [43;1H~                                                                                                                                                                                                                                                             [44;1H~                                                                                                                                                                                                                                                             [45;1H~                                                                                                                                                                                                                                                             [46;1H~                                                                                                                                                                                                                                                             [47;1H~                                                                                                                                                                                                                                                             [48;1H~                                                                                                                                                                                                                                                             [49;1H~                                                                                                                                                                                                                                                             [50;1H~                                                                                                                                                                                                                                                             [51;1H~                                                                                                                                                                                                                                                             [52;1H~                                                                                                                                                                                                                                                             [53;1H~                                                                                                                                                                                                                                                             [54;1H~                                                                                                                                                                                                                                                             [55;1H~                                                                                                                                                                                                                                                             [m[56;237H1,1[11CAll[1;1H[?25h[?4m[?25l[56;227Hi[1;1H[56;227H [1;1H[56;1H[1m-- INSERT --[m[56;13H[K[56;237H1,1[11CAll[1;1H[?25h[?25l[56;237H2[2;1H[?25h[?25l[56;237H3[3;1H[?25h[?25l[56;237H4[4;1H[?25h[?25l[56;237H5[5;1H[?25h[?25l[56;237H6[6;1H[?25h[?25l[56;237H7[7;1H[?25h[?25l[56;237H8[8;1H[?25h[?25l[56;237H9[9;1H[?25h[?25l[56;237H10,1[10;1H[?25h[?25l[56;238H1[11;1H[?25h[?25l[56;238H2[12;1H[?25h[?25l[56;238H3[13;1H[?25h[?25l[56;238H4[14;1H[?25h[?25l[56;238H5[15;1H[?25h[?25l[56;238H4[14;1H[?25h[?25l[56;240H2[14;2H[?25h[?25l[56;240H3[14;3H[?25h[?25l[56;240H4[14;4H[?25h[?25l[56;240H5[14;5H[?25h[?25l[56;240H6[14;6H[?25h[?25l[56;240H7[14;7H[?25h[?25l[56;240H8[14;8H[?25h[?25l[56;240H9[14;9H[?25h[?25l[56;240H10[14;10H[?25h[?25l[56;241H1[14;11H[?25h[?25l[56;241H2[14;12H[?25h[?25l[56;241H3[14;13H[?25h[?25l[56;241H4[14;14H[?25h[?25l[56;241H5[14;15H[?25h[?25l[56;241H6[14;16H[?25h[?25l[56;241H7[14;17H[?25h[?25l[56;241H8[14;18H[?25h[?25l[56;241H9[14;19H[?25h[?25l[56;240H20[14;20H[?25h[?25l[56;241H1[14;21H[?25h[?25l[56;241H2[14;22H[?25h[?25l[56;241H3[14;23H[?25h[?25l[56;241H4[14;24H[?25h[?25l[15;55r[15;1H[L[1;56r[56;237H[K[56;237H15,5[10CAll[15;5H[?25h[?25l[56;240H3[15;3H[?25h[?25li[56;240H4[15;4H[?25h[?25l[15;3H[K[56;240H3[15;3H[?25h[?25lt[56;240H4[15;4H[?25h[?25lo[56;240H5[15;5H[?25h[?25ll[56;240H6[15;6H[?25h[?25le[56;240H7[15;7H[?25h[?25lr[56;240H8[15;8H[?25h[?25la[56;240H9[15;9H[?25h[?25lt[56;240H10[15;10H[?25h[?25li[56;241H1[15;11H[?25h[?25lo[56;241H2[15;12H[?25h[?25ln[56;241H3[15;13H[?25h[?25ls[56;241H4[15;14H[?25h[?25l  [36mtolerations[m[35m:[m[56;241H5[15;15H[?25h[?25l[56;241H6[15;16H[?25h[?25l[16;55r[16;1H[L[1;56r[56;237H[K[56;237H16,5[10CAll[16;5H[?25h[?25l[56;240H6[16;6H[?25h[?25l[56;240H7[16;7H[?25h[?25l[56;240H8[16;8H[?25h[?25l[56;240H9[16;9H[?25h[?25l-[56;240H10[16;10H[?25h[?25l[33m- [m[56;241H1[16;11H[?25h[?25lk[56;241H2[16;12H[?25h[?25le[56;241H3[16;13H[?25h[?25ly[56;241H4[16;14H[?25h[?25l[36mkey[m[35m:[m[56;241H5[16;15H[?25h[?25l[56;241H6[16;16H[?25h[?25ls[56;241H7[16;17H[?25h[?25lp[56;241H8[16;18H[?25h[?25lr[56;241H9[16;19H[?25h[?25la[56;240H20[16;20H[?25h[?25ly[56;241H1[16;21H[?25h[?25l[17;55r[17;1H[L[1;56r[56;237H[K[56;237H17,11[9CAll[17;11H[?25h[?25lv[56;241H2[17;12H[?25h[?25la[56;241H3[17;13H[?25h[?25ll[56;241H4[17;14H[?25h[?25lu[56;241H5[17;15H[?25h[?25le[56;241H6[17;16H[?25h[?25l[36mvalue[m[35m:[m[56;241H7[17;17H[?25h[?25l[56;241H8[17;18H[?25h[?25lm[56;241H9[17;19H[?25h[?25lo[56;240H20[17;20H[?25h[?25lr[56;241H1[17;21H[?25h[?25lt[56;241H2[17;22H[?25h[?25le[56;241H3[17;23H[?25h[?25li[56;241H4[17;24H[?25h[?25ln[56;241H5[17;25H[?25h[?25l[18;55r[18;1H[L[1;56r[56;237H[K[56;237H18,13[9CAll[18;13H[?25h[?25l[56;241H1[18;11H[?25h[?25lo[56;241H2[18;12H[?25h[?25lp[56;241H3[18;13H[?25h[?25le[56;241H4[18;14H[?25h[?25lr[56;241H5[18;15H[?25h[?25la[56;241H6[18;16H[?25h[?25lt[56;241H7[18;17H[?25h[?25lo[56;241H8[18;18H[?25h[?25lr[56;241H9[18;19H[?25h[?25l=[56;240H20[18;20H[?25h[?25l[56;241H1[18;21H[?25h[?25l[56;241H0[18;20H[?25h[?25l[18;19H[K[56;240H19[18;19H[?25h[?25l[18;11H[36moperator[m[35m:[m[56;240H20[18;20H[?25h[?25l[56;241H1[18;21H[?25h[?25l[56;241H0[18;20H[?25h[?25l[56;241H1[18;21H[?25h[?25lE[56;241H2[18;22H[?25h[?25lq[56;241H3[18;23H[?25h[?25lu[56;241H4[18;24H[?25h[?25la[56;241H5[18;25H[?25h[?25ll[56;241H6[18;26H[?25h[56;1H[K[18;25H[?25l[56;227H^[[18;25H[56;227H  [18;26H[56;237H18,25[9CAll[18;25H[?25h[?25l[56;227H:[18;25H[56;227H[K[56;1H:[?25hwq![?25l[?2004l[>4;m"bee.yaml" 19L, 314B written[23;2t[23;1t
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# cat [7mbee.yaml[27mbee.yaml
+[?2004lapiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: bee
+  name: bee
+spec:
+  containers:
+  - image: nginx
+    name: bee
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  tolerations: 
+        - key: spray
+          value: mortein
+          operator: Equal
+status: {}
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl apply -f [7mbee.yaml[27mbee.yaml[1P[1P[1P[1P[1P[1@c[1@r[1@e[1@a[1@t[1@e
+[?2004lpod/bee created
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                      READY   STATUS              RESTARTS      AGE
+bee                       0/1     ContainerCreating   0             5s
+busybox                   1/1     Running             3 (14m ago)   23h
+custom-ngnix              1/1     Running             2 (13m ago)   27h
+httpd-pod                 1/1     Running             2 (14m ago)   27h
+mosquito                  1/1     Running             0             8m20s
+nginx-pod                 1/1     Running             2 (14m ago)   27h
+nginx-pod2                1/1     Running             1 (13m ago)   5h34m
+redis                     1/1     Running             2 (14m ago)   27h
+webapp-799f6b587f-2v8hs   1/1     Running             2 (14m ago)   27h
+webapp-799f6b587f-nqsjm   1/1     Running             2 (14m ago)   27h
+webapp-799f6b587f-pqbnx   1/1     Running             2 (13m ago)   27h
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                      READY   STATUS    RESTARTS      AGE
+bee                       1/1     Running   0             10s
+busybox                   1/1     Running   3 (14m ago)   23h
+custom-ngnix              1/1     Running   2 (13m ago)   27h
+httpd-pod                 1/1     Running   2 (14m ago)   27h
+mosquito                  1/1     Running   0             8m25s
+nginx-pod                 1/1     Running   2 (14m ago)   27h
+nginx-pod2                1/1     Running   1 (13m ago)   5h34m
+redis                     1/1     Running   2 (14m ago)   27h
+webapp-799f6b587f-2v8hs   1/1     Running   2 (14m ago)   27h
+webapp-799f6b587f-nqsjm   1/1     Running   2 (14m ago)   27h
+webapp-799f6b587f-pqbnx   1/1     Running   2 (13m ago)   27h
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                      READY   STATUS    RESTARTS      AGE
+bee                       1/1     Running   0             12s
+busybox                   1/1     Running   3 (14m ago)   23h
+custom-ngnix              1/1     Running   2 (13m ago)   27h
+httpd-pod                 1/1     Running   2 (14m ago)   27h
+mosquito                  1/1     Running   0             8m27s
+nginx-pod                 1/1     Running   2 (14m ago)   27h
+nginx-pod2                1/1     Running   1 (13m ago)   5h34m
+redis                     1/1     Running   2 (14m ago)   27h
+webapp-799f6b587f-2v8hs   1/1     Running   2 (14m ago)   27h
+webapp-799f6b587f-nqsjm   1/1     Running   2 (14m ago)   27h
+webapp-799f6b587f-pqbnx   1/1     Running   2 (13m ago)   27h
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods -o wide
+[?2004lNAME                      READY   STATUS    RESTARTS      AGE     IP                NODE                        NOMINATED NODE   READINESS GATES
+bee                       1/1     Running   0             16s     192.168.210.100   aws-ec2-kube-worker-node1   <none>           <none>
+busybox                   1/1     Running   3 (14m ago)   23h     192.168.210.93    aws-ec2-kube-worker-node1   <none>           <none>
+custom-ngnix              1/1     Running   2 (13m ago)   27h     192.168.121.151   aws-ec2-kube-worker-node2   <none>           <none>
+httpd-pod                 1/1     Running   2 (14m ago)   27h     192.168.210.95    aws-ec2-kube-worker-node1   <none>           <none>
+mosquito                  1/1     Running   0             8m31s   192.168.121.152   aws-ec2-kube-worker-node2   <none>           <none>
+nginx-pod                 1/1     Running   2 (14m ago)   27h     192.168.210.97    aws-ec2-kube-worker-node1   <none>           <none>
+nginx-pod2                1/1     Running   1 (13m ago)   5h34m   192.168.121.148   aws-ec2-kube-worker-node2   <none>           <none>
+redis                     1/1     Running   2 (14m ago)   27h     192.168.210.99    aws-ec2-kube-worker-node1   <none>           <none>
+webapp-799f6b587f-2v8hs   1/1     Running   2 (14m ago)   27h     192.168.210.96    aws-ec2-kube-worker-node1   <none>           <none>
+webapp-799f6b587f-nqsjm   1/1     Running   2 (14m ago)   27h     192.168.210.98    aws-ec2-kube-worker-node1   <none>           <none>
+webapp-799f6b587f-pqbnx   1/1     Running   2 (13m ago)   27h     192.168.121.150   aws-ec2-kube-worker-node2   <none>           <none>
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods -o wide[Kcreate -f bee.yaml[14Pcat[C[C[C[C[C[C[C[C[C
+[?2004lapiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: bee
+  name: bee
+spec:
+  containers:
+  - image: nginx
+    name: bee
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  tolerations: 
+        - key: spray
+          value: mortein
+          operator: Equal
+status: {}
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# cat bee.yamlkubectl get pods -o wide[Kcreate -f bee.yaml[14Pcat[C[C[C[C[C[C[C[C[C[1Pvi[C[C[C[C[C[C[C[C[C[5Pls -lakubectl run bee --image=nginx --dry-run=client -o yaml > bee.yaml[K[30Pget pods -o widedescribe pod mosquito |  grep taint[2@in[C[C[C[C[C[C[C[C[C[C[CTaint[K[5Pget pods -o wide[Krun mosquito --image=nginxget pods[Kdescribe node aws-ec2-kube-worker-node1 | grep Taint
+[?2004l[01;31m[KTaint[m[Ks:             spray=mortein:NoSchedule
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe node aws-ec2-kube-worker-node1 | grep Taint[K[K[K[K[K[K[K[K[K[K[K[K[K
+[?2004lName:               aws-ec2-kube-worker-node1
+Roles:              <none>
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=aws-ec2-kube-worker-node1
+                    kubernetes.io/os=linux
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: unix:///var/run/containerd/containerd.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 172.31.7.173/20
+                    projectcalico.org/IPv4IPIPTunnelAddr: 192.168.210.64
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Mon, 01 Jul 2024 06:50:09 +0000
+Taints:             spray=mortein:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  aws-ec2-kube-worker-node1
+  AcquireTime:     <unset>
+  RenewTime:       Tue, 02 Jul 2024 10:36:52 +0000
+Conditions:
+  Type                 Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----                 ------  -----------------                 ------------------                ------                       -------
+  NetworkUnavailable   False   Tue, 02 Jul 2024 10:35:07 +0000   Tue, 02 Jul 2024 10:35:07 +0000   CalicoIsUp                   Calico is running on this node
+  MemoryPressure       False   Tue, 02 Jul 2024 10:35:51 +0000   Mon, 01 Jul 2024 06:50:09 +0000   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure         False   Tue, 02 Jul 2024 10:35:51 +0000   Mon, 01 Jul 2024 06:50:09 +0000   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure          False   Tue, 02 Jul 2024 10:35:51 +0000   Mon, 01 Jul 2024 06:50:09 +0000   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready                True    Tue, 02 Jul 2024 10:35:51 +0000   Tue, 02 Jul 2024 10:35:00 +0000   KubeletReady                 kubelet is posting ready status. AppArmor enabled
+Addresses:
+  InternalIP:  172.31.7.173
+  Hostname:    aws-ec2-kube-worker-node1
+Capacity:
+  cpu:                1
+  ephemeral-storage:  12112068Ki
+  hugepages-2Mi:      0
+  memory:             980432Ki
+  pods:               110
+Allocatable:
+  cpu:                1
+  ephemeral-storage:  11162481851
+  hugepages-2Mi:      0
+  memory:             878032Ki
+  pods:               110
+System Info:
+  Machine ID:                 ec26aed6ae77c74e6306f43750436238
+  System UUID:                ec26aed6-ae77-c74e-6306-f43750436238
+  Boot ID:                    0263905c-6349-46ab-830c-3af70faadfb4
+  Kernel Version:             6.8.0-1008-aws
+  OS Image:                   Ubuntu 24.04 LTS
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://1.7.12
+  Kubelet Version:            v1.28.11
+  Kube-Proxy Version:         v1.28.11
+Non-terminated Pods:          (11 in total)
+  Namespace                   Name                             CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                             ------------  ----------  ---------------  -------------  ---
+  default                     bee                              0 (0%)        0 (0%)      0 (0%)           0 (0%)         90s
+  default                     busybox                          0 (0%)        0 (0%)      0 (0%)           0 (0%)         23h
+  default                     httpd-pod                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         27h
+  default                     nginx-pod                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         27h
+  default                     redis                            0 (0%)        0 (0%)      0 (0%)           0 (0%)         27h
+  default                     webapp-799f6b587f-2v8hs          0 (0%)        0 (0%)      0 (0%)           0 (0%)         27h
+  default                     webapp-799f6b587f-nqsjm          0 (0%)        0 (0%)      0 (0%)           0 (0%)         27h
+  dev-ns                      redis-deploy-67df7dd58b-qzjrj    0 (0%)        0 (0%)      0 (0%)           0 (0%)         27h
+  kube-flannel                kube-flannel-ds-v8jf7            100m (10%)    0 (0%)      50Mi (5%)        0 (0%)         27h
+  kube-system                 calico-node-mmq75                250m (25%)    0 (0%)      0 (0%)           0 (0%)         27h
+  kube-system                 kube-proxy-tzn4v                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         27h
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                350m (35%)  0 (0%)
+  memory             50Mi (5%)   0 (0%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:
+  Type     Reason                   Age                From             Message
+  ----     ------                   ----               ----             -------
+  Normal   Starting                 4h12m              kube-proxy       
+  Normal   Starting                 12m                kube-proxy       
+  Normal   Starting                 9m54s              kube-proxy       
+  Normal   Starting                 4h44m              kube-proxy       
+  Normal   Starting                 4h38m              kube-proxy       
+  Normal   Starting                 4h33m              kube-proxy       
+  Normal   Starting                 4h27m              kube-proxy       
+  Normal   Starting                 4h20m              kube-proxy       
+  Normal   Starting                 4h51m              kube-proxy       
+  Normal   Starting                 4h59m              kube-proxy       
+  Normal   Starting                 4h6m               kube-proxy       
+  Normal   Starting                 4h                 kube-proxy       
+  Normal   Starting                 14m                kube-proxy       
+  Normal   Starting                 11s                kube-proxy       
+  Normal   Starting                 2m3s               kube-proxy       
+  Normal   Starting                 6m3s               kube-proxy       
+  Warning  InvalidDiskCapacity      15m                kubelet          invalid capacity 0 on image filesystem
+  Normal   Starting                 15m                kubelet          Starting kubelet.
+  Normal   NodeAllocatableEnforced  15m                kubelet          Updated Node Allocatable limit across pods
+  Normal   NodeHasNoDiskPressure    15m (x7 over 15m)  kubelet          Node aws-ec2-kube-worker-node1 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     15m (x7 over 15m)  kubelet          Node aws-ec2-kube-worker-node1 status is now: NodeHasSufficientPID
+  Normal   NodeHasSufficientMemory  15m (x8 over 15m)  kubelet          Node aws-ec2-kube-worker-node1 status is now: NodeHasSufficientMemory
+  Normal   RegisteredNode           14m                node-controller  Node aws-ec2-kube-worker-node1 event: Registered Node aws-ec2-kube-worker-node1 in Controller
+  Normal   Starting                 2m9s               kubelet          Starting kubelet.
+  Warning  InvalidDiskCapacity      2m9s               kubelet          invalid capacity 0 on image filesystem
+  Normal   NodeHasSufficientMemory  2m8s               kubelet          Node aws-ec2-kube-worker-node1 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    2m8s               kubelet          Node aws-ec2-kube-worker-node1 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     2m8s               kubelet          Node aws-ec2-kube-worker-node1 status is now: NodeHasSufficientPID
+  Normal   NodeNotReady             2m8s               kubelet          Node aws-ec2-kube-worker-node1 status is now: NodeNotReady
+  Normal   NodeAllocatableEnforced  2m8s               kubelet          Updated Node Allocatable limit across pods
+  Normal   NodeReady                118s               kubelet          Node aws-ec2-kube-worker-node1 status is now: NodeReady
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# ^C[?2004l[?2004h[?2004l
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl taint node ^C[?2004l[?2004h[?2004l
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe node aws-ec2-kube-worker-node1 | grep Taint^C[?2004l[?2004h[?2004l
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes
+[?2004lNAME                        STATUS   ROLES           AGE   VERSION
+aws-ec2-kube-master-node    Ready    control-plane   27h   v1.28.11
+aws-ec2-kube-worker-node1   Ready    <none>          27h   v1.28.11
+aws-ec2-kube-worker-node2   Ready    <none>          27h   v1.28.11
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes -o wide
+[?2004lNAME                        STATUS   ROLES           AGE   VERSION    INTERNAL-IP    EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION   CONTAINER-RUNTIME
+aws-ec2-kube-master-node    Ready    control-plane   27h   v1.28.11   172.31.2.7     <none>        Ubuntu 24.04 LTS   6.8.0-1009-aws   containerd://1.7.12
+aws-ec2-kube-worker-node1   Ready    <none>          27h   v1.28.11   172.31.7.173   <none>        Ubuntu 24.04 LTS   6.8.0-1008-aws   containerd://1.7.12
+aws-ec2-kube-worker-node2   Ready    <none>          27h   v1.28.11   172.31.4.73    <none>        Ubuntu 24.04 LTS   6.8.0-1009-aws   containerd://1.7.12
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe node [7maws-ec2-kube-master-node[27maws-ec2-kube-master-node [7m| grep Taint[27m| grep Taint
+[?2004l[01;31m[KTaint[m[Ks:             node-role.kubernetes.io/control-plane:NoSchedule
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl taint node [7maws-ec2-kube-worker-node1[27maws-ec2-kube-worker-node1 [7mspray=mortein:NoSchedule[27mspray=mortein:NoSchedule-
+[?2004lnode/aws-ec2-kube-worker-node1 untainted
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# [7mkubectl describe node aws-ec2-kube-worker-node1 | grep Taint[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl describe node aws-ec2-kube-worker-node1 | grep Taint
+[?2004l[01;31m[KTaint[m[Ks:             <none>
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# [7mkubectl describe node aws-ec2-kube-master-node | grep Taint[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl describe node aws-ec2-kube-master-node | grep Taint
+[?2004l[01;31m[KTaint[m[Ks:             node-role.kubernetes.io/control-plane:NoSchedule
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+Broadcast message from root@aws-ec2-kube-master-node (Tue 2024-07-02 10:42:02 UTC):
+
+The system will power off now!
+
+
+Broadcast message from root@aws-ec2-kube-master-node (Tue 2024-07-02 10:42:02 UTC):
+
+The system will power off now!
+
