@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mynginx-deployment
+  labels:
+    app: mynginx
+    type: front-end
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+  template:
+    metadata:
+      labels:
+        app: mynginx
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-c01
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
