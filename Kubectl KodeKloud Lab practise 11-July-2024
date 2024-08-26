@@ -1,0 +1,927 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2024.07.11 16:05:54 =~=~=~=~=~=~=~=~=~=~=~=
+login as: ubuntu
+Authenticating with public key "imported-openssh-key"
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-1009-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Thu Jul 11 15:06:01 UTC 2024
+
+  System load:  0.6                Processes:             147
+  Usage of /:   30.5% of 16.39GB   Users logged in:       0
+  Memory usage: 20%                IPv4 address for enX0: 172.31.2.7
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+37 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Mon Jul  8 06:48:17 2024 from 91.214.5.86
+[?2004h]0;ubuntu@aws-ec2-kube-master-node: ~ubuntu@aws-ec2-kube-master-node:~$ sudo su
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# su - VinayM
+[?2004lsu: user VinayM does not exist or the user entry does not contain all the required fields
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# su - vinaym
+[?2004l[?2004h]0;vinaym@aws-ec2-kube-master-node: ~vinaym@aws-ec2-kube-master-node:~$ sudo su
+[?2004l[sudo] password for vinaym: 
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# vi vi 
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;56r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[56;1H"vi" [New][2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[2;1H[1m[34m~                                                                                                                                                                           [3;1H~                                                                                                                                                                           [4;1H~                                                                                                                                                                           [5;1H~                                                                                                                                                                           [6;1H~                                                                                                                                                                           [7;1H~                                                                                                                                                                           [8;1H~                                                                                                                                                                           [9;1H~                                                                                                                                                                           [10;1H~                                                                                                                                                                           [11;1H~                                                                                                                                                                           [12;1H~                                                                                                                                                                           [13;1H~                                                                                                                                                                           [14;1H~                                                                                                                                                                           [15;1H~                                                                                                                                                                           [16;1H~                                                                                                                                                                           [17;1H~                                                                                                                                                                           [18;1H~                                                                                                                                                                           [19;1H~                                                                                                                                                                           [20;1H~                                                                                                                                                                           [21;1H~                                                                                                                                                                           [22;1H~                                                                                                                                                                           [23;1H~                                                                                                                                                                           [24;1H~                                                                                                                                                                           [25;1H~                                                                                                                                                                           [26;1H~                                                                                                                                                                           [27;1H~                                                                                                                                                                           [28;1H~                                                                                                                                                                           [29;1H~                                                                                                                                                                           [30;1H~                                                                                                                                                                           [31;1H~                                                                                                                                                                           [32;1H~                                                                                                                                                                           [33;1H~                                                                                                                                                                           [34;1H~                                                                                                                                                                           [35;1H~                                                                                                                                                                           [36;1H~                                                                                                                                                                           [37;1H~                                                                                                                                                                           [38;1H~                                                                                                                                                                           [39;1H~                                                                                                                                                                           [40;1H~                                                                                                                                                                           [41;1H~                                                                                                                                                                           [42;1H~                                                                                                                                                                           [43;1H~                                                                                                                                                                           [44;1H~                                                                                                                                                                           [45;1H~                                                                                                                                                                           [46;1H~                                                                                                                                                                           [47;1H~                                                                                                                                                                           [48;1H~                                                                                                                                                                           [49;1H~                                                                                                                                                                           [50;1H~                                                                                                                                                                           [51;1H~                                                                                                                                                                           [52;1H~                                                                                                                                                                           [53;1H~                                                                                                                                                                           [54;1H~                                                                                                                                                                           [55;1H~                                                                                                                                                                           [m[56;155H0,0-1[9CAll[1;1H[?25h[?25l[56;145H^M[1;1H[56;145H  [1;1H[?25h[?4m[?25l[56;145H^M[1;1H[56;145H  [1;1H[?25h[?25l[56;145H^[[1;1H[56;145H  [1;1H[56;145H^[[1;1H[56;145H  [1;1H[?25h[?25l[56;145H:[1;1H[56;1H[K[56;1H:[?25hq![?25l[?2004l[>4;m[23;2t[23;1t[56;1H[K[56;1H[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                                      READY   STATUS             RESTARTS        AGE
+bee                                       1/1     Running            3 (4m12s ago)   9d
+busybox                                   1/1     Running            8 (4m12s ago)   10d
+custom-ngnix                              1/1     Running            5 (4m9s ago)    10d
+event-simulator-pod-v1                    1/2     ErrImagePull       1 (4m12s ago)   3d8h
+httpd-pod                                 1/1     Running            5 (4m12s ago)   10d
+mosquito                                  1/1     Running            3 (4m9s ago)    9d
+nginx-pod                                 1/1     Running            5 (4m12s ago)   10d
+nginx-pod2                                1/1     Running            4 (4m9s ago)    9d
+redis                                     1/1     Running            5 (4m12s ago)   10d
+static-busybox-aws-ec2-kube-master-node   0/1     ImagePullBackOff   0               6d23h
+webapp-799f6b587f-2v8hs                   1/1     Running            5 (4m12s ago)   10d
+webapp-799f6b587f-nqsjm                   1/1     Running            5 (4m12s ago)   10d
+webapp-799f6b587f-pqbnx                   1/1     Running            5 (4m9s ago)    10d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubecgl get replicaset
+[?2004lCommand 'kubecgl' not found, did you mean:
+  command 'kubectl' from snap kubectl (1.29.6)
+See 'snap info <snapname>' for additional versions.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get rs
+[?2004lNAME                DESIRED   CURRENT   READY   AGE
+webapp-799f6b587f   3         3         3       10d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl delete rs [7mwebapp-799f6b587f[27mwebapp-799f6b587f
+[?2004lreplicaset.apps "webapp-799f6b587f" deleted
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get ns
+[?2004lNAME              STATUS   AGE
+default           Active   10d
+dev-ns            Active   10d
+kube-flannel      Active   10d
+kube-node-lease   Active   10d
+kube-public       Active   10d
+kube-system       Active   10d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get po[K[K[Kdeploy
+[?2004lerror: unknown command "getdeploy" for "kubectl"
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                                      READY   STATUS             RESTARTS       AGE
+bee                                       1/1     Running            3 (5m5s ago)   9d
+busybox                                   1/1     Running            8 (5m5s ago)   10d
+custom-ngnix                              1/1     Running            5 (5m2s ago)   10d
+event-simulator-pod-v1                    1/2     ImagePullBackOff   1 (5m5s ago)   3d8h
+httpd-pod                                 1/1     Running            5 (5m5s ago)   10d
+mosquito                                  1/1     Running            3 (5m2s ago)   9d
+nginx-pod                                 1/1     Running            5 (5m5s ago)   10d
+nginx-pod2                                1/1     Running            4 (5m2s ago)   9d
+redis                                     1/1     Running            5 (5m5s ago)   10d
+static-busybox-aws-ec2-kube-master-node   0/1     ImagePullBackOff   0              6d23h
+webapp-799f6b587f-2v8hs                   1/1     Terminating        5 (5m5s ago)   10d
+webapp-799f6b587f-nqsjm                   1/1     Terminating        5 (5m5s ago)   10d
+webapp-799f6b587f-pqbnx                   1/1     Terminating        5 (5m2s ago)   10d
+webapp-799f6b587f-rwh94                   1/1     Running            0              21s
+webapp-799f6b587f-vdx6g                   1/1     Running            0              21s
+webapp-799f6b587f-xpzjv                   1/1     Running            0              21s
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl delete deploy [7mevent-simulator-pod-v1[27mevent-simulator-pod-v1
+[?2004lError from server (NotFound): deployments.apps "event-simulator-pod-v1" not found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl delete pod [7mevent-simulator-pod-v1[27mevent-simulator-pod-v1
+[?2004lpod "event-simulator-pod-v1" deleted
+
+^C[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl delete pod event-simulator-pod-v1
+[?2004lpod "event-simulator-pod-v1" deleted
+
+^C[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get deploy
+[?2004lNAME     READY   UP-TO-DATE   AVAILABLE   AGE
+webapp   3/3     3            3           10d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl delete deploy [7mwebapp[27mwebapp
+[?2004ldeployment.apps "webapp" deleted
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get ns
+[?2004lNAME              STATUS   AGE
+default           Active   10d
+dev-ns            Active   10d
+kube-flannel      Active   10d
+kube-node-lease   Active   10d
+kube-public       Active   10d
+kube-system       Active   10d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get deploy -n [7mdev-ns[27mdev-ns
+[?2004lNAME           READY   UP-TO-DATE   AVAILABLE   AGE
+redis-deploy   2/2     2            2           10d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl delete deploy [7mredis-deploy[27mredis-deploy [7m-n dev-ns[27m-n dev-ns
+[?2004ldeployment.apps "redis-deploy" deleted
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kybec[K[K[K[K[Kkubecl [K[K[Kctl delete [K [K[K[K[K[K[K[K[K get rs [7m-n dev-ns[27m-n dev-ns
+[?2004lNo resources found in dev-ns namespace.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get deploy
+[?2004lNo resources found in default namespace.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                                      READY   STATUS             RESTARTS        AGE
+bee                                       1/1     Running            3 (7m13s ago)   9d
+busybox                                   1/1     Running            8 (7m13s ago)   10d
+custom-ngnix                              1/1     Running            5 (7m10s ago)   10d
+event-simulator-pod-v1                    1/2     Terminating        1 (7m13s ago)   3d8h
+httpd-pod                                 1/1     Running            5 (7m13s ago)   10d
+mosquito                                  1/1     Running            3 (7m10s ago)   9d
+nginx-pod                                 1/1     Running            5 (7m13s ago)   10d
+nginx-pod2                                1/1     Running            4 (7m10s ago)   9d
+redis                                     1/1     Running            5 (7m13s ago)   10d
+static-busybox-aws-ec2-kube-master-node   0/1     ImagePullBackOff   0               6d23h
+webapp-799f6b587f-2v8hs                   1/1     Terminating        5 (7m13s ago)   10d
+webapp-799f6b587f-nqsjm                   1/1     Terminating        5 (7m13s ago)   10d
+webapp-799f6b587f-pqbnx                   1/1     Terminating        5 (7m10s ago)   10d
+webapp-799f6b587f-rwh94                   1/1     Terminating        0               2m29s
+webapp-799f6b587f-vdx6g                   1/1     Terminating        0               2m29s
+webapp-799f6b587f-xpzjv                   1/1     Terminating        0               2m29s
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods [7m-n dev-ns[27m-n dev-ns
+[?2004lNAME                            READY   STATUS        RESTARTS        AGE
+redis-deploy-67df7dd58b-7lkq4   1/1     Terminating   5 (7m15s ago)   10d
+redis-deploy-67df7dd58b-qzjrj   1/1     Terminating   5 (7m18s ago)   10d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# vi nf[Kginx-deployment [K-manifest.yaml
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;56r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[56;1H"nginx-deployment-manifest.yaml" [New][2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[2;1H[1m[34m~                                                                                                                                                                           [3;1H~                                                                                                                                                                           [4;1H~                                                                                                                                                                           [5;1H~                                                                                                                                                                           [6;1H~                                                                                                                                                                           [7;1H~                                                                                                                                                                           [8;1H~                                                                                                                                                                           [9;1H~                                                                                                                                                                           [10;1H~                                                                                                                                                                           [11;1H~                                                                                                                                                                           [12;1H~                                                                                                                                                                           [13;1H~                                                                                                                                                                           [14;1H~                                                                                                                                                                           [15;1H~                                                                                                                                                                           [16;1H~                                                                                                                                                                           [17;1H~                                                                                                                                                                           [18;1H~                                                                                                                                                                           [19;1H~                                                                                                                                                                           [20;1H~                                                                                                                                                                           [21;1H~                                                                                                                                                                           [22;1H~                                                                                                                                                                           [23;1H~                                                                                                                                                                           [24;1H~                                                                                                                                                                           [25;1H~                                                                                                                                                                           [26;1H~                                                                                                                                                                           [27;1H~                                                                                                                                                                           [28;1H~                                                                                                                                                                           [29;1H~                                                                                                                                                                           [30;1H~                                                                                                                                                                           [31;1H~                                                                                                                                                                           [32;1H~                                                                                                                                                                           [33;1H~                                                                                                                                                                           [34;1H~                                                                                                                                                                           [35;1H~                                                                                                                                                                           [36;1H~                                                                                                                                                                           [37;1H~                                                                                                                                                                           [38;1H~                                                                                                                                                                           [39;1H~                                                                                                                                                                           [40;1H~                                                                                                                                                                           [41;1H~                                                                                                                                                                           [42;1H~                                                                                                                                                                           [43;1H~                                                                                                                                                                           [44;1H~                                                                                                                                                                           [45;1H~                                                                                                                                                                           [46;1H~                                                                                                                                                                           [47;1H~                                                                                                                                                                           [48;1H~                                                                                                                                                                           [49;1H~                                                                                                                                                                           [50;1H~                                                                                                                                                                           [51;1H~                                                                                                                                                                           [52;1H~                                                                                                                                                                           [53;1H~                                                                                                                                                                           [54;1H~                                                                                                                                                                           [55;1H~                                                                                                                                                                           [m[56;155H0,0-1[9CAll[1;1H[?25h[?4m[?25l[56;145Hi[1;1H[56;145H [1;1H[56;1H[1m-- INSERT --[m[56;13H[K[56;155H0,1[11CAll[1;1H[?25h[?25l[36mapiVersion[m[35m:[m apps/v1[2;1H[K[2;1H[?25h[?25l[36mkind[m[35m:[m Deployment
+[36mmetadata[m[35m:[m[3;10H[K[4;1H  [36mname[m[35m:[m mynginx-deployment[4;27H[K[4;27H[?25h[?25l
+  [36mlabels[m[35m:[m[5;10H[K[6;1H    [36mapp[m[35m:[m mynginx[6;17H[K[7;1H        [36mtype[m[35m:[m front-end[7;24H[K[8;1H        [8;9H[K[9;1H[36mspec[m[35m:[m[9;6H[K[10;1H  r[10;4H[K[10;4H[?25h[?25l[36mreplicas[m[35m:[m [31m3[m
+  [36mselector[m[35m:[m[11;12H[K[12;1H    [36mmatchLabels[m[35m:[m[12;17H[K[13;1H          [36mtype[m[35m:[m front-end[13;26H[K[14;1H[K[14;1H[?25h[?25l  [36mtemplate[m[35m:[m
+    [36mmetadata[m[35m:[m[15;14H[K[16;1H      [36mlabels[m[35m:[m[16;14H[K[17;1H        [36mapp[m[35m:[m mynginx[17;21H[K[17;21H[?25h[?25l
+                [36mtype[m[35m:[m front-end[18;32H[K[19;1H    [36mspec[m[35m:[m[19;10H[K[20;1H      [36mcontainers[m[35m:[m[20;18H[K[21;1H      [33m- [m[36mname[m[35m:[m [21;15H[K[21;15H[?25h[?25lnginx-c01
+        [36mimage[m[35m:[m nginx:1.14.2[22;28H[K[23;1H        [36mports[m[35m:[m[23;15H[K[24;1H        -[24;10H[K[24;10H[?25h[?25l[33m- [m[36mcontainerPort[m[35m:[m [31m80[m[56;155H24,28[24;28H[?25h[56;1H[K[24;27H[?25l[56;145H^[[24;27H[56;145H  [24;28H[56;155H24,27[9CAll[24;27H[?25h[?25l[56;145H:[24;27H[56;145H[K[56;1H:[?25hwq![?25l[?2004l[>4;m"nginx-deployment-manifest.yaml" [New] 24L, 390B written[23;2t[23;1t
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# cat [7mnginx-deployment-manifest.yaml[27mnginx-deployment-manifest.yaml
+[?2004lapiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mynginx-deployment
+  labels:
+    app: mynginx
+	type: front-end
+	
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+	  type: front-end
+  template:
+    metadata:
+      labels:
+        app: mynginx
+		type: front-end
+    spec:
+      containers:
+      - name: nginx-c01
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl apply [K[K[K[K[K[K[K create -f [7mnginx-deployment-manifest.yaml[27mnginx-deployment-manifest.yaml
+[?2004lerror: error parsing nginx-deployment-manifest.yaml: error converting YAML to JSON: yaml: line 7: found a tab character that violates indentation
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl create -f nginx-deployment-manifest.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pcat[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;56r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[56;1H"nginx-deployment-manifest.yaml" 24L, 390B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H[36mapiVersion[m[35m:[m apps/v1
+[36mkind[m[35m:[m Deployment[2;17H[K[3;1H[36mmetadata[m[35m:[m[3;10H[K[4;3H[36mname[m[35m:[m mynginx-deployment
+  [36mlabels[m[35m:[m
+    [36mapp[m[35m:[m mynginx[7;9H[36mtype[m[35m:[m front-end
+
+[36mspec[m[35m:[m
+  [36mreplicas[m[35m:[m [31m3[m
+  [36mselector[m[35m:[m
+    [36mmatchLabels[m[35m:[m[13;11H[36mtype[m[35m:[m front-end
+  [36mtemplate[m[35m:[m
+    [36mmetadata[m[35m:[m[16;7H[36mlabels[m[35m:[m[17;9H[36mapp[m[35m:[m mynginx[18;17H[36mtype[m[35m:[m front-end
+    [36mspec[m[35m:[m[20;7H[36mcontainers[m[35m:[m[21;7H[33m- [m[36mname[m[35m:[m nginx-c01[22;9H[36mimage[m[35m:[m nginx:1.14.2[23;9H[36mports[m[35m:[m[24;9H[33m- [m[36mcontainerPort[m[35m:[m [31m80[m
+[1m[34m~                                                                                                                                                                           [26;1H~                                                                                                                                                                           [27;1H~                                                                                                                                                                           [28;1H~                                                                                                                                                                           [29;1H~                                                                                                                                                                           [30;1H~                                                                                                                                                                           [31;1H~                                                                                                                                                                           [32;1H~                                                                                                                                                                           [33;1H~                                                                                                                                                                           [34;1H~                                                                                                                                                                           [35;1H~                                                                                                                                                                           [36;1H~                                                                                                                                                                           [37;1H~                                                                                                                                                                           [38;1H~                                                                                                                                                                           [39;1H~                                                                                                                                                                           [40;1H~                                                                                                                                                                           [41;1H~                                                                                                                                                                           [42;1H~                                                                                                                                                                           [43;1H~                                                                                                                                                                           [44;1H~                                                                                                                                                                           [45;1H~                                                                                                                                                                           [46;1H~                                                                                                                                                                           [47;1H~                                                                                                                                                                           [48;1H~                                                                                                                                                                           [49;1H~                                                                                                                                                                           [50;1H~                                                                                                                                                                           [51;1H~                                                                                                                                                                           [52;1H~                                                                                                                                                                           [53;1H~                                                                                                                                                                           [54;1H~                                                                                                                                                                           [55;1H~                                                                                                                                                                           [m[56;155H24,27[9CAll[24;27H[?25h[?4m[?25l[56;145Hi[24;27H[56;145H [24;27H[56;1H[1m-- INSERT --[m[56;13H[K[56;155H24,27[9CAll[24;27H[?25h[?25l[56;156H3,15[23;15H[?25h[?25l[56;156H2,27[22;27H[?25h[?25l[56;156H1,24[21;24H[?25h[?25l[56;156H0,18[20;18H[?25h[?25l[56;155H19,10[19;10H[?25h[?25l[56;156H8,13-27[18;27H[?25h[?25l[56;156H7,21   [17;21H[?25h[?25l[56;156H6,14[16;14H[?25h[?25l[56;156H5[15;14H[?25h[?25l[56;156H4,12[14;12H[?25h[?25l[56;156H3,19-26[13;26H[?25h[?25l[56;156H2,17   [12;17H[?25h[?25l[56;156H1,12[11;12H[?25h[?25l[56;156H0,14[10;14H[?25h[?25l[56;155H9,6  [9;6H[?25h[?25l[56;155H8,2-9[8;9H[?25h[?25l[56;155H7,17-24[7;24H[?25h[?25l[56;158H6-23[7;23H[?25h[?25l[56;158H5-22[7;22H[?25h[?25l[56;158H4-21[7;21H[?25h[?25l[56;158H3-20[7;20H[?25h[?25l[56;158H2-19[7;19H[?25h[?25l[56;158H1-18[7;18H[?25h[?25l[56;158H0-17[7;17H[?25h[?25l[56;157H9-16 [7;16H[?25h[?25l[56;157H8-15[7;15H[?25h[?25l[56;157H7-14[7;14H[?25h[?25l[56;157H6-13[7;13H[?25h[?25l[56;157H5-12[7;12H[?25h[?25l[56;157H4-11[7;11H[?25h[?25l[56;157H3-10[7;10H[?25h[?25l[56;157H2-9 [7;9H[?25h[?25l[56;157H1  [7;1H[?25h[?25l[6;55r[55;1H
+[1;56r[6;5H[36mapp[m[35m:[m mynginx        type: front-end[55;1H[1m[34m~                                                                                                                                                                           [m[56;155H[K[56;155H6,17[10CAll[6;17H[?25h[?25l[7;55r[7;1H[L[1;56r[6;25H[K[7;5H[36mtype[m[35m:[m front-end[56;155H[K[56;155H7,1[11CAll[7;1H[?25h[?25l[56;157H2[7;2H[?25h[?25l[56;157H3[7;3H[?25h[?25l[56;155H8,1[8;1H[?25h[?25l[56;155H9,3[9;3H[?25h[?25l[56;155H10,3[10;3H[?25h[?25l[56;156H1[11;3H[?25h[?25l[56;156H2[12;3H[?25h[?25l[56;156H3,1[13;1H[?25h[?25l[56;156H4,3[14;3H[?25h[?25l[56;156H5[15;3H[?25h[?25l[56;156H6[16;3H[?25h[?25l[56;156H7[17;3H[?25h[?25l[56;156H8,1[18;1H[?25h[?25l[56;156H9,3[19;3H[?25h[?25l[56;155H20[20;3H[?25h[?25l[56;158H4[20;4H[?25h[?25l[56;155H19[19;4H[?25h[?25l[56;156H8,1[18;1H[?25h[?25l[56;156H7,4[17;4H[?25h[?25l[56;158H5[17;5H[?25h[?25l[56;158H6[17;6H[?25h[?25l[56;158H7[17;7H[?25h[?25l[56;156H8,1[18;1H[?25h[?25l[56;158H2-9[18;9H[?25h[?25l[56;158H3-17[18;17H[?25h[?25l[56;158H4-18[18;18H[?25h[?25l[56;158H5-19[18;19H[?25h[?25l[56;158H6-20[18;20H[?25h[?25l[56;158H5-19[18;19H[?25h[?25l[56;158H4-18[18;18H[?25h[?25l[56;158H3-17[18;17H[?25h[?25l[36mtype[m[35m:[m front-end[18;30H[K[56;158H8-15[18;15H[?25h[?25l[36mtype[m[35m:[m front-end[18;28H[K[56;158H6-13[18;13H[?25h[?25l[36mtype[m[35m:[m front-end[18;26H[K[56;158H4-11[18;11H[?25h[?25l[36mtype[m[35m:[m front-end[18;24H[K[56;158H2-9 [18;9H[?25h[?25l[36mtype[m[35m:[m front-end[18;22H[K[56;158H7  [18;7H[?25h[?25l [36mtype[m[35m:[m front-end[56;158H8[18;8H[?25h[?25l [36mtype[m[35m:[m front-end[56;158H9[18;9H[?25h[56;1H[K[18;8H[?25l[56;145H^[[18;8H[56;145H  [18;9H[56;155H18,8[10CAll[18;8H[?25h[?25l[56;145H~@k[18;8H[56;145H   [19;8H[56;156H9[19;8H[?25h[?25l[56;145H^[[19;8H[56;145H  [19;8H[56;145H^[[19;8H[56;145H  [19;8H[?25h[?25l[56;145H:[19;8H[56;145H[K[56;1H:[?25hwq![?25l[?2004l[>4;m"nginx-deployment-manifest.yaml" 24L, 399B written[23;2t[23;1t
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# vi nginx-deployment-manifest.yaml[15@kubectl create -f[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pcat[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lapiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mynginx-deployment
+  labels:
+    app: mynginx
+    type: front-end
+	
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+	  type: front-end
+  template:
+    metadata:
+      labels:
+        app: mynginx
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-c01
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# cat nginx-deployment-manifest.yaml[1Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15@kubectl create -f[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lerror: error parsing nginx-deployment-manifest.yaml: error converting YAML to JSON: yaml: line 8: found a tab character that violates indentation
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl create -f nginx-deployment-manifest.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14Pcat[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;56r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[56;1H"nginx-deployment-manifest.yaml" 24L, 399B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H[36mapiVersion[m[35m:[m apps/v1
+[36mkind[m[35m:[m Deployment[2;17H[K[3;1H[36mmetadata[m[35m:[m[3;10H[K[4;3H[36mname[m[35m:[m mynginx-deployment
+  [36mlabels[m[35m:[m
+    [36mapp[m[35m:[m mynginx
+    [36mtype[m[35m:[m front-end
+
+[36mspec[m[35m:[m
+  [36mreplicas[m[35m:[m [31m3[m
+  [36mselector[m[35m:[m
+    [36mmatchLabels[m[35m:[m[13;11H[36mtype[m[35m:[m front-end
+  [36mtemplate[m[35m:[m
+    [36mmetadata[m[35m:[m[16;7H[36mlabels[m[35m:[m[17;9H[36mapp[m[35m:[m mynginx[18;9H[36mtype[m[35m:[m front-end
+    [36mspec[m[35m:[m[20;7H[36mcontainers[m[35m:[m[21;7H[33m- [m[36mname[m[35m:[m nginx-c01[22;9H[36mimage[m[35m:[m nginx:1.14.2[23;9H[36mports[m[35m:[m[24;9H[33m- [m[36mcontainerPort[m[35m:[m [31m80[m
+[1m[34m~                                                                                                                                                                           [26;1H~                                                                                                                                                                           [27;1H~                                                                                                                                                                           [28;1H~                                                                                                                                                                           [29;1H~                                                                                                                                                                           [30;1H~                                                                                                                                                                           [31;1H~                                                                                                                                                                           [32;1H~                                                                                                                                                                           [33;1H~                                                                                                                                                                           [34;1H~                                                                                                                                                                           [35;1H~                                                                                                                                                                           [36;1H~                                                                                                                                                                           [37;1H~                                                                                                                                                                           [38;1H~                                                                                                                                                                           [39;1H~                                                                                                                                                                           [40;1H~                                                                                                                                                                           [41;1H~                                                                                                                                                                           [42;1H~                                                                                                                                                                           [43;1H~                                                                                                                                                                           [44;1H~                                                                                                                                                                           [45;1H~                                                                                                                                                                           [46;1H~                                                                                                                                                                           [47;1H~                                                                                                                                                                           [48;1H~                                                                                                                                                                           [49;1H~                                                                                                                                                                           [50;1H~                                                                                                                                                                           [51;1H~                                                                                                                                                                           [52;1H~                                                                                                                                                                           [53;1H~                                                                                                                                                                           [54;1H~                                                                                                                                                                           [55;1H~                                                                                                                                                                           [m[56;155H19,8[10CAll[19;8H[?25h[?4m[?25l[56;145H~@k[19;8H[56;145H   [18;8H[56;156H8[18;8H[?25h[?25l[56;145Hi[18;8H[56;145H [18;8H[56;1H[1m-- INSERT --[m[56;13H[K[56;155H18,8[10CAll[18;8H[?25h[?25l[56;156H7[17;8H[?25h[?25l[56;156H6[16;8H[?25h[?25l[56;156H5[15;8H[?25h[?25l[56;156H4[14;8H[?25h[?25l[56;156H3,1[13;1H[?25h[?25l[56;156H2,8[12;8H[?25h[?25l[56;156H1[11;8H[?25h[?25l[56;156H0[10;8H[?25h[?25l[56;155H9,6 [9;6H[?25h[?25l[56;155H8,1[8;1H[?25h[?25l[56;155H7,8[7;8H[?25h[?25l[56;155H6[6;8H[?25h[?25l[56;155H5[5;8H[?25h[?25l[56;155H4[4;8H[?25h[?25l[56;155H3[3;8H[?25h[?25l[56;155H2[2;8H[?25h[?25l[56;155H1[1;8H[?25h[?25l[56;155H2[2;8H[?25h[?25l[56;155H3[3;8H[?25h[?25l[56;155H4[4;8H[?25h[?25l[56;155H5[5;8H[?25h[?25l[56;155H6[6;8H[?25h[?25l[56;155H7[7;8H[?25h[?25l[56;155H8,1[8;1H[?25h[?25l[56;155H9,6[9;6H[?25h[?25l[56;157H5[9;5H[?25h[?25l[56;157H4[9;4H[?25h[?25l[56;157H3[9;3H[?25h[?25l[56;157H2[9;2H[?25h[?25l[56;157H1[9;1H[?25h[?25l[8;55r[55;1H
+[1;56r[8;1H        [36mspec[m[35m:[m[55;1H[1m[34m~                                                                                                                                                                           [m[56;155H[K[56;155H8,2-9[9CAll[8;9H[?25h[?25l[36mspec[m[35m:[m[8;12H[K[56;157H7  [8;7H[?25h[?25l[36mspec[m[35m:[m[8;10H[K[56;157H5[8;5H[?25h[?25l[36mspec[m[35m:[m[8;8H[K[56;157H3[8;3H[?25h[?25l[36mspec[m[35m:[m[8;6H[K[56;157H1[8;1H[?25h[56;1H[K[8;1H[?25l[56;145H^[[8;1H[56;145H  [8;1H[56;155H8,1[11CAll[8;1H[?25h[?25l[56;145H:[8;1H[56;145H[K[56;1H:[?25hwq![?25l[?2004l[>4;m"nginx-deployment-manifest.yaml" 23L, 397B written[23;2t[23;1t
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# vi nginx-deployment-manifest.yaml[15@kubectl create -f[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lerror: error parsing nginx-deployment-manifest.yaml: error converting YAML to JSON: yaml: line 12: found character that cannot start any token
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl create -f nginx-deployment-manifest.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pvi[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;56r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[56;1H"nginx-deployment-manifest.yaml" 23L, 397B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H[36mapiVersion[m[35m:[m apps/v1
+[36mkind[m[35m:[m Deployment[2;17H[K[3;1H[36mmetadata[m[35m:[m[3;10H[K[4;3H[36mname[m[35m:[m mynginx-deployment
+  [36mlabels[m[35m:[m
+    [36mapp[m[35m:[m mynginx
+    [36mtype[m[35m:[m front-end
+[36mspec[m[35m:[m
+  [36mreplicas[m[35m:[m [31m3[m
+  [36mselector[m[35m:[m
+    [36mmatchLabels[m[35m:[m[12;11H[36mtype[m[35m:[m front-end
+  [36mtemplate[m[35m:[m
+    [36mmetadata[m[35m:[m[15;7H[36mlabels[m[35m:[m[16;9H[36mapp[m[35m:[m mynginx[17;9H[36mtype[m[35m:[m front-end
+    [36mspec[m[35m:[m[19;7H[36mcontainers[m[35m:[m[20;7H[33m- [m[36mname[m[35m:[m nginx-c01[21;9H[36mimage[m[35m:[m nginx:1.14.2[22;9H[36mports[m[35m:[m[23;9H[33m- [m[36mcontainerPort[m[35m:[m [31m80[m
+[1m[34m~                                                                                                                                                                           [25;1H~                                                                                                                                                                           [26;1H~                                                                                                                                                                           [27;1H~                                                                                                                                                                           [28;1H~                                                                                                                                                                           [29;1H~                                                                                                                                                                           [30;1H~                                                                                                                                                                           [31;1H~                                                                                                                                                                           [32;1H~                                                                                                                                                                           [33;1H~                                                                                                                                                                           [34;1H~                                                                                                                                                                           [35;1H~                                                                                                                                                                           [36;1H~                                                                                                                                                                           [37;1H~                                                                                                                                                                           [38;1H~                                                                                                                                                                           [39;1H~                                                                                                                                                                           [40;1H~                                                                                                                                                                           [41;1H~                                                                                                                                                                           [42;1H~                                                                                                                                                                           [43;1H~                                                                                                                                                                           [44;1H~                                                                                                                                                                           [45;1H~                                                                                                                                                                           [46;1H~                                                                                                                                                                           [47;1H~                                                                                                                                                                           [48;1H~                                                                                                                                                                           [49;1H~                                                                                                                                                                           [50;1H~                                                                                                                                                                           [51;1H~                                                                                                                                                                           [52;1H~                                                                                                                                                                           [53;1H~                                                                                                                                                                           [54;1H~                                                                                                                                                                           [55;1H~                                                                                                                                                                           [m[56;155H8,1[11CAll[8;1H[?25h[?4m[?25l[56;145H~@k[8;1H[56;145H   [7;1H[56;155H7[7;1H[?25h[?25l[56;145H~@k[7;1H[56;145H   [6;1H[56;155H6[6;1H[?25h[?25l[56;145H~@k[6;1H[56;145H   [5;1H[56;155H5[5;1H[?25h[?25l[56;145H~@k[5;1H[56;145H   [4;1H[56;155H4[4;1H[?25h[?25l[56;145H~@k[4;1H[56;145H   [3;1H[56;155H3[3;1H[?25h[?25l[56;145H~@k[3;1H[56;145H   [2;1H[56;155H2[2;1H[?25h[?25l[56;145H~@k[2;1H[56;145H   [1;1H[56;155H1[1;1H[?25h[?25l[56;145H~@k[1;1H[56;145H   [2;1H[56;155H2[2;1H[?25h[?25l[56;145H~@k[2;1H[56;145H   [3;1H[56;155H3[3;1H[?25h[?25l[56;145H~@k[3;1H[56;145H   [4;1H[56;155H4[4;1H[?25h[?25l[56;145H~@k[4;1H[56;145H   [5;1H[56;155H5[5;1H[?25h[?25l[56;145H~@k[5;1H[56;145H   [6;1H[56;155H6[6;1H[?25h[?25l[56;145H~@k[6;1H[56;145H   [7;1H[56;155H7[7;1H[?25h[?25l[56;145H~@k[7;1H[56;145H   [8;1H[56;155H8[8;1H[?25h[?25l[56;145H~@k[8;1H[56;145H   [9;1H[56;155H9[9;1H[?25h[?25l[56;145H~@k[9;1H[56;145H   [10;1H[56;155H10,1[10;1H[?25h[?25l[56;145H~@k[10;1H[56;145H   [11;1H[56;156H1[11;1H[?25h[?25l[56;145H~@k[11;1H[56;145H   [12;8H[56;156H2,1-8[12;8H[?25h[?25l[56;145H~@k[12;8H[56;145H   [12;9H[56;158H2-9[12;9H[?25h[?25l[56;145H~@k[12;9H[56;145H   [12;10H[56;158H3-10[12;10H[?25h[?25l[56;145H~@k[12;10H[56;145H   [12;11H[56;158H4-11[12;11H[?25h[?25l[56;145H~@k[12;11H[56;145H   [12;10H[56;158H3-10[12;10H[?25h[?25l[56;145H~@k[12;10H[56;145H   [12;9H[56;158H2-9 [12;9H[?25h[?25l[56;145H~@k[12;9H[56;145H   [12;10H[56;158H3-10[12;10H[?25h[?25l[56;145H~@k[12;10H[56;145H   [12;9H[56;158H2-9 [12;9H[?25h[?25l[56;145H~@k[12;9H[56;145H   [12;8H[56;158H1-8[12;8H[?25h[?25l[56;145Hi[12;8H[56;145H [12;1H[56;1H[1m-- INSERT --[m[56;13H[K[56;155H12,1[10CAll[12;1H[?25h[?25l[56;158H2-9[12;9H[?25h[?25l[56;158H3-10[12;10H[?25h[?25l[56;158H4-11[12;11H[?25h[?25l[36mtype[m[35m:[m front-end[12;24H[K[56;158H2-9 [12;9H[?25h[?25l[36mtype[m[35m:[m front-end[12;22H[K[56;158H7  [12;7H[?25h[56;1H[K[12;6H[?25l[56;145H^[[12;6H[56;145H  [12;7H[56;155H12,6[10CAll[12;6H[?25h[?25l[56;145H:[12;6H[56;145H[K[56;1H:[?25hwq![?25l[?2004l[>4;m"nginx-deployment-manifest.yaml" 23L, 400B written[23;2t[23;1t
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# vi nginx-deployment-manifest.yaml[15@kubectl create -f[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004ldeployment.apps/mynginx-deployment created
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# cay[Kt [7mnginx-deployment-manifest.yaml[27mnginx-deployment-manifest.yaml
+[?2004lapiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mynginx-deployment
+  labels:
+    app: mynginx
+    type: front-end
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: front-end
+  template:
+    metadata:
+      labels:
+        app: mynginx
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-c01
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get deploy
+[?2004lNAME                 READY   UP-TO-DATE   AVAILABLE   AGE
+mynginx-deployment   3/3     3            3           12s
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                                      READY   STATUS             RESTARTS      AGE
+bee                                       1/1     Running            3 (14m ago)   9d
+busybox                                   1/1     Running            8 (14m ago)   10d
+custom-ngnix                              1/1     Running            5 (14m ago)   10d
+event-simulator-pod-v1                    1/2     Terminating        1 (14m ago)   3d8h
+httpd-pod                                 1/1     Running            5 (14m ago)   10d
+mosquito                                  1/1     Running            3 (14m ago)   9d
+mynginx-deployment-6dc68d5d64-khn9m       1/1     Running            0             18s
+mynginx-deployment-6dc68d5d64-kr62h       1/1     Running            0             18s
+mynginx-deployment-6dc68d5d64-t8fhh       1/1     Running            0             18s
+nginx-pod                                 1/1     Running            5 (14m ago)   10d
+nginx-pod2                                1/1     Running            4 (14m ago)   9d
+redis                                     1/1     Running            5 (14m ago)   10d
+static-busybox-aws-ec2-kube-master-node   0/1     ImagePullBackOff   0             6d23h
+webapp-799f6b587f-2v8hs                   1/1     Terminating        5 (14m ago)   10d
+webapp-799f6b587f-nqsjm                   1/1     Terminating        5 (14m ago)   10d
+webapp-799f6b587f-pqbnx                   1/1     Terminating        5 (14m ago)   10d
+webapp-799f6b587f-rwh94                   1/1     Terminating        0             9m19s
+webapp-799f6b587f-vdx6g                   1/1     Terminating        0             9m19s
+webapp-799f6b587f-xpzjv                   1/1     Terminating        0             9m19s
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe deploy [7mmynginx-deployment[27mmynginx-deployment
+[?2004lName:                   mynginx-deployment
+Namespace:              default
+CreationTimestamp:      Thu, 11 Jul 2024 15:16:44 +0000
+Labels:                 app=mynginx
+                        type=front-end
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               type=front-end
+Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=mynginx
+           type=front-end
+  Containers:
+   nginx-c01:
+    Image:        nginx:1.14.2
+    Port:         80/TCP
+    Host Port:    0/TCP
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   mynginx-deployment-6dc68d5d64 (3/3 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  43s   deployment-controller  Scaled up replica set mynginx-deployment-6dc68d5d64 to 3
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# ku[K[Kkubectl describe deploy mynginx-deploymentget pods[Kdeploycat nginx-deployment-manifest.yaml[16Pkubectl get deploycat nginx-deployment-manifest.yaml[14@kubectl create -f[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kkubectl get pods -A
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+default        bee                                                1/1     Running            3 (14m ago)       9d
+default        busybox                                            1/1     Running            8 (14m ago)       10d
+default        custom-ngnix                                       1/1     Running            5 (14m ago)       10d
+default        event-simulator-pod-v1                             1/2     Terminating        1 (14m ago)       3d8h
+default        httpd-pod                                          1/1     Running            5 (14m ago)       10d
+default        mosquito                                           1/1     Running            3 (14m ago)       9d
+default        mynginx-deployment-6dc68d5d64-khn9m                1/1     Running            0                 64s
+default        mynginx-deployment-6dc68d5d64-kr62h                1/1     Running            0                 64s
+default        mynginx-deployment-6dc68d5d64-t8fhh                1/1     Running            0                 64s
+default        nginx-pod                                          1/1     Running            5 (14m ago)       10d
+default        nginx-pod2                                         1/1     Running            4 (14m ago)       9d
+default        redis                                              1/1     Running            5 (14m ago)       10d
+default        static-busybox-aws-ec2-kube-master-node            0/1     ImagePullBackOff   0                 6d23h
+default        webapp-799f6b587f-2v8hs                            1/1     Terminating        5 (14m ago)       10d
+default        webapp-799f6b587f-nqsjm                            1/1     Terminating        5 (14m ago)       10d
+default        webapp-799f6b587f-pqbnx                            1/1     Terminating        5 (14m ago)       10d
+default        webapp-799f6b587f-rwh94                            1/1     Terminating        0                 10m
+default        webapp-799f6b587f-vdx6g                            1/1     Terminating        0                 10m
+default        webapp-799f6b587f-xpzjv                            1/1     Terminating        0                 10m
+dev-ns         redis-deploy-67df7dd58b-7lkq4                      1/1     Terminating        5 (14m ago)       10d
+dev-ns         redis-deploy-67df7dd58b-qzjrj                      1/1     Terminating        5 (14m ago)       10d
+kube-flannel   kube-flannel-ds-fsnjf                              0/1     CrashLoopBackOff   154 (2m46s ago)   10d
+kube-flannel   kube-flannel-ds-p72jp                              0/1     CrashLoopBackOff   145 (2m57s ago)   10d
+kube-flannel   kube-flannel-ds-v8jf7                              0/1     CrashLoopBackOff   146 (2m31s ago)   10d
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            7 (14m ago)       10d
+kube-system    calico-node-74m87                                  0/1     Running            123 (6m16s ago)   10d
+kube-system    calico-node-mmq75                                  0/1     CrashLoopBackOff   118 (3m8s ago)    10d
+kube-system    calico-node-xmx8g                                  0/1     Completed          124               10d
+kube-system    coredns-5dd5756b68-k6z7z                           1/1     Running            5 (14m ago)       10d
+kube-system    coredns-5dd5756b68-w4rhk                           1/1     Running            5 (14m ago)       10d
+kube-system    elasticsearch-9sktg                                1/1     Running            2 (14m ago)       6d22h
+kube-system    elasticsearch-hfk5p                                1/1     Running            2 (14m ago)       6d22h
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            8 (14m ago)       10d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            8 (14m ago)       10d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            8 (14m ago)       10d
+kube-system    kube-proxy-2p5m9                                   0/1     CrashLoopBackOff   120 (27s ago)     10d
+kube-system    kube-proxy-blc9s                                   0/1     CrashLoopBackOff   114 (98s ago)     10d
+kube-system    kube-proxy-tzn4v                                   0/1     CrashLoopBackOff   118 (2m5s ago)    10d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            8 (14m ago)       10d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe pod [7mmynginx-deployment-6dc68d5d64-khn9m[27mmynginx-deployment-6dc68d5d64-khn9m
+[?2004lName:             mynginx-deployment-6dc68d5d64-khn9m
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             aws-ec2-kube-worker-node1/172.31.7.173
+Start Time:       Thu, 11 Jul 2024 15:16:44 +0000
+Labels:           app=mynginx
+                  pod-template-hash=6dc68d5d64
+                  type=front-end
+Annotations:      cni.projectcalico.org/containerID: 9b3b7619456453794d3a3d1fed5999f6ca7bb541da9797cda1a2bdbf08a79b72
+                  cni.projectcalico.org/podIP: 192.168.210.66/32
+                  cni.projectcalico.org/podIPs: 192.168.210.66/32
+Status:           Running
+IP:               192.168.210.66
+IPs:
+  IP:           192.168.210.66
+Controlled By:  ReplicaSet/mynginx-deployment-6dc68d5d64
+Containers:
+  nginx-c01:
+    Container ID:   containerd://a25bc4f17b7f775f9095aa2b356d330de5ba6af9372f5cafc361640ded03a34e
+    Image:          nginx:1.14.2
+    Image ID:       docker.io/library/nginx@sha256:f7988fb6c02e0ce69257d9bd9cf37ae20a60f1df7563c3a2a6abe24160306b8d
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Thu, 11 Jul 2024 15:16:55 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-dthjg (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-dthjg:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  78s   default-scheduler  Successfully assigned default/mynginx-deployment-6dc68d5d64-khn9m to aws-ec2-kube-worker-node1
+  Normal  Pulling    76s   kubelet            Pulling image "nginx:1.14.2"
+  Normal  Pulled     67s   kubelet            Successfully pulled image "nginx:1.14.2" in 1.503s (9.529s including waiting)
+  Normal  Created    67s   kubelet            Created container nginx-c01
+  Normal  Started    67s   kubelet            Started container nginx-c01
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# ls -la
+[?2004ltotal 84
+drwxr-x--- 4 vinaym vinaym 4096 Jul 11 15:16 [0m[01;34m.[0m
+drwxr-xr-x 4 root   root   4096 Jul  1 06:09 [01;34m..[0m
+-rw------- 1 vinaym vinaym   70 Jul  4 16:28 .bash_history
+-rw-r--r-- 1 vinaym vinaym  220 Jul  1 06:09 .bash_logout
+-rw-r--r-- 1 vinaym vinaym 3771 Jul  1 06:09 .bashrc
+-rw-r--r-- 1 vinaym vinaym  807 Jul  1 06:09 .profile
+-rw-r--r-- 1 vinaym vinaym    0 Jul  1 06:57 .sudo_as_admin_successful
+-rw-r--r-- 1 root   root    158 Jul  2 04:50 1
+-rw-r--r-- 1 root   root    314 Jul  2 10:34 bee.yaml
+-rw-r--r-- 1 root   root    229 Jul  1 10:53 busybox-pod-definition.yaml
+-rw-r--r-- 1 root   root    217 Jul  8 06:44 event-simulator.yaml
+-rw-r--r-- 1 root   root    448 Jul  4 16:18 fluentd.yaml
+drwxr-xr-x 3 root   root   4096 Jul  8 06:39 [01;34mgitdir[0m
+drwxr-xr-x 3 root   root   4096 Jul  8 06:14 [01;34mkubernetes-metrics-server[0m
+-rw-r--r-- 1 root   root    400 Jul 11 15:16 nginx-deployment-manifest.yaml
+-rw-r--r-- 1 root   root    384 Jul  1 07:30 nginx-deployment.yaml
+-rw-r--r-- 1 root   root    265 Jul  2 05:50 nginx-pod.yml
+-rw-r--r-- 1 root   root    205 Jul  2 05:01 nginx.yaml
+-rw-r--r-- 1 root   root    166 Jul  1 08:15 pod-definition.yaml
+-rw-r--r-- 1 root   root    241 Jul  1 08:46 redis123.yaml
+-rw-r--r-- 1 root   root    285 Jul  1 09:44 replicaset-definition-1.yaml
+-rw-r--r-- 1 root   root    298 Jul  4 15:03 static-busybox.yaml
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# cp [7mnginx-deployment-manifest.yaml[27mnginx-deployment-manifest.yaml gitdir
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# vi ubuntu-sleeper-2.yaml
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;56r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[56;1H"ubuntu-sleeper-2.yaml" [New][2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[2;1H[1m[34m~                                                                                                                                                                           [3;1H~                                                                                                                                                                           [4;1H~                                                                                                                                                                           [5;1H~                                                                                                                                                                           [6;1H~                                                                                                                                                                           [7;1H~                                                                                                                                                                           [8;1H~                                                                                                                                                                           [9;1H~                                                                                                                                                                           [10;1H~                                                                                                                                                                           [11;1H~                                                                                                                                                                           [12;1H~                                                                                                                                                                           [13;1H~                                                                                                                                                                           [14;1H~                                                                                                                                                                           [15;1H~                                                                                                                                                                           [16;1H~                                                                                                                                                                           [17;1H~                                                                                                                                                                           [18;1H~                                                                                                                                                                           [19;1H~                                                                                                                                                                           [20;1H~                                                                                                                                                                           [21;1H~                                                                                                                                                                           [22;1H~                                                                                                                                                                           [23;1H~                                                                                                                                                                           [24;1H~                                                                                                                                                                           [25;1H~                                                                                                                                                                           [26;1H~                                                                                                                                                                           [27;1H~                                                                                                                                                                           [28;1H~                                                                                                                                                                           [29;1H~                                                                                                                                                                           [30;1H~                                                                                                                                                                           [31;1H~                                                                                                                                                                           [32;1H~                                                                                                                                                                           [33;1H~                                                                                                                                                                           [34;1H~                                                                                                                                                                           [35;1H~                                                                                                                                                                           [36;1H~                                                                                                                                                                           [37;1H~                                                                                                                                                                           [38;1H~                                                                                                                                                                           [39;1H~                                                                                                                                                                           [40;1H~                                                                                                                                                                           [41;1H~                                                                                                                                                                           [42;1H~                                                                                                                                                                           [43;1H~                                                                                                                                                                           [44;1H~                                                                                                                                                                           [45;1H~                                                                                                                                                                           [46;1H~                                                                                                                                                                           [47;1H~                                                                                                                                                                           [48;1H~                                                                                                                                                                           [49;1H~                                                                                                                                                                           [50;1H~                                                                                                                                                                           [51;1H~                                                                                                                                                                           [52;1H~                                                                                                                                                                           [53;1H~                                                                                                                                                                           [54;1H~                                                                                                                                                                           [55;1H~                                                                                                                                                                           [m[56;155H0,0-1[9CAll[1;1H[?25h[?4m[?25l[56;145Hi[1;1H[56;145H [1;1H[56;1H[1m-- INSERT --[m[56;13H[K[56;155H0,1[11CAll[1;1H[?25h[?25la[56;155H1,2[1;2H[?25h[?25lp[56;157H3[1;3H[?25h[?25li[56;157H4[1;4H[?25h[?25lV[56;157H5[1;5H[?25h[?25le[56;157H6[1;6H[?25h[?25lr[56;157H7[1;7H[?25h[?25ls[56;157H8[1;8H[?25h[?25li[56;157H9[1;9H[?25h[?25lo[56;157H10[1;10H[?25h[?25ln[56;158H1[1;11H[?25h[?25l[36mapiVersion[m[35m:[m[56;158H2[1;12H[?25h[?25l[56;158H3[1;13H[?25h[?25lv[56;158H4[1;14H[?25h[?25l1[56;158H5[1;15H[?25h[?25l
+  [2;3H[K[56;155H2,3 [2;3H[?25h[?25l[56;157H1[2;1H[?25h[?25lk[56;157H2[2;2H[?25h[?25li[56;157H3[2;3H[?25h[?25lb[56;157H4[2;4H[?25h[?25ld[56;157H5[2;5H[?25h[?25l[36mkibd[m[35m:[m[56;157H6[2;6H[?25h[?25l[56;157H7[2;7H[?25h[?25l[56;157H6[2;6H[?25h[?25lkibd[2;5H[K[56;157H5[2;5H[?25h[?25l[2;4H[K[56;157H4[2;4H[?25h[?25l[2;3H[K[56;157H3[2;3H[?25h[?25ln[56;157H4[2;4H[?25h[?25ld[56;157H5[2;5H[?25h[?25l[36mkind[m[35m:[m[56;157H6[2;6H[?25h[?25l[56;157H7[2;7H[?25h[?25lp[56;157H8[2;8H[?25h[?25lo[56;157H9[2;9H[?25h[?25ld[56;157H10[2;10H[?25h[?25l[2;9H[K[56;157H9 [2;9H[?25h[?25l[2;8H[K[56;157H8[2;8H[?25h[?25l[2;7H[K[56;157H7[2;7H[?25h[?25lP[56;157H8[2;8H[?25h[?25lo[56;157H9[2;9H[?25h[?25ld[56;157H10[2;10H[?25h[?25l
+  [3;3H[K[56;155H3,3 [3;3H[?25h[?25l[56;157H1[3;1H[?25h[?25lm[56;157H2[3;2H[?25h[?25le[56;157H3[3;3H[?25h[?25lt[56;157H4[3;4H[?25h[?25la[56;157H5[3;5H[?25h[?25ld[56;157H6[3;6H[?25h[?25la[56;157H7[3;7H[?25h[?25lt[56;157H8[3;8H[?25h[?25la[56;157H9[3;9H[?25h[?25l[36mmetadata[m[35m:[m[56;157H10[3;10H[?25h[?25l[56;158H1[3;11H[?25h[?25l
+  [4;3H[K[56;155H4,3 [4;3H[?25h[?25ln[56;157H4[4;4H[?25h[?25la[56;157H5[4;5H[?25h[?25lm[56;157H6[4;6H[?25h[?25le[56;157H7[4;7H[?25h[?25l[36mname[m[35m:[m[4;6H[K[56;157H6[4;6H[?25h[?25lname[4;5H[K[56;157H5[4;5H[?25h[?25l[4;4H[K[56;157H4[4;4H[?25h[?25l[4;3H[K[56;157H3[4;3H[?25h[?25l[4;2H[K[56;157H2[4;2H[?25h[?25l[4;1H[K[56;157H1[4;1H[?25h[?25l[56;157H2[4;2H[?25h[?25l[56;157H3[4;3H[?25h[?25ln[56;157H4[4;4H[?25h[?25la[56;157H5[4;5H[?25h[?25lm[56;157H6[4;6H[?25h[?25le[56;157H7[4;7H[?25h[?25l  [36mname[m[35m:[m[56;157H8[4;8H[?25h[?25l[56;157H9[4;9H[?25h[?25lu[56;157H10[4;10H[?25h[?25lb[56;158H1[4;11H[?25h[?25lu[56;158H2[4;12H[?25h[?25ln[56;158H3[4;13H[?25h[?25lt[56;158H4[4;14H[?25h[?25lu[56;158H5[4;15H[?25h[?25l-[56;158H6[4;16H[?25h[?25ls[56;158H7[4;17H[?25h[?25ll[56;158H8[4;18H[?25h[?25le[56;158H9[4;19H[?25h[?25le[56;157H20[4;20H[?25h[?25lp[56;158H1[4;21H[?25h[?25le[56;158H2[4;22H[?25h[?25lr[56;158H3[4;23H[?25h[?25l-[56;158H4[4;24H[?25h[?25l2[56;158H5[4;25H[?25h[?25l
+    [5;5H[K[56;155H5,5 [5;5H[?25h[?25l[56;157H3[5;3H[?25h[?25l[56;157H1[5;1H[?25h[?25ls[56;157H2[5;2H[?25h[?25lp[56;157H3[5;3H[?25h[?25le[56;157H4[5;4H[?25h[?25lc[56;157H5[5;5H[?25h[?25l[36mspec[m[35m:[m[56;157H6[5;6H[?25h[?25l[56;157H7[5;7H[?25h[?25l
+  [6;3H[K[56;155H6,3[6;3H[?25h[?25l[56;157H4[6;4H[?25h[?25lc[56;157H5[6;5H[?25h[?25lo[56;157H6[6;6H[?25h[?25ln[56;157H7[6;7H[?25h[?25lt[56;157H8[6;8H[?25h[?25la[56;157H9[6;9H[?25h[?25li[56;157H10[6;10H[?25h[?25ln[56;158H1[6;11H[?25h[?25le[56;158H2[6;12H[?25h[?25lr[56;158H3[6;13H[?25h[?25ls[56;158H4[6;14H[?25h[?25l   [36mcontainers[m[35m:[m[56;158H5[6;15H[?25h[?25l
+     [7;6H[K[56;155H7,6 [7;6H[?25h[?25l[56;157H7[7;7H[?25h[?25l-[56;157H8[7;8H[?25h[?25l[33m- [m[56;157H9[7;9H[?25h[?25ln[56;157H10[7;10H[?25h[?25la[56;158H1[7;11H[?25h[?25lm[56;158H2[7;12H[?25h[?25le[56;158H3[7;13H[?25h[?25l[36mname[m[35m:[m[56;158H4[7;14H[?25h[?25l[56;158H5[7;15H[?25h[?25lu[56;158H6[7;16H[?25h[?25lb[56;158H7[7;17H[?25h[?25lu[56;158H8[7;18H[?25h[?25ln[56;158H9[7;19H[?25h[?25lt[56;157H20[7;20H[?25h[?25lu[56;158H1[7;21H[?25h[?25l
+        [8;9H[K[56;155H8,9 [8;9H[?25h[?25li[56;157H10[8;10H[?25h[?25lm[56;158H1[8;11H[?25h[?25la[56;158H2[8;12H[?25h[?25lg[56;158H3[8;13H[?25h[?25le[56;158H4[8;14H[?25h[?25l[36mimage[m[35m:[m[56;158H5[8;15H[?25h[?25l[56;158H6[8;16H[?25h[?25lu[56;158H7[8;17H[?25h[?25lb[56;158H8[8;18H[?25h[?25lu[56;158H9[8;19H[?25h[?25ln[56;157H20[8;20H[?25h[?25lt[56;158H1[8;21H[?25h[?25lu[56;158H2[8;22H[?25h[?25l
+          [9;11H[K[56;155H9,11[9;11H[?25h[?25l[56;157H9 [9;9H[?25h[?25lc[56;157H10[9;10H[?25h[?25lo[56;158H1[9;11H[?25h[?25lm[56;158H2[9;12H[?25h[?25lm[56;158H3[9;13H[?25h[?25la[56;158H4[9;14H[?25h[?25ln[56;158H5[9;15H[?25h[?25ld[56;158H6[9;16H[?25h[?25l[56;158H7[9;17H[?25h[?25l[9;9H[36mcommand[m[35m :[m[56;158H8[9;18H[?25h[?25l[9;9Hcommand [9;17H[K[56;158H7[9;17H[?25h[?25l[56;158H6[9;16H[?25h[?25l[9;9H[36mcommand[m[35m:[m[56;158H7[9;17H[?25h[?25l[56;158H8[9;18H[?25h[?25l
+          [10;11H[K[56;155H10,11[10;11H[?25h[?25l[56;159H2[10;12H[?25h[?25l[56;159H3[10;13H[?25h[?25l[56;159H4[10;14H[?25h[?25l-[56;159H5[10;15H[?25h[?25l[33m- [m[56;159H6[10;16H[?25h[?25l[31m"[m[56;159H7[10;17H[?25h[?25l[31ms[m[56;159H8[10;18H[?25h[?25l[31ml[m[56;159H9[10;19H[?25h[?25l[31me[m[56;158H20[10;20H[?25h[?25l[31me[m[56;159H1[10;21H[?25h[?25l[10;20H[K[56;159H0[10;20H[?25h[?25l[10;19H[K[56;158H19[10;19H[?25h[?25l[10;18H[K[56;159H8[10;18H[?25h[?25l[10;17H[K[56;159H7[10;17H[?25h[?25l[10;16H[K[56;159H6[10;16H[?25h[?25l:[56;159H7[10;17H[?25h[?25l[10;16H[K[56;159H6[10;16H[?25h[?25l[31m"[m[56;159H7[10;17H[?25h[?25l[31ms[m[56;159H8[10;18H[?25h[?25l[31ml[m[56;159H9[10;19H[?25h[?25l[31me[m[56;158H20[10;20H[?25h[?25l[31me[m[56;159H1[10;21H[?25h[?25l[31mp[m[56;159H2[10;22H[?25h[?25l[31m"[m[56;159H3[10;23H[?25h[?25l
+               [11;16H[K[56;156H1,16[11;16H[?25h[?25l[56;159H5[11;15H[?25h[?25l[56;159H3[11;13H[?25h[?25l[56;159H4[11;14H[?25h[?25l-[56;159H5[11;15H[?25h[?25l[33m- [m[56;159H6[11;16H[?25h[?25l[31m"[m[56;159H7[11;17H[?25h[?25l[31m5[m[56;159H8[11;18H[?25h[?25l[31m0[m[56;159H9[11;19H[?25h[?25l[31m0[m[56;158H20[11;20H[?25h[?25l[31m0[m[56;159H1[11;21H[?25h[?25l[31m"[m[56;159H2[11;22H[?25h[?25l[56;156H0[10;22H[?25h[56;1H[K[10;21H[?25l[56;145H^[[10;21H[56;145H  [10;22H[56;155H10,21[9CAll[10;21H[?25h[?25l[56;145H:[10;21H[56;145H[K[56;1H:[?25hwq![?25l[?2004l[>4;m"ubuntu-sleeper-2.yaml" [New] 11L, 189B written[23;2t[23;1t
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# cat [7mubuntu-sleeper-2.yaml[27mubuntu-sleeper-2.yaml
+[?2004lapiVersion: v1
+kind: Pod
+metadata: 
+  name: ubuntu-sleeper-2
+spec: 
+   containers:
+      - name: ubuntu
+        image: ubuntu
+        command: 
+             - "sleep"
+             - "5000"
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl create - [Kg[Kf [7mubuntu-sleeper-2.yaml[27mubuntu-sleeper-2.yaml
+[?2004lpod/ubuntu-sleeper-2 created
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                                      READY   STATUS              RESTARTS      AGE
+bee                                       1/1     Running             3 (21m ago)   9d
+busybox                                   1/1     Running             8 (21m ago)   10d
+custom-ngnix                              1/1     Running             5 (21m ago)   10d
+event-simulator-pod-v1                    1/2     Terminating         1 (21m ago)   3d8h
+httpd-pod                                 1/1     Running             5 (21m ago)   10d
+mosquito                                  1/1     Running             3 (21m ago)   9d
+mynginx-deployment-6dc68d5d64-khn9m       1/1     Running             0             7m18s
+mynginx-deployment-6dc68d5d64-kr62h       1/1     Running             0             7m18s
+mynginx-deployment-6dc68d5d64-t8fhh       1/1     Running             0             7m18s
+nginx-pod                                 1/1     Running             5 (21m ago)   10d
+nginx-pod2                                1/1     Running             4 (21m ago)   9d
+redis                                     1/1     Running             5 (21m ago)   10d
+static-busybox-aws-ec2-kube-master-node   0/1     ImagePullBackOff    0             7d
+ubuntu-sleeper-2                          0/1     ContainerCreating   0             6s
+webapp-799f6b587f-2v8hs                   1/1     Terminating         5 (21m ago)   10d
+webapp-799f6b587f-nqsjm                   1/1     Terminating         5 (21m ago)   10d
+webapp-799f6b587f-pqbnx                   1/1     Terminating         5 (21m ago)   10d
+webapp-799f6b587f-rwh94                   1/1     Terminating         0             16m
+webapp-799f6b587f-vdx6g                   1/1     Terminating         0             16m
+webapp-799f6b587f-xpzjv                   1/1     Terminating         0             16m
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods
+[?2004lNAME                                      READY   STATUS             RESTARTS      AGE
+bee                                       1/1     Running            3 (21m ago)   9d
+busybox                                   1/1     Running            8 (21m ago)   10d
+custom-ngnix                              1/1     Running            5 (21m ago)   10d
+event-simulator-pod-v1                    1/2     Terminating        1 (21m ago)   3d8h
+httpd-pod                                 1/1     Running            5 (21m ago)   10d
+mosquito                                  1/1     Running            3 (21m ago)   9d
+mynginx-deployment-6dc68d5d64-khn9m       1/1     Running            0             7m24s
+mynginx-deployment-6dc68d5d64-kr62h       1/1     Running            0             7m24s
+mynginx-deployment-6dc68d5d64-t8fhh       1/1     Running            0             7m24s
+nginx-pod                                 1/1     Running            5 (21m ago)   10d
+nginx-pod2                                1/1     Running            4 (21m ago)   9d
+redis                                     1/1     Running            5 (21m ago)   10d
+static-busybox-aws-ec2-kube-master-node   0/1     ImagePullBackOff   0             7d
+ubuntu-sleeper-2                          1/1     Running            0             12s
+webapp-799f6b587f-2v8hs                   1/1     Terminating        5 (21m ago)   10d
+webapp-799f6b587f-nqsjm                   1/1     Terminating        5 (21m ago)   10d
+webapp-799f6b587f-pqbnx                   1/1     Terminating        5 (21m ago)   10d
+webapp-799f6b587f-rwh94                   1/1     Terminating        0             16m
+webapp-799f6b587f-vdx6g                   1/1     Terminating        0             16m
+webapp-799f6b587f-xpzjv                   1/1     Terminating        0             16m
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods [K[K[K[K[K[K[K[K[Kdescribe o[Kpod [7mubuntu-sleeper-2[27mubuntu-sleeper-2
+[?2004lName:             ubuntu-sleeper-2
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             aws-ec2-kube-worker-node1/172.31.7.173
+Start Time:       Thu, 11 Jul 2024 15:23:56 +0000
+Labels:           <none>
+Annotations:      cni.projectcalico.org/containerID: 919430c1ae130bf1d54c3f2bfdfc8fe812fe6499ab4a5c481d8f5b667ffaa538
+                  cni.projectcalico.org/podIP: 192.168.210.71/32
+                  cni.projectcalico.org/podIPs: 192.168.210.71/32
+Status:           Running
+IP:               192.168.210.71
+IPs:
+  IP:  192.168.210.71
+Containers:
+  ubuntu:
+    Container ID:  containerd://dd6926def368107e260586bb55592383c3e2e5aefe39f4d8530e1ac0d57db560
+    Image:         ubuntu
+    Image ID:      docker.io/library/ubuntu@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      sleep
+      5000
+    State:          Running
+      Started:      Thu, 11 Jul 2024 15:24:04 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-xl55s (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-xl55s:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age                From               Message
+  ----    ------     ----               ----               -------
+  Normal  Scheduled  33s                default-scheduler  Successfully assigned default/ubuntu-sleeper-2 to aws-ec2-kube-worker-node1
+  Normal  Pulling    32s                kubelet            Pulling image "ubuntu"
+  Normal  Pulled     26s                kubelet            Successfully pulled image "ubuntu" in 6.385s (6.385s including waiting)
+  Normal  Created    26s                kubelet            Created container ubuntu
+  Normal  Started    25s                kubelet            Started container ubuntu
+  Normal  Killing    24s (x2 over 25s)  kubelet            Stopping container ubuntu
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl describe pod ubuntu-sleeper-2get pods[Kcreate -f ubuntu-sleeper-2.yaml[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kls -la
+[?2004ltotal 88
+drwxr-x--- 4 vinaym vinaym 4096 Jul 11 15:23 [0m[01;34m.[0m
+drwxr-xr-x 4 root   root   4096 Jul  1 06:09 [01;34m..[0m
+-rw------- 1 vinaym vinaym   70 Jul  4 16:28 .bash_history
+-rw-r--r-- 1 vinaym vinaym  220 Jul  1 06:09 .bash_logout
+-rw-r--r-- 1 vinaym vinaym 3771 Jul  1 06:09 .bashrc
+-rw-r--r-- 1 vinaym vinaym  807 Jul  1 06:09 .profile
+-rw-r--r-- 1 vinaym vinaym    0 Jul  1 06:57 .sudo_as_admin_successful
+-rw-r--r-- 1 root   root    158 Jul  2 04:50 1
+-rw-r--r-- 1 root   root    314 Jul  2 10:34 bee.yaml
+-rw-r--r-- 1 root   root    229 Jul  1 10:53 busybox-pod-definition.yaml
+-rw-r--r-- 1 root   root    217 Jul  8 06:44 event-simulator.yaml
+-rw-r--r-- 1 root   root    448 Jul  4 16:18 fluentd.yaml
+drwxr-xr-x 3 root   root   4096 Jul 11 15:18 [01;34mgitdir[0m
+drwxr-xr-x 3 root   root   4096 Jul  8 06:14 [01;34mkubernetes-metrics-server[0m
+-rw-r--r-- 1 root   root    400 Jul 11 15:16 nginx-deployment-manifest.yaml
+-rw-r--r-- 1 root   root    384 Jul  1 07:30 nginx-deployment.yaml
+-rw-r--r-- 1 root   root    265 Jul  2 05:50 nginx-pod.yml
+-rw-r--r-- 1 root   root    205 Jul  2 05:01 nginx.yaml
+-rw-r--r-- 1 root   root    166 Jul  1 08:15 pod-definition.yaml
+-rw-r--r-- 1 root   root    241 Jul  1 08:46 redis123.yaml
+-rw-r--r-- 1 root   root    285 Jul  1 09:44 replicaset-definition-1.yaml
+-rw-r--r-- 1 root   root    298 Jul  4 15:03 static-busybox.yaml
+-rw-r--r-- 1 root   root    189 Jul 11 15:23 ubuntu-sleeper-2.yaml
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# cp [7mubuntu-sleeper-2.yaml[27mubuntu-sleeper-2.yaml gitdir
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl edit pod [7mubuntu-sleeper-2[27mubuntu-sleeper-2
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;56r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[56;1H"/tmp/kubectl-edit-3307457117.yaml" 107L, 3048B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H[34m# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be[m[2;91H[K[3;1H[34m# reopened with the relevant failures.[m[3;39H[K[4;1H[34m#[m
+[36mapiVersion[m[35m:[m v1
+[36mkind[m[35m:[m Pod
+[36mmetadata[m[35m:[m
+  [36mannotations[m[35m:[m
+    [36mcni.projectcalico.org/containerID[m[35m:[m 919430c1ae130bf1d54c3f2bfdfc8fe812fe6499ab4a5c481d8f5b667ffaa538
+    [36mcni.projectcalico.org/podIP[m[35m:[m 192.168.210.71/32
+    [36mcni.projectcalico.org/podIPs[m[35m:[m 192.168.210.71/32
+  [36mcreationTimestamp[m[35m:[m [31m"2024-07-11T15:23:56Z"[m
+  [36mname[m[35m:[m ubuntu-sleeper-2
+  [36mnamespace[m[35m:[m default
+  [36mresourceVersion[m[35m:[m [31m"73265"[m
+  [36muid[m[35m:[m 8674a177-364a-4f9d-9340-f32e38ad2b95
+[36mspec[m[35m:[m
+  [36mcontainers[m[35m:[m
+  [33m- [m[36mcommand[m[35m:[m
+    [33m- [msleep
+    [33m- [m[31m"5000"[m
+    [36mimage[m[35m:[m ubuntu
+    [36mimagePullPolicy[m[35m:[m Always
+    [36mname[m[35m:[m ubuntu
+    [36mresources[m[35m:[m [35m{}[m
+    [36mterminationMessagePath[m[35m:[m /dev/termination-log
+    [36mterminationMessagePolicy[m[35m:[m File
+    [36mvolumeMounts[m[35m:[m
+    [33m- [m[36mmountPath[m[35m:[m /var/run/secrets/kubernetes.io/serviceaccount[30;7H[36mname[m[35m:[m kube-api-access-xl55s[31;7H[36mreadOnly[m[35m:[m [31mtrue[m
+  [36mdnsPolicy[m[35m:[m ClusterFirst
+  [36menableServiceLinks[m[35m:[m [31mtrue[m
+  [36mnodeName[m[35m:[m aws-ec2-kube-worker-node1
+  [36mpreemptionPolicy[m[35m:[m PreemptLowerPriority
+  [36mpriority[m[35m:[m [31m0[m
+  [36mrestartPolicy[m[35m:[m Always
+  [36mschedulerName[m[35m:[m default-scheduler
+  [36msecurityContext[m[35m:[m [35m{}[m
+  [36mserviceAccount[m[35m:[m default
+  [36mserviceAccountName[m[35m:[m default
+  [36mterminationGracePeriodSeconds[m[35m:[m [31m30[m
+  [36mtolerations[m[35m:[m
+  [33m- [m[36meffect[m[35m:[m NoExecute
+    [36mkey[m[35m:[m node.kubernetes.io/not-ready
+    [36moperator[m[35m:[m Exists
+    [36mtolerationSeconds[m[35m:[m [31m300[m
+  [33m- [m[36meffect[m[35m:[m NoExecute
+    [36mkey[m[35m:[m node.kubernetes.io/unreachable
+    [36moperator[m[35m:[m Exists
+    [36mtolerationSeconds[m[35m:[m [31m300[m
+  [36mvolumes[m[35m:[m
+  [33m- [m[36mname[m[35m:[m kube-api-access-xl55s
+    [36mprojected[m[35m:[m[55;7H[36mdefaultMode[m[35m:[m [31m420[m[56;155H1,1[11CTop[1;1H[?25h[?4m[?25l[56;145H~@k[1;1H[56;145H   [2;1H[56;155H2[2;1H[?25h[?25l[56;145H~@k[2;1H[56;145H   [3;1H[56;155H3[3;1H[?25h[?25l[56;145H~@k[3;1H[56;145H   [4;1H[56;155H4[4;1H[?25h[?25l[56;145H~@k[4;1H[56;145H   [5;1H[56;155H5[5;1H[?25h[?25l[56;145H~@k[5;1H[56;145H   [6;1H[56;155H6[6;1H[?25h[?25l[56;145H~@k[6;1H[56;145H   [7;1H[56;155H7[7;1H[?25h[?25l[56;145H~@k[7;1H[56;145H   [8;1H[56;155H8[8;1H[?25h[?25l[56;145H~@k[8;1H[56;145H   [9;1H[56;155H9[9;1H[?25h[?25l[56;145H~@k[9;1H[56;145H   [10;1H[56;155H10,1[10;1H[?25h[?25l[56;145H~@k[10;1H[56;145H   [11;1H[56;156H1[11;1H[?25h[?25l[56;145H~@k[11;1H[56;145H   [12;1H[56;156H2[12;1H[?25h[?25l[56;145H~@k[12;1H[56;145H   [13;1H[56;156H3[13;1H[?25h[?25l[56;145H~@k[13;1H[56;145H   [14;1H[56;156H4[14;1H[?25h[?25l[56;145H~@k[14;1H[56;145H   [15;1H[56;156H5[15;1H[?25h[?25l[56;145H~@k[15;1H[56;145H   [16;1H[56;156H6[16;1H[?25h[?25l[56;145H~@k[16;1H[56;145H   [17;1H[56;156H7[17;1H[?25h[?25l[56;145H~@k[17;1H[56;145H   [18;1H[56;156H8[18;1H[?25h[?25l[56;145H~@k[18;1H[56;145H   [19;1H[56;156H9[19;1H[?25h[?25l[56;145H~@k[19;1H[56;145H   [20;1H[56;155H20[20;1H[?25h[?25l[56;145H~@k[20;1H[56;145H   [21;1H[56;156H1[21;1H[?25h[?25l[56;145H~@k[21;1H[56;145H   [22;1H[56;156H2[22;1H[?25h[?25l[56;145H~@k[22;1H[56;145H   [23;1H[56;156H3[23;1H[?25h[?25l[56;145H~@k[23;1H[56;145H   [24;1H[56;156H4[24;1H[?25h[?25l[56;145H~@k[24;1H[56;145H   [23;1H[56;156H3[23;1H[?25h[?25l[56;145H~@k[23;1H[56;145H   [22;1H[56;156H2[22;1H[?25h[?25l[56;145H~@k[22;1H[56;145H   [21;1H[56;156H1[21;1H[?25h[?25l[56;145H~@k[21;1H[56;145H   [20;1H[56;156H0[20;1H[?25h[?25l[56;145H~@k[20;1H[56;145H   [20;2H[56;158H2[20;2H[?25h[?25l[56;145H~@k[20;2H[56;145H   [20;3H[56;158H3[20;3H[?25h[?25l[56;145H~@k[20;3H[56;145H   [20;4H[56;158H4[20;4H[?25h[?25l[56;145H~@k[20;4H[56;145H   [20;5H[56;158H5[20;5H[?25h[?25l[56;145H~@k[20;5H[56;145H   [20;6H[56;158H6[20;6H[?25h[?25l[56;145H~@k[20;6H[56;145H   [20;7H[56;158H7[20;7H[?25h[?25l[56;145H~@k[20;7H[56;145H   [21;7H[56;156H1[21;7H[?25h[?25l[56;145H~@k[21;7H[56;145H   [21;8H[56;158H8[21;8H[?25h[?25l[56;145H~@k[21;8H[56;145H   [21;9H[56;158H9[21;9H[?25h[?25l[56;145H~@k[21;9H[56;145H   [21;8H[56;158H8[21;8H[?25h[?25l[56;145H1[21;8H[?25h[?25l[56;146Hi[21;8H[56;145H  [21;8H[56;1H[1m-- INSERT --[m[56;13H[K[56;155H21,8[10CTop[21;8H[?25h[?25l[56;158H9[21;9H[?25h[?25l[31m000"[m[21;12H[K[56;158H8[21;8H[?25h[?25l[31m2000"[m[56;158H9[21;9H[?25h[56;1H[K[21;8H[?25l[56;145H^[[21;8H[56;145H  [21;9H[56;155H21,8[10CTop[21;8H[?25h[?25l[56;145H:[21;8H[56;145H[K[56;1H:[?25hwq![?25l[?2004l[>4;m"/tmp/kubectl-edit-3307457117.yaml" 107L, 3048B written[23;2t[23;1t
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;merror: pods "ubuntu-sleeper-2" is invalid
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;56r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[56;1H"/tmp/kubectl-edit-2698808171.yaml" 132L, 4263B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H[34m# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be[m[2;91H[K[3;1H[34m# reopened with the relevant failures.[m[3;39H[K[4;1H[34m#
+# pods "ubuntu-sleeper-2" was not valid:
+# * spec: Forbidden: pod updates may not change fields other than `spec.containers[*].image`,`spec.initContainers[*].image`,`spec.activeDeadlineSeconds`,`spec.tolerations`  [7;1H(only additions to existing tolerations),`spec.terminationGracePeriodSeconds` (allow it to be set to 1 if it was previously negative)
+#   core.PodSpec{
+#       Volumes:        {{Name: "kube-api-access-xl55s", VolumeSource: {Projected: &{Sources: {{ServiceAccountToken: &{ExpirationSeconds: 3607, Path: "token"}}, {ConfigMap::[10;1H &{LocalObjectReference: {Name: "kube-root-ca.crt"}, Items: {{Key: "ca.crt", Path: "ca.crt"}}}}, {DownwardAPI: &{Items: {{Path: "namespace", FieldRef: &{APIVersion: "v1", FF[11;1HieldPath: "metadata.namespace"}}}}}}, DefaultMode: &420}}}},
+#       InitContainers: nil,
+#       Containers: []core.Container{
+#               {
+#                       Name:  "ubuntu",
+#                       Image: "ubuntu",
+#                       Command: []string{
+#                               "sleep",
+# -                             "5000",
+# +                             "2000",
+#                       },
+#                       Args:       nil,
+#                       WorkingDir: "",
+#                       ... // 19 identical fields
+#               },
+#       },
+#       EphemeralContainers: nil,
+#       RestartPolicy:       "Always",
+#       ... // 28 identical fields
+#   }
+
+#[m
+[36mapiVersion[m[35m:[m v1
+[36mkind[m[35m:[m Pod
+[36mmetadata[m[35m:[m
+  [36mannotations[m[35m:[m
+    [36mcni.projectcalico.org/containerID[m[35m:[m 919430c1ae130bf1d54c3f2bfdfc8fe812fe6499ab4a5c481d8f5b667ffaa538
+    [36mcni.projectcalico.org/podIP[m[35m:[m 192.168.210.71/32
+    [36mcni.projectcalico.org/podIPs[m[35m:[m 192.168.210.71/32
+  [36mcreationTimestamp[m[35m:[m [31m"2024-07-11T15:23:56Z"[m
+  [36mname[m[35m:[m ubuntu-sleeper-2
+  [36mnamespace[m[35m:[m default
+  [36mresourceVersion[m[35m:[m [31m"73265"[m
+  [36muid[m[35m:[m 8674a177-364a-4f9d-9340-f32e38ad2b95
+[36mspec[m[35m:[m
+  [36mcontainers[m[35m:[m
+  [33m- [m[36mcommand[m[35m:[m
+    [33m- [msleep
+    [33m- [m[31m"2000"[m
+    [36mimage[m[35m:[m ubuntu
+    [36mimagePullPolicy[m[35m:[m Always
+    [36mname[m[35m:[m ubuntu
+    [36mresources[m[35m:[m [35m{}[m
+    [36mterminationMessagePath[m[35m:[m /dev/termination-log
+    [36mterminationMessagePolicy[m[35m:[m File[56;155H1,1[11CTop[1;1H[?25h[?4m[?25l[56;145H^[[1;1H[56;145H  [1;1H[56;145H^[[1;1H[56;145H  [1;1H[?25h[?25l[56;145H^[[1;1H[56;145H  [1;1H[56;145H^[[1;1H[56;145H  [1;1H[?25h[?25l[56;145H^M[1;1H[56;145H  [2;1H[56;155H2[2;1H[?25h[?25l[56;145H^M[2;1H[56;145H  [3;1H[56;155H3[3;1H[?25h[?25l[56;145H^M[3;1H[56;145H  [4;1H[56;155H4[4;1H[?25h[?25l[56;145H^[[4;1H[56;145H  [4;1H[56;145H^[[4;1H[56;145H  [4;1H[?25h[?25l[56;145H:[4;1H[56;1H[K[56;1H:[?25hwq![?25l[?2004l[>4;m"/tmp/kubectl-edit-2698808171.yaml" 132L, 4263B written[23;2t[23;1t
+[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;mA copy of your changes has been stored to "/tmp/kubectl-edit-2698808171.yaml"
+error: Edit cancelled, no valid changes were saved.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# cat [7m/tmp/kubectl-edit-2698808171.yaml[27m/tmp/kubectl-edit-2698808171.yaml
+[?2004l# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+# pods "ubuntu-sleeper-2" was not valid:
+# * spec: Forbidden: pod updates may not change fields other than `spec.containers[*].image`,`spec.initContainers[*].image`,`spec.activeDeadlineSeconds`,`spec.tolerations` (only additions to existing tolerations),`spec.terminationGracePeriodSeconds` (allow it to be set to 1 if it was previously negative)
+#   core.PodSpec{
+#   	Volumes:        {{Name: "kube-api-access-xl55s", VolumeSource: {Projected: &{Sources: {{ServiceAccountToken: &{ExpirationSeconds: 3607, Path: "token"}}, {ConfigMap: &{LocalObjectReference: {Name: "kube-root-ca.crt"}, Items: {{Key: "ca.crt", Path: "ca.crt"}}}}, {DownwardAPI: &{Items: {{Path: "namespace", FieldRef: &{APIVersion: "v1", FieldPath: "metadata.namespace"}}}}}}, DefaultMode: &420}}}},
+#   	InitContainers: nil,
+#   	Containers: []core.Container{
+#   		{
+#   			Name:  "ubuntu",
+#   			Image: "ubuntu",
+#   			Command: []string{
+#   				"sleep",
+# - 				"5000",
+# + 				"2000",
+#   			},
+#   			Args:       nil,
+#   			WorkingDir: "",
+#   			... // 19 identical fields
+#   		},
+#   	},
+#   	EphemeralContainers: nil,
+#   	RestartPolicy:       "Always",
+#   	... // 28 identical fields
+#   }
+
+#
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    cni.projectcalico.org/containerID: 919430c1ae130bf1d54c3f2bfdfc8fe812fe6499ab4a5c481d8f5b667ffaa538
+    cni.projectcalico.org/podIP: 192.168.210.71/32
+    cni.projectcalico.org/podIPs: 192.168.210.71/32
+  creationTimestamp: "2024-07-11T15:23:56Z"
+  name: ubuntu-sleeper-2
+  namespace: default
+  resourceVersion: "73265"
+  uid: 8674a177-364a-4f9d-9340-f32e38ad2b95
+spec:
+  containers:
+  - command:
+    - sleep
+    - "2000"
+    image: ubuntu
+    imagePullPolicy: Always
+    name: ubuntu
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-xl55s
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: aws-ec2-kube-worker-node1
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-xl55s
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2024-07-11T15:23:56Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2024-07-11T15:24:04Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2024-07-11T15:24:04Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2024-07-11T15:23:56Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://dd6926def368107e260586bb55592383c3e2e5aefe39f4d8530e1ac0d57db560
+    image: docker.io/library/ubuntu:latest
+    imageID: docker.io/library/ubuntu@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
+    lastState: {}
+    name: ubuntu
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2024-07-11T15:24:04Z"
+  hostIP: 172.31.7.173
+  phase: Running
+  podIP: 192.168.210.71
+  podIPs:
+  - ip: 192.168.210.71
+  qosClass: BestEffort
+  startTime: "2024-07-11T15:23:56Z"
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# ls -la
+[?2004ltotal 88
+drwxr-x--- 4 vinaym vinaym 4096 Jul 11 15:23 [0m[01;34m.[0m
+drwxr-xr-x 4 root   root   4096 Jul  1 06:09 [01;34m..[0m
+-rw------- 1 vinaym vinaym   70 Jul  4 16:28 .bash_history
+-rw-r--r-- 1 vinaym vinaym  220 Jul  1 06:09 .bash_logout
+-rw-r--r-- 1 vinaym vinaym 3771 Jul  1 06:09 .bashrc
+-rw-r--r-- 1 vinaym vinaym  807 Jul  1 06:09 .profile
+-rw-r--r-- 1 vinaym vinaym    0 Jul  1 06:57 .sudo_as_admin_successful
+-rw-r--r-- 1 root   root    158 Jul  2 04:50 1
+-rw-r--r-- 1 root   root    314 Jul  2 10:34 bee.yaml
+-rw-r--r-- 1 root   root    229 Jul  1 10:53 busybox-pod-definition.yaml
+-rw-r--r-- 1 root   root    217 Jul  8 06:44 event-simulator.yaml
+-rw-r--r-- 1 root   root    448 Jul  4 16:18 fluentd.yaml
+drwxr-xr-x 3 root   root   4096 Jul 11 15:25 [01;34mgitdir[0m
+drwxr-xr-x 3 root   root   4096 Jul  8 06:14 [01;34mkubernetes-metrics-server[0m
+-rw-r--r-- 1 root   root    400 Jul 11 15:16 nginx-deployment-manifest.yaml
+-rw-r--r-- 1 root   root    384 Jul  1 07:30 nginx-deployment.yaml
+-rw-r--r-- 1 root   root    265 Jul  2 05:50 nginx-pod.yml
+-rw-r--r-- 1 root   root    205 Jul  2 05:01 nginx.yaml
+-rw-r--r-- 1 root   root    166 Jul  1 08:15 pod-definition.yaml
+-rw-r--r-- 1 root   root    241 Jul  1 08:46 redis123.yaml
+-rw-r--r-- 1 root   root    285 Jul  1 09:44 replicaset-definition-1.yaml
+-rw-r--r-- 1 root   root    298 Jul  4 15:03 static-busybox.yaml
+-rw-r--r-- 1 root   root    189 Jul 11 15:23 ubuntu-sleeper-2.yaml
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl replace -f [K[K- force -f [7m/tmp/kubectl-edit-2698808171.yaml[27m/tmp/kubectl-edit-2698808171.yaml
+[?2004lerror: must specify one of -f and -k
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl replace -- force -f /tmp/kubectl-edit-2698808171.yaml[C[1P
+[?2004lpod "ubuntu-sleeper-2" deleted
+error: timed out waiting for the condition
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
