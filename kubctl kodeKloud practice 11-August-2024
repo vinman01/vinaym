@@ -1,0 +1,418 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2024.08.11 07:40:16 =~=~=~=~=~=~=~=~=~=~=~=
+[upgrade/apply] FATAL: couldn't upgrade control plane. kubeadm has tried to recover everything into the earlier state. Errors faced: static Pod hash for component kube-apiserver on Node aws-ec2-kube-master-node did not change after 5m0s: timed out waiting for the condition
+To see the stack trace of this error execute with --v=5 or higher
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# kube adm [K[K[K[K[K[K[K[K[Kkube[K[K[K[K
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# kubeadm upgrade apply v1.28.12 --force[Kplan[Kctl get nodes -o wide
+[?2004lNAME                        STATUS   ROLES           AGE   VERSION    INTERNAL-IP    EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION   CONTAINER-RUNTIME
+aws-ec2-kube-master-node    Ready    control-plane   40d   v1.28.12   172.31.2.7     <none>        Ubuntu 24.04 LTS   6.8.0-1010-aws   containerd://1.7.12
+aws-ec2-kube-worker-node1   Ready    <none>          40d   v1.28.12   172.31.7.173   <none>        Ubuntu 24.04 LTS   6.8.0-1013-aws   containerd://1.7.12
+aws-ec2-kube-worker-node2   Ready    <none>          40d   v1.28.12   172.31.4.73    <none>        Ubuntu 24.04 LTS   6.8.0-1009-aws   containerd://1.7.12
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# k get pods
+[?2004lk: command not found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# k get pods [K[K[K[K[K[K[K[K[K[K[Kalias k=kubectl
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# k get pods
+[?2004lNo resources found in default namespace.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# k get pods -A
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+kube-flannel   kube-flannel-ds-fsnjf                              0/1     CrashLoopBackOff   307 (19s ago)     40d
+kube-flannel   kube-flannel-ds-p72jp                              0/1     CrashLoopBackOff   285 (2m52s ago)   40d
+kube-flannel   kube-flannel-ds-v8jf7                              0/1     Error              288 (5m13s ago)   40d
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            15 (17m ago)      40d
+kube-system    calico-node-74m87                                  1/1     Running            240 (3m37s ago)   40d
+kube-system    calico-node-mmq75                                  0/1     CrashLoopBackOff   233 (74s ago)     40d
+kube-system    calico-node-xmx8g                                  1/1     Running            241 (5m16s ago)   40d
+kube-system    coredns-5dd5756b68-ffpzd                           1/1     Running            2 (17m ago)       47h
+kube-system    coredns-5dd5756b68-h28ms                           1/1     Running            2 (17m ago)       47h
+kube-system    elasticsearch-9sktg                                1/1     Running            8 (17m ago)       37d
+kube-system    elasticsearch-hfk5p                                1/1     Running            8 (17m ago)       37d
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            16 (17m ago)      40d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            16 (17m ago)      40d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            16 (17m ago)      40d
+kube-system    kube-proxy-2p5m9                                   1/1     Running            238 (5m59s ago)   40d
+kube-system    kube-proxy-blc9s                                   0/1     CrashLoopBackOff   221 (28s ago)     40d
+kube-system    kube-proxy-tzn4v                                   0/1     CrashLoopBackOff   234 (4m3s ago)    40d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            16 (17m ago)      40d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# systemctl restart kubectl
+[?2004l[0;1;31mFailed to restart kubectl.service: Unit kubectl.service not found.[0m
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# systemctl restart kubectl[K[K[Klet
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# systemctl restart kubeletctl[12Pk get pods -A[K -A
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+kube-flannel   kube-flannel-ds-fsnjf                              0/1     CrashLoopBackOff   312 (2m8s ago)    40d
+kube-flannel   kube-flannel-ds-p72jp                              0/1     CrashLoopBackOff   286 (3m33s ago)   40d
+kube-flannel   kube-flannel-ds-v8jf7                              0/1     CrashLoopBackOff   289 (52s ago)     40d
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            15 (23m ago)      40d
+kube-system    calico-node-74m87                                  0/1     CrashLoopBackOff   240 (4m50s ago)   40d
+kube-system    calico-node-mmq75                                  1/1     Running            234 (7m7s ago)    40d
+kube-system    calico-node-xmx8g                                  0/1     Running            244 (49s ago)     40d
+kube-system    coredns-5dd5756b68-ffpzd                           1/1     Running            2 (23m ago)       47h
+kube-system    coredns-5dd5756b68-h28ms                           1/1     Running            2 (23m ago)       47h
+kube-system    elasticsearch-9sktg                                1/1     Running            8 (23m ago)       37d
+kube-system    elasticsearch-hfk5p                                1/1     Running            8 (23m ago)       37d
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            16 (23m ago)      41d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            16 (23m ago)      41d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            16 (23m ago)      41d
+kube-system    kube-proxy-2p5m9                                   1/1     Running            242 (104s ago)    41d
+kube-system    kube-proxy-blc9s                                   0/1     CrashLoopBackOff   222 (2m18s ago)   40d
+kube-system    kube-proxy-tzn4v                                   0/1     CrashLoopBackOff   235 (3m41s ago)   41d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            16 (23m ago)      41d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# k get pods -A
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+kube-flannel   kube-flannel-ds-fsnjf                              0/1     CrashLoopBackOff   313 (48s ago)     40d
+kube-flannel   kube-flannel-ds-p72jp                              0/1     Error              287 (5m7s ago)    40d
+kube-flannel   kube-flannel-ds-v8jf7                              0/1     CrashLoopBackOff   289 (2m26s ago)   40d
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            15 (24m ago)      40d
+kube-system    calico-node-74m87                                  1/1     Running            241 (6m24s ago)   40d
+kube-system    calico-node-mmq75                                  0/1     CrashLoopBackOff   234 (40s ago)     40d
+kube-system    calico-node-xmx8g                                  0/1     Running            245 (72s ago)     40d
+kube-system    coredns-5dd5756b68-ffpzd                           1/1     Running            2 (24m ago)       47h
+kube-system    coredns-5dd5756b68-h28ms                           1/1     Running            2 (24m ago)       47h
+kube-system    elasticsearch-9sktg                                1/1     Running            8 (24m ago)       37d
+kube-system    elasticsearch-hfk5p                                1/1     Running            8 (24m ago)       37d
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            16 (24m ago)      41d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            16 (24m ago)      41d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            16 (24m ago)      41d
+kube-system    kube-proxy-2p5m9                                   0/1     CrashLoopBackOff   242 (79s ago)     41d
+kube-system    kube-proxy-blc9s                                   0/1     CrashLoopBackOff   222 (3m52s ago)   40d
+kube-system    kube-proxy-tzn4v                                   1/1     Running            236 (5m15s ago)   41d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            16 (24m ago)      41d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# k get pods -A
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+kube-flannel   kube-flannel-ds-fsnjf                              0/1     CrashLoopBackOff   313 (62s ago)     40d
+kube-flannel   kube-flannel-ds-p72jp                              0/1     CrashLoopBackOff   287 (20s ago)     40d
+kube-flannel   kube-flannel-ds-v8jf7                              0/1     CrashLoopBackOff   289 (2m40s ago)   40d
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            15 (24m ago)      40d
+kube-system    calico-node-74m87                                  1/1     Running            241 (6m38s ago)   40d
+kube-system    calico-node-mmq75                                  0/1     CrashLoopBackOff   234 (54s ago)     40d
+kube-system    calico-node-xmx8g                                  1/1     Running            245 (86s ago)     40d
+kube-system    coredns-5dd5756b68-ffpzd                           1/1     Running            2 (24m ago)       47h
+kube-system    coredns-5dd5756b68-h28ms                           1/1     Running            2 (24m ago)       47h
+kube-system    elasticsearch-9sktg                                1/1     Running            8 (24m ago)       37d
+kube-system    elasticsearch-hfk5p                                1/1     Running            8 (24m ago)       37d
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            16 (24m ago)      41d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            16 (24m ago)      41d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            16 (24m ago)      41d
+kube-system    kube-proxy-2p5m9                                   1/1     Running            243 (93s ago)     41d
+kube-system    kube-proxy-blc9s                                   0/1     CrashLoopBackOff   222 (4m6s ago)    40d
+kube-system    kube-proxy-tzn4v                                   1/1     Running            236 (5m29s ago)   41d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            16 (24m ago)      41d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# k get pods -A
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+kube-flannel   kube-flannel-ds-fsnjf                              0/1     CrashLoopBackOff   313 (69s ago)     40d
+kube-flannel   kube-flannel-ds-p72jp                              0/1     CrashLoopBackOff   287 (27s ago)     40d
+kube-flannel   kube-flannel-ds-v8jf7                              0/1     CrashLoopBackOff   289 (2m47s ago)   40d
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            15 (24m ago)      40d
+kube-system    calico-node-74m87                                  1/1     Running            241 (6m45s ago)   40d
+kube-system    calico-node-mmq75                                  0/1     CrashLoopBackOff   234 (61s ago)     40d
+kube-system    calico-node-xmx8g                                  1/1     Running            245 (93s ago)     40d
+kube-system    coredns-5dd5756b68-ffpzd                           1/1     Running            2 (24m ago)       47h
+kube-system    coredns-5dd5756b68-h28ms                           1/1     Running            2 (25m ago)       47h
+kube-system    elasticsearch-9sktg                                1/1     Running            8 (25m ago)       37d
+kube-system    elasticsearch-hfk5p                                1/1     Running            8 (25m ago)       37d
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            16 (24m ago)      41d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            16 (24m ago)      41d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            16 (24m ago)      41d
+kube-system    kube-proxy-2p5m9                                   1/1     Running            243 (100s ago)    41d
+kube-system    kube-proxy-blc9s                                   0/1     CrashLoopBackOff   222 (4m13s ago)   40d
+kube-system    kube-proxy-tzn4v                                   1/1     Running            236 (5m36s ago)   41d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            16 (24m ago)      41d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# ETCDCL[KTL_API=3 etcdctl snapshot
+[?2004lCommand 'etcdctl' not found, but can be installed with:
+snap install etcd         # version 3.4.22, or
+apt  install etcd-client  # version 3.4.30-1ubuntu0.24.04.1
+See 'snap info etcd' for additional versions.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# ETCDCTL_API=3 etcdctl snapshot[C[1P[1@2
+[?2004lCommand 'etcdctl' not found, but can be installed with:
+snap install etcd         # version 3.4.22, or
+apt  install etcd-client  # version 3.4.30-1ubuntu0.24.04.1
+See 'snap info etcd' for additional versions.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# export ETCDCTL_API=3
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# etcdctl snapsht[Kot
+[?2004lCommand 'etcdctl' not found, but can be installed with:
+snap install etcd         # version 3.4.22, or
+apt  install etcd-client  # version 3.4.30-1ubuntu0.24.04.1
+See 'snap info etcd' for additional versions.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# etcdctl snapshot save 
+[?2004lCommand 'etcdctl' not found, but can be installed with:
+snap install etcd         # version 3.4.22, or
+apt  install etcd-client  # version 3.4.30-1ubuntu0.24.04.1
+See 'snap info etcd' for additional versions.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# [7msnap info etcd'[27msnap info etcd'
+[?2004l[?2004h> ^C[?2004l[?2004h[?2004l
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# [7metcdctl[27metcdctlsn[K[K snapshot status
+[?2004lCommand 'etcdctl' not found, but can be installed with:
+snap install etcd         # version 3.4.22, or
+apt  install etcd-client  # version 3.4.30-1ubuntu0.24.04.1
+See 'snap info etcd' for additional versions.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/ubunturoot@aws-ec2-kube-master-node:/home/ubuntu# su - vinanm[K[Kym
+[?2004l[?2004h]0;vinaym@aws-ec2-kube-master-node: ~vinaym@aws-ec2-kube-master-node:~$ sudo su
+[?2004l[sudo] password for vinaym: 
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# [7metcdctl snapshot status[27metcdctl snapshot status
+[?2004lCommand 'etcdctl' not found, but can be installed with:
+snap install etcd         # version 3.4.22, or
+apt  install etcd-client  # version 3.4.30-1ubuntu0.24.04.1
+See 'snap info etcd' for additional versions.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes --labels
+[?2004lerror: unknown flag: --labels
+See 'kubectl get --help' for usage.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes --labels[K[K[K[K[K[K[K[K[Klabel
+[?2004lerror: the server doesn't have a resource type "nodeslabel"
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubetl [K[K[Kctl get nodes -label
+[?2004lNo resources found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes -labels
+[?2004lNo resources found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes -labels -A
+[?2004lNo resources found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k get pods [7m-labels -A[27m-labels -A
+[?2004lk: command not found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k get pods -labels -A[1P -A
+[?2004lk: command not found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k [Kubectl get pods -label
+[?2004lNo resources found in default namespace.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get pods -label -A
+[?2004lNo resources found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k[Kkubectl get nodes -o wide
+[?2004lNAME                        STATUS   ROLES           AGE   VERSION    INTERNAL-IP    EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION   CONTAINER-RUNTIME
+aws-ec2-kube-master-node    Ready    control-plane   41d   v1.28.12   172.31.2.7     <none>        Ubuntu 24.04 LTS   6.8.0-1010-aws   containerd://1.7.12
+aws-ec2-kube-worker-node1   Ready    <none>          41d   v1.28.12   172.31.7.173   <none>        Ubuntu 24.04 LTS   6.8.0-1013-aws   containerd://1.7.12
+aws-ec2-kube-worker-node2   Ready    <none>          41d   v1.28.12   172.31.4.73    <none>        Ubuntu 24.04 LTS   6.8.0-1009-aws   containerd://1.7.12
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl label node [7maws-ec2-kube-worker-node1[27maws-ec2-kube-worker-node1 ow[K[Kenv=p[Kuat
+[?2004lnode/aws-ec2-kube-worker-node1 labeled
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# [7mkubectl get nodes -label[27mkubectl get nodes -label
+[?2004lNo resources found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes -label[K[K[K[K[K[K[K --label
+[?2004lerror: unknown flag: --label
+See 'kubectl get --help' for usage.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes --label[K[K[K[K[K[Klabel
+[?2004lNo resources found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes -label[K[K[K[K[Kh[Kshow-labe;s[K[Kls
+[?2004lE0811 07:23:06.869737   51061 memcache.go:265] couldn't get current server API group list: Get "http://how-labels/api?timeout=32s": dial tcp: lookup how-labels on 127.0.0.53:53: server misbehaving
+E0811 07:23:06.871467   51061 memcache.go:265] couldn't get current server API group list: Get "http://how-labels/api?timeout=32s": dial tcp: lookup how-labels on 127.0.0.53:53: server misbehaving
+E0811 07:23:06.873221   51061 memcache.go:265] couldn't get current server API group list: Get "http://how-labels/api?timeout=32s": dial tcp: lookup how-labels on 127.0.0.53:53: server misbehaving
+E0811 07:23:06.875274   51061 memcache.go:265] couldn't get current server API group list: Get "http://how-labels/api?timeout=32s": dial tcp: lookup how-labels on 127.0.0.53:53: server misbehaving
+E0811 07:23:06.877566   51061 memcache.go:265] couldn't get current server API group list: Get "http://how-labels/api?timeout=32s": dial tcp: lookup how-labels on 127.0.0.53:53: server misbehaving
+Unable to connect to the server: dial tcp: lookup how-labels on 127.0.0.53:53: server misbehaving
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes -show-labels[K
+[?2004lE0811 07:23:12.319513   51121 memcache.go:265] couldn't get current server API group list: Get "http://how-label/api?timeout=32s": dial tcp: lookup how-label on 127.0.0.53:53: server misbehaving
+E0811 07:23:12.321475   51121 memcache.go:265] couldn't get current server API group list: Get "http://how-label/api?timeout=32s": dial tcp: lookup how-label on 127.0.0.53:53: server misbehaving
+E0811 07:23:12.323330   51121 memcache.go:265] couldn't get current server API group list: Get "http://how-label/api?timeout=32s": dial tcp: lookup how-label on 127.0.0.53:53: server misbehaving
+E0811 07:23:12.325152   51121 memcache.go:265] couldn't get current server API group list: Get "http://how-label/api?timeout=32s": dial tcp: lookup how-label on 127.0.0.53:53: server misbehaving
+E0811 07:23:12.326871   51121 memcache.go:265] couldn't get current server API group list: Get "http://how-label/api?timeout=32s": dial tcp: lookup how-label on 127.0.0.53:53: server misbehaving
+Unable to connect to the server: dial tcp: lookup how-label on 127.0.0.53:53: server misbehaving
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes -show-label[C[C[C-show-label
+[?2004lerror: unknown flag: --show-label
+See 'kubectl get --help' for usage.
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes --show-labels
+[?2004lNAME                        STATUS   ROLES           AGE   VERSION    LABELS
+aws-ec2-kube-master-node    Ready    control-plane   41d   v1.28.12   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=aws-ec2-kube-master-node,kubernetes.io/os=linux,node-role.kubernetes.io/control-plane=,node.kubernetes.io/exclude-from-external-load-balancers=
+aws-ec2-kube-worker-node1   Ready    <none>          41d   v1.28.12   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,env=uat,kubernetes.io/arch=amd64,kubernetes.io/hostname=aws-ec2-kube-worker-node1,kubernetes.io/os=linux
+aws-ec2-kube-worker-node2   Ready    <none>          41d   v1.28.12   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=aws-ec2-kube-worker-node2,kubernetes.io/os=linux
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl get nodes --show-labels=true
+[?2004lNAME                        STATUS   ROLES           AGE   VERSION    LABELS
+aws-ec2-kube-master-node    Ready    control-plane   41d   v1.28.12   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=aws-ec2-kube-master-node,kubernetes.io/os=linux,node-role.kubernetes.io/control-plane=,node.kubernetes.io/exclude-from-external-load-balancers=
+aws-ec2-kube-worker-node1   Ready    <none>          41d   v1.28.12   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,env=uat,kubernetes.io/arch=amd64,kubernetes.io/hostname=aws-ec2-kube-worker-node1,kubernetes.io/os=linux
+aws-ec2-kube-worker-node2   Ready    <none>          41d   v1.28.12   beta.kubernetes.io/arch=amd64,beta.kubernetes.io/os=linux,kubernetes.io/arch=amd64,kubernetes.io/hostname=aws-ec2-kube-worker-node2,kubernetes.io/os=linux
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl config view
+[?2004lapiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: DATA+OMITTED
+    server: https://172.31.2.7:6443
+  name: kubernetes
+contexts:
+- context:
+    cluster: kubernetes
+    user: kubernetes-admin
+  name: kubernetes-admin@kubernetes
+current-context: kubernetes-admin@kubernetes
+kind: Config
+preferences: {}
+users:
+- name: kubernetes-admin
+  user:
+    client-certificate-data: DATA+OMITTED
+    client-key-data: DATA+OMITTED
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k get nodes[K[K[K[K[Kpods -A
+[?2004lk: command not found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k [K[Kalias -[Kl=kubec[Kctl
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# alias l=kubectl[2Pk get pods -A
+[?2004lk: command not found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k get pods -Aalias l=kubectl[C[C[1P=kubectlk=kubectl
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# alias k=kubectl[2Pk get pods -A
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+kube-flannel   kube-flannel-ds-fsnjf                              0/1     CrashLoopBackOff   328 (2m12s ago)   41d
+kube-flannel   kube-flannel-ds-p72jp                              0/1     CrashLoopBackOff   302 (112s ago)    41d
+kube-flannel   kube-flannel-ds-v8jf7                              0/1     CrashLoopBackOff   304 (3m45s ago)   41d
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            15 (102m ago)     41d
+kube-system    calico-node-74m87                                  0/1     CrashLoopBackOff   255 (92s ago)     41d
+kube-system    calico-node-mmq75                                  0/1     Running            246 (8m10s ago)   41d
+kube-system    calico-node-xmx8g                                  0/1     CrashLoopBackOff   259 (3m37s ago)   41d
+kube-system    coredns-5dd5756b68-ffpzd                           1/1     Running            2 (102m ago)      2d1h
+kube-system    coredns-5dd5756b68-h28ms                           1/1     Running            2 (102m ago)      2d1h
+kube-system    elasticsearch-9sktg                                1/1     Running            8 (102m ago)      37d
+kube-system    elasticsearch-hfk5p                                1/1     Running            8 (102m ago)      37d
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            16 (102m ago)     41d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            16 (102m ago)     41d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            16 (102m ago)     41d
+kube-system    kube-proxy-2p5m9                                   0/1     CrashLoopBackOff   255 (33s ago)     41d
+kube-system    kube-proxy-blc9s                                   1/1     Running            235 (5m35s ago)   41d
+kube-system    kube-proxy-tzn4v                                   1/1     Running            248 (5m56s ago)   41d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            16 (102m ago)     41d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# [7mkubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
+[?2004lnamespace/kube-flannel unchanged
+clusterrole.rbac.authorization.k8s.io/flannel unchanged
+clusterrolebinding.rbac.authorization.k8s.io/flannel unchanged
+serviceaccount/flannel unchanged
+configmap/kube-flannel-cfg unchanged
+daemonset.apps/kube-flannel-ds configured
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# [7mkubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ckubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+[?2004lpoddisruptionbudget.policy/calico-kube-controllers configured
+serviceaccount/calico-kube-controllers unchanged
+serviceaccount/calico-node unchanged
+configmap/calico-config unchanged
+customresourcedefinition.apiextensions.k8s.io/bgpconfigurations.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/bgppeers.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/blockaffinities.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/caliconodestatuses.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/clusterinformations.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/felixconfigurations.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/globalnetworkpolicies.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/globalnetworksets.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/hostendpoints.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/ipamblocks.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/ipamconfigs.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/ipamhandles.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/ippools.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/ipreservations.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/kubecontrollersconfigurations.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/networkpolicies.crd.projectcalico.org configured
+customresourcedefinition.apiextensions.k8s.io/networksets.crd.projectcalico.org configured
+clusterrole.rbac.authorization.k8s.io/calico-kube-controllers unchanged
+clusterrole.rbac.authorization.k8s.io/calico-node unchanged
+clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers unchanged
+clusterrolebinding.rbac.authorization.k8s.io/calico-node unchanged
+daemonset.apps/calico-node configured
+deployment.apps/calico-kube-controllers unchanged
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# kubectl apply -f https://docs.projectcalico.org/manifests/calico.yamlgithub.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C get pods -A[K
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+kube-flannel   kube-flannel-ds-2r8ql                              0/1     Error              1 (6s ago)        14s
+kube-flannel   kube-flannel-ds-b264p                              0/1     CrashLoopBackOff   1 (2s ago)        14s
+kube-flannel   kube-flannel-ds-b8fdc                              0/1     Error              1 (6s ago)        14s
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            15 (104m ago)     41d
+kube-system    calico-node-74m87                                  0/1     CrashLoopBackOff   255 (3m38s ago)   41d
+kube-system    calico-node-mmq75                                  0/1     CrashLoopBackOff   246 (110s ago)    41d
+kube-system    calico-node-xmx8g                                  0/1     Running            260 (5m43s ago)   41d
+kube-system    coredns-5dd5756b68-ffpzd                           1/1     Running            2 (104m ago)      2d1h
+kube-system    coredns-5dd5756b68-h28ms                           1/1     Running            2 (105m ago)      2d1h
+kube-system    elasticsearch-9sktg                                1/1     Running            8 (105m ago)      37d
+kube-system    elasticsearch-hfk5p                                1/1     Running            8 (105m ago)      37d
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            16 (104m ago)     41d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            16 (104m ago)     41d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            16 (104m ago)     41d
+kube-system    kube-proxy-2p5m9                                   0/1     CrashLoopBackOff   255 (2m39s ago)   41d
+kube-system    kube-proxy-blc9s                                   0/1     CrashLoopBackOff   235 (74s ago)     41d
+kube-system    kube-proxy-tzn4v                                   0/1     CrashLoopBackOff   248 (91s ago)     41d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            16 (104m ago)     41d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k get pods -Aubectl apply -f https://docs.projectcalico.org/manifests/calico.yamlgithub.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C get pods -A[K
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+kube-flannel   kube-flannel-ds-2r8ql                              0/1     CrashLoopBackOff   1 (15s ago)       25s
+kube-flannel   kube-flannel-ds-b264p                              0/1     CrashLoopBackOff   1 (13s ago)       25s
+kube-flannel   kube-flannel-ds-b8fdc                              1/1     Running            2 (15s ago)       25s
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            15 (105m ago)     41d
+kube-system    calico-node-74m87                                  0/1     CrashLoopBackOff   255 (3m49s ago)   41d
+kube-system    calico-node-mmq75                                  0/1     CrashLoopBackOff   246 (2m1s ago)    41d
+kube-system    calico-node-xmx8g                                  0/1     Running            260 (5m54s ago)   41d
+kube-system    coredns-5dd5756b68-ffpzd                           1/1     Running            2 (105m ago)      2d1h
+kube-system    coredns-5dd5756b68-h28ms                           1/1     Running            2 (105m ago)      2d1h
+kube-system    elasticsearch-9sktg                                1/1     Running            8 (105m ago)      37d
+kube-system    elasticsearch-hfk5p                                1/1     Running            8 (105m ago)      37d
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            16 (105m ago)     41d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            16 (105m ago)     41d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            16 (105m ago)     41d
+kube-system    kube-proxy-2p5m9                                   0/1     CrashLoopBackOff   255 (2m50s ago)   41d
+kube-system    kube-proxy-blc9s                                   0/1     CrashLoopBackOff   235 (85s ago)     41d
+kube-system    kube-proxy-tzn4v                                   0/1     CrashLoopBackOff   248 (102s ago)    41d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            16 (105m ago)     41d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k delete pod [7mkube-flannel-ds-2r8ql[27mkube-flannel-ds-2r8ql -n [7mkube-system[27mkube-system
+[?2004lError from server (NotFound): pods "kube-flannel-ds-2r8ql" not found
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k delete pod [K[K[K[K[K[K[K[K[K[K[K[K[K
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# k delete pod kube-flannel-ds-2r8ql -n kube-systemget pods -A[K
+[?2004lNAMESPACE      NAME                                               READY   STATUS             RESTARTS          AGE
+kube-flannel   kube-flannel-ds-2r8ql                              0/1     CrashLoopBackOff   3 (26s ago)       76s
+kube-flannel   kube-flannel-ds-b264p                              0/1     CrashLoopBackOff   3 (20s ago)       76s
+kube-flannel   kube-flannel-ds-b8fdc                              0/1     CrashLoopBackOff   3 (22s ago)       76s
+kube-system    calico-kube-controllers-658d97c59c-rfrh8           1/1     Running            15 (106m ago)     41d
+kube-system    calico-node-74m87                                  0/1     CrashLoopBackOff   255 (4m40s ago)   41d
+kube-system    calico-node-mmq75                                  0/1     CrashLoopBackOff   246 (2m52s ago)   41d
+kube-system    calico-node-xmx8g                                  0/1     Running            260 (6m45s ago)   41d
+kube-system    coredns-5dd5756b68-ffpzd                           1/1     Running            2 (106m ago)      2d1h
+kube-system    coredns-5dd5756b68-h28ms                           1/1     Running            2 (106m ago)      2d1h
+kube-system    elasticsearch-9sktg                                1/1     Running            8 (106m ago)      37d
+kube-system    elasticsearch-hfk5p                                1/1     Running            8 (106m ago)      37d
+kube-system    etcd-aws-ec2-kube-master-node                      1/1     Running            16 (106m ago)     41d
+kube-system    kube-apiserver-aws-ec2-kube-master-node            1/1     Running            16 (106m ago)     41d
+kube-system    kube-controller-manager-aws-ec2-kube-master-node   1/1     Running            16 (106m ago)     41d
+kube-system    kube-proxy-2p5m9                                   0/1     CrashLoopBackOff   255 (3m41s ago)   41d
+kube-system    kube-proxy-blc9s                                   0/1     CrashLoopBackOff   235 (2m16s ago)   41d
+kube-system    kube-proxy-tzn4v                                   0/1     CrashLoopBackOff   248 (2m33s ago)   41d
+kube-system    kube-scheduler-aws-ec2-kube-master-node            1/1     Running            16 (106m ago)     41d
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+[?2004l[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
+Broadcast message from root@aws-ec2-kube-master-node (Sun 2024-08-11 10:25:20 UTC):
+
+The system will power off now!
+
+
+Broadcast message from root@aws-ec2-kube-master-node (Sun 2024-08-11 10:25:20 UTC):
+
+The system will power off now!
+
+
+Broadcast message from root@aws-ec2-kube-master-node (Sun 2024-08-11 10:25:20 UTC):
+
+The system will power off now!
+
