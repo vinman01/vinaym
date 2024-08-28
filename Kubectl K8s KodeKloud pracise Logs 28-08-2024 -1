@@ -1,0 +1,561 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2024.08.28 17:33:24 =~=~=~=~=~=~=~=~=~=~=~=
+history
+[?2004l    1  sudo hostnamectl set-hostname aws-ec2-kube-master-node
+    2  adduser vinaym
+    3  usermod -aG sudo vinaym
+    4  sudo apt update -y
+    5  sudo apt-get update -y
+    6  sudo apt install docker.io -y
+    7  sudo systemctl start docker
+    8  sudo systemctl enable docker
+    9  apt-get install -y apt-transport-https
+   10  sudo apt-get install -y apt-transport-https ca-certificates curl
+   11  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/kubernetes-archive-keyring.gpg
+   12  echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+   13  curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+   14  sudo apt update && sudo apt-get update -y
+   15  sudo apt install kubeadm kubelet kubectl -y
+   16  sudo swapoff -a
+   17  sudo  kubeadm init
+   18  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   19  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   20  kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
+   21  kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+   22  kubectl get nodes
+   23  sudo systemctl daemon-reload
+   24  sudo systemctl restart docker
+   25  sudo systemctl restart kubelet
+   26  systemctl enable kubelet.service
+   27  alias k=kubectl
+   28  k get nodes
+   29  reboot
+   30  cp 'Kubectl KodeKloud Lab practise 11-July-2024' /home/vinaym
+   31  cp 'Kubectl KodeKloud Lab practise 11-July-2024' /home/vinaym/gitdir
+   32  cp 'Kubectl KodeKloud Lab practise 13-July-2024' /home/vinaym/gitdir
+   33  cp 'Setting Up a Kubernetes Cluster on AWS EC2 with Ubuntu 22.04 LTS and Kubeadm.txt' /home/vinaym/gitdir
+   34  cp 'Terraform Play Logs.txt' /home/vinaym/gitdir
+   35  cp 'kubctl kodeKloud practice 09-August-2024' /home/vinaym/gitdir
+   36  cp 'kubctl kodeKloud practice 11-August-2024' /home/vinaym/gitdir
+   37  exit
+   38  ls -la
+   39  cd 'Kubectl KodeKloud Lab practise 11-July-2024' gitdir
+   40  cp 'Kubectl KodeKloud Lab practise 11-July-2024' /home/vinaym/gitdir
+   41  cp 'Kubectl KodeKloud Lab practise 13-July-2024' /home/vinaym/gitdir
+   42  cp 'kubctl kodeKloud practice 09-August-2024' /home/vinaym/gitdir 
+   43  cp 'kubctl kodeKloud practice 11-August-2024' /home/vinaym/gitdir
+   44  ls -la
+   45  cp 'Kubectl KodeKloud Lab practise 11-July-2024' /home/vinaym/gitdir
+   46  cp 'Kubectl KodeKloud Lab practise 13-July-2024' /home/vinaym/gitdir
+   47  exit
+   48  k get nodes
+   49  alias k=kubectl
+   50  k get nodes
+   51  mkdir
+   52  mkdir gitdir
+   53  cd gitdir
+   54  git config --global user.name "vinaym"
+   55  git config --global user.email "vinay_man01@hotmail.com"
+   56  git config --list
+   57  git init
+   58  git remote add origin https://github.com/vinman01/vinaym.git
+   59  git init
+   60  git status
+   61  git branch -M main
+   62  cd ..
+   63  k get pods
+   64  k get nodes -o wide
+   65  k get pods -A
+   66  k get svc
+   67  k get serviceaccount
+   68  k get rs
+   69  k run --help
+   70  k run nginx --image=nginx
+   71  k get pods
+   72  k get pods -o wide
+   73  k describe pod nginx
+   74  k run redis --image=redis  --dry-run -o yaml
+   75  k run redis --image=redis  --dry-run=client -o yaml
+   76  k run redis --image=redis123  --dry-run=client -o yaml > redis.yaml
+   77  ls -la
+   78  cat redis.yaml
+   79  k get pods
+   80  k cteare -f redis.yaml
+   81  k create -f redis.yaml
+   82  k get pods
+   83  k get certificates
+   84  k get pods -A
+   85  k describe pod kube-proxy-nts7k -n kube-system
+   86  k get pods -A
+   87  k describe pod kube-flannel-ds-bq2bb -n kube-flannel
+   88  k get pods -A
+   89  k delete pod kube-proxy-nts7k -n kube-system
+   90  k delete pod kube-proxy-qwpbh -n kube-system
+   91  k get pods -A
+   92  k delete pod kube-proxy-z7jvl -n kube-system
+   93  k get pods -A
+   94  k delete pod calico-node-gzxfs -n kube-system
+   95  k get pods -A
+   96  k delete pod calico-node-hjr7c -n kube-system
+   97  k delete pod calico-node-v5zpt -n kube-system
+   98  k get pods -A
+   99  k delete pod kube-flannel-ds-bq2bb -n kube-flannel
+  100  k delete pod kube-flannel-ds-zd6ns -n kube-flannel
+  101  k delete pod kube-flannel-ds-zjsmp -n kube-flannel
+  102  k get pods -A
+  103  k delete pod kube-flannel-ds-vbswk -n kube-flannel
+  104  k delete pod kube-flannel-ds-lhd72 -n kube-flannel
+  105  k get pods -A
+  106  k delete pod kube-proxy-dx6w6 -n kube-system
+  107  k get pods
+  108  k get pods -A
+  109  kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+  110  k get pods -A
+  111  k describe kube-flannel-ds-lhxjd -n kube-flannel
+  112  k describe pod kube-flannel-ds-lhxjd -n kube-flannel
+  113  k get pods
+  114  k delete pod nginx
+  115  k create deployment --image=nginx nginx-app --dry-run=client -o yaml >nginx-deployment.yaml
+  116  ls -la
+  117  rm -rf nginx-deployment.yaml
+  118  k create deployment --image=nginx nginx-app --replicas=3 --dry-run=client -o yaml >nginx-deployment.yaml
+  119  ls -la
+  120  cat nginx-deployment.yaml
+  121  k create -f nginx-deployment.yaml
+  122  k get deployment.apps/nginx-app
+  123  k get pods
+  124  k get rs
+  125  k get configview
+  126  k get configmap
+  127  k get kubecluster
+  128  ls -la
+  129  cd gitdir
+  130  pwd
+  131  cd ..
+  132  ls -la
+  133  rm -rf 'Kubectl KodeKloud Lab practise 11-July-2024'
+  134  cd gitdi
+  135  cd gitdir
+  136  git status
+  137  git add .
+  138  git commit -m "Commit latest kodeKloud practice log files on date-26-August-2024"
+  139  git push -u origin main
+  140  git pull
+  141  git pull main
+  142  ls -la
+  143  git pull
+  144  git branch -M main
+  145  git pull origin main
+  146  git push -u origin main
+  147  git remote add origin https://github.com/vinman01/vinaym.git
+  148  git config pull.rebase false
+  149  git push -u origin main
+  150  'git pull'
+  151  git pull
+  152  git pull main
+  153  ls -la
+  154  git pull origin main
+  155  git pull  --help
+  156  git status
+  157  git reset --hard
+  158  git push -u origin main
+  159  git pull origin main
+  160  git branch -M main
+  161  git pull origin main
+  162  git pull origin main --allow-unrelated-histories 
+  163  ls -la
+  164  rm -rf 'Setting Up a Kubernetes Cluster on AWS EC2 with Ubuntu 22.04 LTS and Kubeadm.txt'
+  165  git status
+  166  git add .
+  167  git commit -m "commit new KodeCloud practise logs Date 26-August-2024"
+  168  git status
+  169  git push -u origin main
+  170  ls -la
+  171  rm -rf 'Terraform Play Logs.txt'
+  172  git status
+  173  git add .
+  174  git commit -m "commit new KodeCloud practise logs Date 26-August-2024"
+  175  git push -u origin main
+  176  ls -la
+  177  git pull origin main --allow-unrelated-histories 
+  178  git reset --hard
+  179  ls -la
+  180  git push -u origin main
+  181  git status
+  182  git add .
+  183  git status
+  184  git commit -m "commit new KodeCloud practise logs Date 26-August-2024"
+  185  git push -u origin main
+  186  git status
+  187  ls -la
+  188  cd ..
+  189  rm -rf gitdir
+  190  ls -la
+  191  mkdir gitdir
+  192  cd gitdir
+  193  pwd
+  194  ls -la
+  195  rm -rf 'Kubectl KodeKloud Lab practise 11-July-2024'
+  196  rm -rf 'Kubectl KodeKloud Lab practise 13-July-2024'
+  197  ls -la
+  198  git config --global user.name "vinaym"
+  199  git config --global user.email "vinay_man01@hotmail.com"
+  200  git config --list
+  201  git init
+  202  git branch -M main
+  203  git remote add origin https://github.com/vinman01/vinaym.git
+  204  git branch -M main
+  205  git pull origin main
+  206  git status
+  207  git remote add origin https://github.com/vinman01/vinaym.git
+  208  git commit -m "commit new KubeKodeCloud practise logs 26-August-2024"
+  209  git add .
+  210  git commit -m "commit new KubeKodeCloud practise logs 26-August-2024"
+  211  git push -u origin main
+  212  pwd
+  213  ls -la
+  214  pwd
+  215  git status
+  216  git add .
+  217  git commit -m "commit new KubeKodeCloud practise logs 26-August-2024"
+  218  git push -u origin main
+  219  cd ..
+  220  k get rs
+  221  k edit rs nginx-app
+  222  k get rs
+  223  k edit rs nginx-app-5777b5f95
+  224  k get rs
+  225  k get pods
+  226  k get rs
+  227  k describe rs nginx-app
+  228  k get pods
+  229  k delete pod redis
+  230  k get rs
+  231  k delete rs nginx-app-5777b5f95
+  232  k get rs
+  233  k describe rs nginx-app
+  234  k get pos
+  235  k get pods
+  236  k delete pod nginx-app-5777b5f95-9rslp
+  237  k get rs
+  238  k scale rs nginx-app --replicas=2
+  239  k get rs
+  240  k scale rs nginx-app --replicas=2
+  241  k scale rs nginx-app --replicas=1
+  242  k scale rs -help
+  243  k scale rs --help
+  244  k get rs
+  245  k scale --replicas=2 rs/nginx-app
+  246  k get rs
+  247  k scale --replicas=4 rs/nginx-app
+  248  k get rs
+  249  k scale rs nginx-app-5dd5c8f658 --replicas=1
+  250  k get rs
+  251  k describe rs  nginx-app-5dd5c8f658
+  252  k get rs
+  253  k get pods
+  254  k get rs
+  255  k delete rs nginx-app-5dd5c8f658
+  256  k get rs
+  257  k delete rs nginx-app-nginx-app-
+  258  k delete rs nginx-app
+  259  k get rs
+  260  k delete rs nginx-app-5dd5c8f658
+  261  k get rs
+  262  ls -la
+  263  k delete -f nginx-deployment.yaml
+  264  k get rs
+  265  k get deployments
+  266  k get ALL
+  267  k get all
+  268  k get pods
+  269  k create deployment httpd-frontend --image=httpd:2.4-alpine--replicas=2
+  270  k get deploy
+  271  k describe deploy httpd-frontend
+  272  k get pods
+  273  k get deploy
+  274  k describe pod httpd-frontend
+  275  k get deploy
+  276  k delete deploy httpd-frontend
+  277  k create deployment httpd-frontend --image=httpd:2.4-alpine --replicas=2
+  278  k get deploy
+  279  k describe deploy httpd-frontend
+  280  k get pods
+  281  k describe pod httpd-frontend-6d6c7d4cb6-bmwjq
+  282  k get rs
+  283  k get deploy
+  284  k get all
+  285  k describe pod pod/httpd-frontend-6d6c7d4cb6-bmwjq
+  286  k get pods
+  287  k describe pod httpd-frontend-6d6c7d4cb6-cw644
+  288  k get svc
+  289  k create deployment simple-webapp-deployment --image=kodekloud/simple-webapp:red
+  290  k get deploy
+  291  k describe deploy simple-webapp-deployment
+  292  k get rs
+  293  k get pods
+  294  ls -la
+  295  visudo
+  296  su - vinaym
+  297  k get ALL
+  298  alias k=kubectl
+  299  k get pods
+  300  k get ALL
+  301  k get all
+  302  ls -la
+  303  cat nginx-deployment.yaml
+  304  ls
+  305  ls -la
+  306  k get pods -all
+  307  k
+  308  k get nodes
+  309  k get pods -all
+  310  k get all
+  311  k get pods -n kube-system
+  312  k get pods --help
+  313  k get pods --all
+  314  k get pods --all -n
+  315  kubectl get pods
+  316  kubectl get pods -ALL
+  317  k get deploy
+  318  k describe simple-webapp-deployment
+  319  k describe deploy simple-webapp-deployment -o > yaml
+  320  k describe deploy simple-webapp-deployment 
+  321  k edit deploy simple-webapp-deployment
+  322  vi service-definiton-1.yaml
+  323  k create -f service-definiton-1.yaml
+  324  cat service-definiton-1.yaml
+  325  vi service-definiton-1.yaml
+  326  cat service-definiton-1.yaml
+  327  k create -f service-definiton-1.yaml
+  328  vi service-definiton-1.yaml
+  329  k create -f service-definiton-1.yaml
+  330  vi service-definiton-1.yaml
+  331  k create -f service-definiton-1.yaml
+  332  cat service-definiton-1.yaml
+  333  k get svc
+  334  telnet 10.105.111.64 30080
+  335  telnet 10.105.111.64 8080
+  336  telnet 10.105.111.64 30080
+  337  k get ns
+  338  k get pods -o wide
+  339  curl 10.105.111.64:30080
+  340  curl 192.168.121.140:30080
+  341  curl 192.168.121.140:8080
+  342  curl 192.168.121.140:80
+  343  curl 10.105.111.64:80
+  344  curl 10.105.111.64:8080
+  345  curl 10.105.111.64:30080
+  346  k get svc
+  347  vi deploy-httpd.yaml
+  348  cat deploy-httpd.yaml
+  349  k create -f deploy-httpd.yaml
+  350  k get deploy
+  351  k get pods
+  352  k get pods -o wide
+  353  k delete deploy httpd-frontend-
+  354  k delete deploy httpd-frontend
+  355  k get pods -o wide
+  356  curl 192.168.210.76:80
+  357  vi mydeployments-service.yaml
+  358  k create -f mydeployments-service.yaml
+  359  k get svc
+  360  cat mydeployments-service.yaml
+  361  curl 10.104.71.59:80
+  362  cat deploy-httpd.yaml
+  363  k get pods
+  364  k get svc
+  365  k get pods -o wide
+  366  k get deploy
+  367  k delete deploy simple-webapp-deployment
+  368  k get svc
+  369  k delete svc webapp-service
+  370  ls -la
+  371  k get svc
+  372  k delete svc demoservice
+  373  ls -la
+  374  cat service-definiton-1.yaml
+  375  k get deploy
+  376  cat deploy-httpd.yaml
+  377  k get pods
+  378  vi NodePort-svc.yaml
+  379  cat NodePort-svc.yaml
+  380  k apply -f NodePort-svc.yaml
+  381  k get svc
+  382  k get pods
+  383  k get pods | grep Running
+  384  k get pods
+  385  k get deploy
+  386  k get pods -o wide
+  387  k describe svc demoservice
+  388  k get svc
+  389  ls -la
+  390  cat deploy-httpd.yaml
+  391  k get pods
+  392  k exec pod mydeployments-685f595fb8-cz8xs  -- /bin/bash
+  393  k exec pod mydeployments-685f595fb8-cz8xs  --/bin/bash
+  394  k describe pod mydeployments-685f595fb8-cz8xs
+  395  k exec -it mydeployments-685f595fb8-cz8xs --/bin/bash
+  396  k get pods
+  397  alias k=kubectl
+  398  k exec -it mydeployments-685f595fb8-cz8xs -- /bin/bash
+  399  k exec -it mydeployments-685f595fb8-cz8xs
+  400  k exec -it mydeployments-685f595fb8-cz8xs -- /bin/bash
+  401  k get pods
+  402  alias k=kubectl
+  403  k get pods
+  404  kubectl run nginx --image=nginx --dry-run=client -o yaml
+  405  kubectl run nginx --image=nginx --dry-run=client -o yaml > nginx.html
+  406  ls -la
+  407  kubectl run nginx --image=nginx
+  408  k get pods
+  409  kubectl expose pod nginx --type=NodePort --port=80 --name=nginx-service --dry-run=client -o yaml
+  410  kubectl expose pod nginx --type=NodePort --port=80 --name=nginx-service --dry-run=client -o yaml >nginx-service.yaml
+  411  ls -la
+  412  kubectl expose pod nginx --type=NodePort --port=80 --name=nginx-service
+  413  k get svc
+  414  k get pods 
+  415  k get pods -o wide
+  416  k get svc -o wide
+  417  k get pods -o wide
+  418  k exec nginx -it --/bin/bash
+  419  k exec -it nginx -- /bin/bash
+  420  su - vinaym
+  421  ls -la
+  422  k get deploy
+  423  alias k=kubectl
+  424  k get deploy
+  425  k delete deploy mydeployments
+  426  k get pods
+  427  cat deploy-httpd.yaml
+  428  kubectl apply -f deploy-httpd.yaml
+  429  k get pods
+  430  kubectl expose deploy mydeployments --help
+  431  kubectl expose deploy mydeployments --type=NodePort --port=80 --name=web-service --dry-run=client -o yaml
+  432  kubectl expose deploy mydeployments --type=NodePort --port=80 --name=web-service --dry-run=client -o yaml > web-service.yaml
+  433  kubectl expose deploy mydeployments --type=NodePort --port=80 --name=web-service
+  434  k get svc
+  435  k delete svc demoservice
+  436  k delete svc nginx-service
+  437  k get svc
+  438  k get pods -o wide
+  439  k get svc -o wide
+  440  ls -la
+  441  k get pods -o wide
+  442  k get svc -o wide
+  443  k get deploy -o wide
+  444  k exec -it mydeployments-685f595fb8-h9ff5 -- /bin/bash
+  445  k exec -it mydeployments-685f595fb8-h9ff5 
+  446  k exec -it mydeployments-685f595fb8-h9ff5 bash
+  447  k get deploy
+  448  k delete deploy mydeployments
+  449  k get pods
+  450  k delete pod nginx
+  451  ls -la
+  452  cat deploy-httpd.yaml
+  453  k get svc
+  454  k create -f deploy-httpd.yaml
+  455  k get svc
+  456  k get pods -o wide
+  457  k exec -it mydeployments-685f595fb8-tmflm -- /bin/bash
+  458  alias k=kubectl
+  459  k get pods
+  460  k get all
+  461  k get pods
+  462  k get svc
+  463  k get deploy
+  464  k get pods -o wide
+  465  k get svc -o wide
+  466  k get deploy -o wide
+  467  k exec mydeployments-685f595fb8-tmflm -it -- /bin/bash
+  468  k get deploy -o wide
+  469  k get svc -o wide
+  470  k get pods -o wide
+  471  k exec mydeployments-685f595fb8-tmflm -it -- /bin/bash
+  472  alias k=kubectl
+  473  kubectl config use-context k8s
+  474  kubectl version
+  475  kubectl cluster-info
+  476  kubectl cluster-info dump
+  477  kubectl create namespace app-team1
+  478  k get ns
+  479  kubectl config view 
+  480  kubectl config set-context k8s --namespace=app-team1
+  481  kubectl config use-context k8s
+  482  kubectl create clusterrole deployment-clusterrole --verb=create --resource=Deployment,statefulSet,DaemonSet
+  483  k get nodes
+  484  kubectl config view 
+  485  k get nodes
+  486  kubectl config view 
+  487  kubectl config use-context kubernetes
+  488  kubectl config set-context default
+  489  kubectl config view 
+  490  kubectl config set-context kubernetes-admin
+  491  k get nodes
+  492  reboot
+  493  su - vinaym
+  494  kubectl get nodes
+  495  k get pods
+  496  kubectl get pods -A
+  497  kubectl create ClusterRole deployment-clusterrole  --help
+  498  kubectl create ClusterRole deployment-clusterrole  -verb=create --resource=Deployment,statefulSet,DaemonSet
+  499  kubectl create ClusterRole deployment-clusterrole  --verb=create --resource=Deployment,statefulSet,DaemonSet
+  500  kubectl create clusterrole deployment-clusterrole  --verb=create --resource=Deployment,statefulSet,DaemonSet
+  501  k get clusterrole
+  502  alias k=kubectl
+  503  k get clusterrole
+  504  kubectl create sa cicd-token --namespace app-team1
+  505  k get sa
+  506  k get serviceaccount
+  507  k get serviceaccount -n app-team1
+  508  kubectl create clusterrolebinding deploy-binding --clusterrole=deployment-clusterrole --serviceaccount=app-team1:cicd-token
+  509  k get clusterrolebinding
+  510  k get serviceaccount
+  511  k get all
+  512  k get clusterrole
+  513  k get clusterrole -n app-team1
+  514  k get configmaps
+  515  k get roles
+  516  k get roles -n app-team1
+  517  k get rolebindings
+  518  k get rolebindings -n app-team1
+  519  k get ns
+  520  k get clusterrolebindings -n app-team1
+  521  history
+  522  k get pods
+  523  k get pods -all
+  524  k get pods -a
+  525  k get pods -ALL
+  526  k get All
+  527  k get all
+  528  kubectl run redis --image=redis:alpine --labels="tier=db"
+  529  k get pods
+  530  k get pods -o wide
+  531  k get pods --labels
+  532  k get pods -labels
+  533  k get pods -label
+  534  k describe pod redis
+  535  k get pods --show-labels
+  536  kubectl 
+  537  kubectl create service clusterip redis-service --tcp=6379:6379 --dry-run=client -o yaml > redis-service.yaml
+  538  ls -la
+  539  k get nodes
+  540  kubectl get nodes
+  541  kubectl config  use-context kubernetes-admin@kubernetes
+  542  k get nodes
+  543  kubectl get nodes
+  544  alias k=kubectl
+  545  k get ns
+  546  k delete ns app-team1
+  547  k create ns app-team1
+  548  k get ns
+  549  kubectl create ClusterRole deployment-clusterrole  --verb=create --resource=Deployment,statefulSet,DaemonSet
+  550  kubectl create ClusterRole deployment-clusterrole  -verb=create --resource=Deployment,statefulSet,DaemonSet
+  551  su - vinaym
+  552  ls -la
+  553  git status
+  554  git add .
+  555  git commit -m "commit new KodeKloud practise log files"
+  556  git push -u origin main
+  557  cd ..
+  558  history
+[?2004h]0;root@aws-ec2-kube-master-node: /home/vinaymroot@aws-ec2-kube-master-node:/home/vinaym# 
