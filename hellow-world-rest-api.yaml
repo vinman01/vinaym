@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hellow-world-rest-api
+  name: hellow-world-rest-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hellow-world-rest-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hellow-world-rest-api
+    spec:
+      containers:
+      - image: in28min/hello-world-rest-api:0.0.1.RELEASE
+        name: hello-world-rest-api
+        resources: {}
+status: {}
