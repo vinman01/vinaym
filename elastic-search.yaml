@@ -1,0 +1,19 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+   name: app
+  namespace: elastic-stack
+spec:
+  containers:
+  - name: sidecar
+    image: kodekloud/firebreat-configured
+    volumeMounts: 
+      - mountPath: /var/log/event-simulator/
+        name: log-volume
+  - image: kodekloud/event-simulator
+    name: app
+    volumeMounts:
+     - mountPath: /log
+       name: log-volume
