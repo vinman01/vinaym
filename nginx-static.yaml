@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-static
+  namespace: nginx-static
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-static
+  template:
+    metadata:
+      labels:
+        app: nginx-static
+    spec:
+      volumes:
+      - name: config
+        configMap:
+          name: nginx-config
+      - name: nginx-tls
+        secret:
+          secretName: nginx-tls # Assuming the TLS secret is pre-created
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 443
+        volumeMounts:
+        - name: config
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+        - name: nginx-tls
+          mountPath: /etc/nginx/ssl

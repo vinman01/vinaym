@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: big-corp-app-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: big-corp-app
+  template:
+    metadata:
+      labels:
+        app: big-corp-app
+    spec:
+      containers:
+        - name: monitor
+          image: lfcert/monitor:latest
+          volumeMounts:
+           - mountPath: /var/log
+             name: log-volume 
+          env:
+            - name: LOG_FILENAME
+              value: /var/log/big-corp.log
+      volumes:
+           - name: log-volume
+             emptyDir: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      - name: sidecar
+        image: busybox:stable
+        command: [ "/bin/sh", "-c", "tail -f /var/log/big-corp.log" ]
+        volumeMounts:
+           - mountPath: /var/log
+             name: log-volume
+      
+      tolerations:
+        - effect: NoExecute
+          key: node.kubernetes.io/not-ready
+          operator: Exists
+          tolerationSeconds: 300
+        - effect: NoExecute
+          key: node.kubernetes.io/unreachable
+          operator: Exists
+          tolerationSeconds: 300

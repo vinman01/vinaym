@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: neokloud-np
+  namespace: neokloud
+spec:
+  podSelector:
+    matchLabels:
+      app: cloud-app
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+         namespace: neok8s
+    - podSelector:
+        matchLabels:
+          app: k8s-app

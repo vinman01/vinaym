@@ -1,0 +1,102 @@
+---
+
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+
+  name: neo-app
+
+  namespace: neo
+
+  labels:
+
+    app: neo-app
+
+spec:
+
+  containers:
+
+  - name: web
+
+    image: busybox
+
+    command: ["sleep", "3600"]
+
+---
+
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+
+  name: cloud-app
+
+  namespace: neokloud
+
+  labels:
+
+    app: cloud-app
+
+spec:
+
+  containers:
+
+  - name: web
+
+    image: busybox
+
+    command: ["sleep", "3600"]
+
+---
+
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+
+  name: k8s-app
+
+  namespace: neok8s
+
+  labels:
+
+    app: k8s-app
+
+spec:
+
+  containers:
+
+  - name: web
+
+    image: busybox
+
+    command: ["sleep", "3600"]
+
+
+
+# --- Apply Default-Deny Ingress Policy to neokloud ---
+
+---
+
+apiVersion: networking.k8s.io/v1
+
+kind: NetworkPolicy
+
+metadata:
+
+  name: default-deny
+
+  namespace: neokloud
+
+spec:
+
+  podSelector: {}          # Match all pods in neokloud
+
+  policyTypes:
+
+
+    - Ingress              # Deny all ingress by default
