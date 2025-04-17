@@ -1,0 +1,59 @@
+deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /
+
+sudo apt-get install -y kubeadm='1.32.x-*'
+
+spec.template.spec.containers[0].image
+
+.items[0].status.readyReplicas
+
+k get deployments.apps -o custom-columns='DEPLOYMENT:.metadata.name,CONTAINER_IMAGE:.spec.template.spec.containers[0].image,READY_REPLICAS:.items[0].status.readyReplicas,NAMESPACE:.metadata.namespace'
+
+
+kubectl -n admin2406 get deployment -o custom-columns=DEPLOYMENT:.metadata.name,CONTAINER_IMAGE:.spec.template.spec.containers[].image,READY_REPLICAS:.status.readyReplicas,NAMESPACE:.metadata.namespace --sort-by=.metadata.name > /opt/admin2406_data
+
+
+vim /etc/apt/sources.list.d/kubernetes.list
+deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /
+kubectl drain controlplane --ignore-daemonsets
+apt update
+apt-cache madison kubeadm
+
+apt-get install kubeadm=1.32.0-1.1
+kubeadm upgrade plan v1.32.0
+kubeadm upgrade apply v1.32.0
+
+apt-get install kubelet=1.32.0-1.1
+systemctl daemon-reload
+systemctl restart kubelet
+kubectl uncordon controlplane
+
+# Identify the taint first. 
+kubectl describe node controlplane | grep -i taint
+
+# Remove the taint with help of "kubectl taint" command.
+kubectl taint node controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+
+# Verify it, the taint has been removed successfully.  
+kubectl describe node controlplane | grep -i taint
+
+kubectl drain node01 --ignore-daemonsets
+
+vim /etc/apt/sources.list.d/kubernetes.list
+deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /
+apt update
+apt-cache madison kubeadm
+
+apt-get install kubeadm=1.32.0-1.1
+# Upgrade the node 
+kubeadm upgrade node
+
+apt-get install kubelet=1.32.0-1.1
+systemctl daemon-reload
+systemctl restart kubelet
+
+kubectl uncordon node01
+kubectl get pods -o wide | grep gold # make sure this is scheduled on a node
+
+
+
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/apiserver-etcd-client.crt --key=/etc/kubernetes/pki/apiserver-etcd-client.key snapshot save /opt/etcd-backup.db

@@ -1,0 +1,72 @@
+Traget Kubeadm cluster  Version  1.32.0-1.1  ( will get exact version to upgrade from cahce-madison cli command )
+
+kubectl drain controlplane --ignore-daemonsets
+
+
+vi /etc/apt/sources.list.d/kubernetes.list  ( change to 1.32 )
+
+sudo apt update
+sudo apt-cache madison kubeadm
+
+sudo apt-mark unhold kubeadm && \
+sudo apt-get update && sudo apt-get install -y kubeadm='1.32.0-1.1' && \
+sudo apt-mark hold kubeadm
+
+
+kubeadm version
+sudo kubeadm upgrade plan
+sudo kubeadm upgrade apply v1.32.0 -y
+
+sudo apt-mark unhold kubelet kubectl && \
+sudo apt-get update && sudo apt-get install -y kubelet='1.32.0-1.1' kubectl='1.32.0-1.1' && \
+sudo apt-mark hold kubelet kubectl
+
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+
+
+kubectl uncordon controlplane
+
+for worker node
+========================= 
+kubectl cordon node01
+
+vi /etc/apt/sources.list.d/kubernetes.list  ( change to 1.32 )
+
+
+apt update
+apt-cache madison kubeadm
+
+sudo apt-mark unhold kubeadm && \
+sudo apt-get update && sudo apt-get install -y kubeadm='1.32.0-1.1' && \
+sudo apt-mark hold kubeadm
+
+kubeadm version
+
+sudo apt-mark unhold kubelet kubectl && \
+sudo apt-get update && sudo apt-get install -y kubelet='1.32.0-1.1' kubectl='1.32.0-1.1' && \
+sudo apt-mark hold kubelet kubectl
+
+
+systemctl daemon-reload
+systemctl restart kubelet
+
+kubectl uncordon node01
+
+
+check all nodes with following CLI command one last time
+
+kubectl get nodes -o wide
+
+===========================================================================================
+
+
+kubectl get node -o custom-columns='NODE_NAME:.metadata.name,STATUS:.status.conditions[?(@.type=="Ready")].status'
+
+.spec.template.spe.containers[0].image
+
+status.readyReplicas
+
+.metadata.namespace
+
+k get deployments.apps -o custom-columns='DEPLOYMENT:.metadata.name,CONTAINER_IMAGE:.spec.template.spec.containers[0].image,READY_REPLICAS:.status.readyReplicas,NAMESPACE:.metadata.namespace'

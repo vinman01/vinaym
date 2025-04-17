@@ -1,0 +1,179 @@
+vi pvc-sc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-sc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi
+  storageClassName: local-path
+
+cluster1-controlplane ~ ➜  cat local-sc.yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-path
+provisioner: kubernetes.io/no-provisioner # indicates that this StorageClass does not support automatic provisioning
+volumeBindingMode: WaitForFirstConsumer
+
+
+cluster1-controlplane ~ ➜  cat pod-sc.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+    - name: app
+      image: busybox
+      command: [ "bin/sh", "-c", "echo 'hello from PVC' > /data/test.txt && sleep 3600" ]
+      volumeMounts:
+      - mountPath: "/data"
+        name: mypd
+  volumes:
+    - name: mypd
+      persistentVolumeClaim:
+        claimName: pvc-sc
+
+
+controlplane ~ ➜  cat static-pv.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: static-pv
+spec:
+  capacity:
+    storage: 300Mi
+  volumeMode: Filesystem
+  hostPath:
+     path: "/mnt/data-static"
+     type: Directory
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+      required:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+               - cluster1-node01
+
+
+controlplane ~ ➜  cat static-pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: static-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 300Mi
+  volumeName: static-pv
+
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: stateful-app-svc
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: http
+  clusterIP: None
+  selector:
+    app: nginx
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: stateful-app
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  serviceName: "stateful-app-svc"
+  replicas: 3 # by default is 1
+  minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: registry.k8s.io/nginx-slim:0.24
+        ports:
+        - containerPort: 80
+          name: http
+        volumeMounts:
+        - name: node1-volume
+          mountPath: /mnt/data-static
+      volumes:
+       - name: node1-volume
+         persistentVolumeClaim:
+          claimName: static-pvc
+ 
+
+helm repo add traefik https://traefik.github.io/charts
+
+
+
+hosts { 
+10.10.10.10 myapp.internal
+fallthrough
+}
+
+
+cluster1-controlplane ~ ➜  helm  show values traefik/traefik | grep -i kubernetesgateway -A 5
+  kubernetesGateway:
+    # -- Enable traefik experimental GatewayClass CRD
+
+helm install traefik traefik/traefik -n traefik --create-namespace --set experimental.kubernetesGateway.enabled=true
+
+
+
+cluster1-controlplane ~ ➜  helm show values argo/argo-cd | grep -i crds -A 5
+crds:
+  # -- Install and upgrade CRDs
+  install: true
+
+helm repo add argo https://argoproj.github.io/argo-helm
+helm template argocd argo/argo-cd -n argocd --version 7.7.3 --set crds.install=false  > argocd-helm.yaml
+helm template argocd argo/argo-cd -n argocd --version 7.7.3 --skip-crds > argocd-helm.yaml
+helm install argocd argo/argo-cd -n argocd --create-namespace --version 7.7.3 --skip-crds
+
+
+
+
+kubectl apply -k "https://github.com/argoproj/argo-cd/manifests/crds?ref=v2.13.0"
+
+
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: pod-resource-limits
+  namespace: limit-test
+spec:
+  limits:
+  - type: Container
+    default: # this section defines default limits
+      cpu: 200m
+      memory: 100Mi
+    defaultRequest: # this section defines default requests
+      cpu: 100m
+      memory: 50Mi
+    max: # max and min define the limit range
+      memory: 500Mi
+      cpu: 1

@@ -1,0 +1,164 @@
+openssl genrsa -out /root/vinaym.key 3072
+
+openssl req -new -key  /root/vinaym.key -out vinaym.csr -subj "/CN=vinaym"
+
+
+cat /root/vinaym.csr | base64 | tr -d "\n"
+
+
+
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: john
+spec:
+  # This is an encoded CSR. Change this to the base64-encoded contents of myuser.csr
+  request: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZEQ0NBVHdDQVFBd0R6RU5NQXNHQTFVRUF3d0VhbTlvYmpDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRApnZ0VQQURDQ0FRb0NnZ0VCQUxjNWNwekdPY2YrMFBwQ1k0OXJmK3dzOGZvNXdybFlKUTlLbTlSNnhsUEZWMC9EClBkZVRlOENpNVd1QXgyUlUvZk05c3pUY09qQ052WnVhWGI3SiszaGJQKzdQOFdBb1MzRHptUlZaZURXSzNuc0cKNVZDTmlsQlNNUHNhbldQeTBJZDJGZU9pMWtQMy9jVDdMck9NaWQzdlVFZ0k0cW8zS0U1NmxZM0FsTGF1UnRjWgpvR05EN0FrbEJseXA3NXczNktNRlpJRTJJWlVJZ0EvRlYvK3JLK20rbzlqcGNjVlhuMzFxNkIzUStPV0FrUTZVCndyMjFwQ3ZqL09qak9oczlJVDluMi92dldPa3kzNThxNy83Zi8vbGVJT2FTZEJZK2JNQ1FCL0tGc1E4b0FhVHgKSklBVkQwNC9YOW5EV2Q2THpVRW8rWVZ3dzVMU1lXNjQ1dGlDeEc4Q0F3RUFBYUFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQTBtNHVKNVJaWnFoV093cWJiV1JXWUh1czc0WllMTSs5SVkzVjVUcmZmRDl6SzJlNjJDdlhHCkZiZTRDYzZwOEt4bjBmZU9oK1Avek1PRU41bStoWG0yUnhYZFBSN1E0cGlEckUrNGlVZThXYW5QWDZYRUx1MUEKODdFcWZLUnNyVVhwbUVQcXZRQU00aGlSWkN5QlNNcXhJQXZwTStHOXRrcjlRT0ljb1pKOVhudENkcFhOWVUwNgpDMEdSTnVDaVk5SS9zUHUrK3RUUSsyZGg3WjRrQXlhMVVodU1uVlZhTVJvbFZFa1hpVThvMldsWFYwVk1HSFN1CkFaT3BCUGNkNno4N1ZKSVZ0akpMeEl3MUN4S2pnd1pwTVVCNWVMc2VVL2s5Nkt5bm5vVExVSERVRDJmQ1cwUjEKUzZMMElLYk0ycGoxV0tMcDBadStHRmtnOWZEaVk5Y3QKLS0tLS1FTkQgQ0VSVElGSUNBVEUgUkVRVUVTVC0tLS0tCg==
+  signerName: kubernetes.io/kube-apiserver-client
+  expirationSeconds: 86400  # one day
+  usages:
+  - client auth
+
+ TOKEN=$(cat /run/secrets/kubernetes.io/serviceaccount/token)
+curl -k https://kubernetes.default/api/v1/pods -H "Authorization: Bearer ${TOKEN}"
+
+kubectl kustomize https://github.com/nginxinc/nginxgateway-fabric/config/crd/gateway-api/standard?ref=v1.5.1 | kubectl apply -f -
+
+kubectl create quota my-quota --hard=cpu=1,memory=1G,pods=3 -n restricted --namespace-create
+
+
+
+
+
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast-storage
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+provisioner: rancher.io/local-path
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: fast-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
+  storageClassName: fast-storage
+
+
+controlplane:~$ cat static-pv-example.yaml 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: static-pv-example
+spec:
+  capacity:
+    storage: 200Mi
+  accessModes:
+    - ReadWriteOnce
+  nodeAffinity:
+      required:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - node01
+  hostPath:
+    path: "/mnt/data-static"
+    type: Directory
+
+
+
+controlplane:~$ cat static-pvc-example.yaml 
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: static-pvc-example
+  namespace: default
+spec:
+  volumeName: static-pv-example
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 200Mi
+
+
+
+
+
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None
+  selector:
+    app: nginx
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: nginx # has to match .spec.template.metadata.labels
+  serviceName: "nginx"
+  replicas: 3 # by default is 1
+  minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: nginx # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: registry.k8s.io/nginx-slim:0.24
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "my-storage-class"
+      resources:
+        requests:
+          storage: 1Gi
+
+
+
+resources:
+- ../base
+
+namePrefix: prod-
+labels:
+   - pairs:
+       enviornment: production
+
+images:
+   - name: nginx
+     newTag: "1.21"
+                                          

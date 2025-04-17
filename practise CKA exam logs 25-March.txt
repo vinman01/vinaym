@@ -1,0 +1,39 @@
+helm upgrade dazzling-web bitnami/nginx --version 18.3.6
+
+netstat -nplt | grep scheduler
+netstat -anp | grep etcd | grep 2380 | wc -l
+kubectl logs weave-net-726km -n kube-system | grep ipalloc-range
+
+controlplane ~ ?  cat internal-policy.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: internal-policy
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      name: Internal
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    -  podSelector:
+         matchLabels:
+          name: payroll
+    ports:
+     - protocol: TCP
+       port: 8080
+  - to: 
+    -  podSelector:
+         matchLabels:
+           name: mysql
+    ports:
+     - protocol: TCP
+       port: 3306
+
+  - ports:
+     - port: 53
+       protocol: UDP
+     - port: 53
+       protocol: TCP

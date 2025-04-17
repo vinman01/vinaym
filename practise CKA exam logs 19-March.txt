@@ -1,0 +1,91 @@
+https://uklabs.kodekloud.com/topic/practice-test-control-plane-failure-2/
+
+Run the 
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+ nodeName: node01 
+ containers:
+  - name: nginx
+    image: nginx
+  
+affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: node-role.kubernetes.io/control-plane
+            operator: Equal
+            values:
+            - ssd 
+Image:         polinux/stress
+spec:
+  containers:
+  - args:
+    - --vm
+    - "1"
+    - --vm-bytes
+    - 15M
+    - --vm-hang
+    - "1"
+    command:
+    - stress
+
+kubectl exec -it kube-apiserver-controlplane -n kube-system -- kube-apiserver -h | grep 'enable-admission-plugin'
+
+ps -ef | grep kube-apiserver | grep admission-plugins
+
+busybox command: ["sh", "-c", "echo I am runing as user $(id -u)"]
+
+
+spec:
+  containers:
+  - name: simple-webapp
+    image: kodekloud/webapp-color
+    command: ["--color","green"]
+
+
+
+
+spec:
+  containers:
+  - name: simple-webapp
+    image: kodekloud/webapp-color
+    command: ["python", "app.py"]
+    args: ["--color", "pink"]
+
+
+
+
+env:
+        - name: SPECIAL_LEVEL_KEY
+          valueFrom:
+            configMapKeyRef:
+              name: special-config
+              key: SPECIAL_LEVEL
+
+envFrom:
+        - secretRef:
+            name: Secret=db-secret
+
+
+
+
+ETCDCTL_API=3 etcdctl  --endpoints=https://127.0.0.1:2379 
+--cacert=/etc/kubernetes/pki/etcd/ca.crt   \
+--cert=/etc/kubernetes/pki/etcd/server.crt \
+--key=/etc/kubernetes/pki/etcd/server.key  \
+snapshot save  /opt/snapshot-pre-boot.db
+
+
+
+ETCDCTL_API=3 etcdctl  --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key snapshot save  /opt/snapshot-pre-boot.db
+

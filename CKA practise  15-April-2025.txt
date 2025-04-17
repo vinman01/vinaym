@@ -1,0 +1,131 @@
+apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: manual-storageclass # Choose a unique name
+     provisioner: kubernetes.io/no-provisioner # For manual provisioning
+    volumeBindingMode: WaitForFirstConsumer # Choose your preferred binding mode
+
+
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: manual
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+
+
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: manual
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+provisioner: kubernetes.io/no-provisioner # For manual provisioning
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+
+
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mariadb
+  namespace: mariadb
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+  storageClassName: manual
+
+
+
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-to-nptest
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      run: np-test-1
+  policyTypes:
+  - Ingress
+  ingress:
+  - 
+    - ports:
+      - protocol: TCP
+        port: 80
+
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: api-hpa
+  namespace: api
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: api-deployment
+  minReplicas: 1
+  maxReplicas: 20
+  metrics:
+  - type: Pods
+    pods:
+      metric:
+        name: requests_per_second
+      target:
+        type: AverageValue
+        averageValue: "1000"
+
+controlplane ~ ➜  k describe node node01 | grep -i cidr
+PodCIDR:                      172.17.1.0/24
+PodCIDRs:                     172.17.1.0/24
+
+
+
+controlplane ~ ➜  helm ls -n default
+NAME                    NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
+webpage-server-01       default         1               2025-04-15 10:01:27.646661457 +0000 UTC deployed        webpage-server-01-0.1.0 v1         
+
+controlplane ~ ➜  cd /root/
+
+helm lint ./new-version
+==> Linting ./new-version
+[INFO] Chart.yaml: icon is recommended
+
+1 chart(s) linted, 0 chart(s) failed
+
+
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: web-route
+spec:
+  parentRefs:
+  - name: web-gateway
+    namespace: nginx-gateway
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /login
+    backendRefs:
+    - name: web-service
+      port: 80
+      weight: 80
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /login
+    backendRefs:
+    - name: web-service2
+      port: 80
+      weight: 20

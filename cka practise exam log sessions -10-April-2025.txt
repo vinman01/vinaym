@@ -1,0 +1,317 @@
+items[].spec.template.spec.containers[0].image
+
+
+.items[0].status.readyReplicas
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ingress-to-nptest
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      run: np-test-1
+  policyTypes:
+  - Ingress
+  ingress:
+   - ports:
+     - protocol: TCP
+       port: 80
+
+
+tolerations:
+- key: "env_type"
+  operator: "Equal"
+  value: "productions"
+  effect: "NoSchedule"
+
+metrics:
+  - type: Pods
+    resource:
+      name: requests-per-second
+      target:
+        type: AverageValue
+        averageValue: 1000
+
+
+ metrics:
+  - type: Pods
+    name: requests-per-second
+  target:
+    type: AverageValue
+    averageValue: 1000
+
+
+
+kubectl set env deployment/cm-webapp -n cm-namespace \
+  --from=configmap/app-config
+
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: api-hpa
+  namespace: api
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: api-deployment
+  minReplicas: 1
+  maxReplicas: 20
+  metrics:
+  - type: Pods
+    pods:
+      metric:
+        name: requests_per_second
+      target:
+        type: AverageValue
+        averageValue: "1000"
+
+
+Task
+You are an administrator preparing your environment to deploy a Kubernetes cluster using kubeadm. Adjust the following network parameters on the system to the following values, and make sure your changes persist reboots:
+
+net.ipv4.ip_forward = 1
+net.bridge.bridge-nf-call-iptables = 1
+systemctl -p
+
+Solution
+Use sysctl to adjust system parameters and make sure they persist across reboots.
+
+To set the required sysctl parameters and make them persistent:
+
+k get deployments.apps -n admin2406 -o custom-columns='DEPLOYMENT:.metadata.name,CONTAINER_IMAGE:.spec.template.spec.containers[0].image,READY_REPLICAS:.status.readyReplicas,NAMESPACE:.metadata.namespace'
+ > /opt/admin2406_data
+
+controlplane ~ ➜  
+
+controlplane ~ ➜  cat /opt/admin2406_data
+DEPLOYMENT   CONTAINER_IMAGE   READY_REPLICAS   NAMESPACE
+deploy1      nginx             1                admin2406
+deploy2      nginx:alpine      1                admin2406
+deploy3      nginx:1.16        1                admin2406
+deploy4      nginx:1.17        1                admin2406
+deploy5      nginx:latest      1                admin2406
+
+
+controlplane ~ ✖ kubectl set env --from=configmap/app-config deployment/cm-webapp -n cm-namespace
+deployment.apps/cm-webapp env updated
+
+
+
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: web-route
+spec:
+  parentRefs:
+  - name: web-gateway
+    class: nginx
+  rules:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /login
+    backendRefs:
+    - name: web-service
+      port: 80
+      weight: 80
+    - name: web-service-v2
+      port: 80
+      weight: 20
+
+
+
+cd /root/
+
+helm lint ./new-version
+helm install --generate-name ./new-version
+
+
+
+echo 'net.ipv4.ip_forward = 1' >> /etc/sysctl.conf
+echo 'net.bridge.bridge-nf-call-iptables = 1' >> /etc/sysctl.conf
+sysctl -p
+
+To verify:
+
+sysctl net.ipv4.ip_forward
+sysctl net.bridge.bridge-nf-call-iptables
+
+
+
+
+cluster1-controlplane ~ ➜  cat webapp-ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webapp-ingress
+  namespace: ingress-ns
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "kodekloud-ingress.app"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: webapp-svc
+            port:
+              number: 80
+
+
+apiVersion: certificates.k8s.io/v1
+kind: CertificateSigningRequest
+metadata:
+  name: john-developer
+spec:
+  request: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSBSRVFVRVNULS0tLS0KTUlJQ1ZEQ0NBVHdDQVFBd0R6RU5NQXNHQTFVRUF3d0VhbTlvYmpDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRApnZ0VQQURDQ0FRb0NnZ0VCQU1Nek01SzErcW9SenVkSGQxTldyVkN3OEhLb1NaTE10cCtOWWEvWDdWc3JNd1JCCk5oak00L0FpT2JTRWFtcm9zdDA0ZzZjcU1tMVZkQ1VHVHU2b004UktOYmFyWWQyY2M0Sk5Eai9RcitJRUI0dEkKWHhvc3haUUNjWUU1UHY2bFZxWXVQV0xrWmdKR0E2STJZWW9CVjF0Q0lBeW1vbmU1ZURBY3JBNk9KczRITlpFMQpGNytvaG5xTGYwR0JqMEVsdGVkR2pvNTdHZ1pkT1Q3amNxQ2E3NkNwbHE0SFc0emlrdy81RTBrL3V1T1pocHdmClF0RFh4N2RjcUd0RWdaTWhmREV1bGxTRUplZnZQUzNIcG9ZRU90b1ovamd2a1E0UitUVDV6c0RKYXM4OEJxNTcKcVRra1YzQXowUStzMWYySnB0SERhamxDTWtVSHFuVEZFRVdaRkgwQ0F3RUFBYUFBTUEwR0NTcUdTSWIzRFFFQgpDd1VBQTRJQkFRQlQvWVp0WTlFN0Nyc3RaRzhsZ3AvSmswdlUwaXA5WkJrZzNsbHBCaXorbTFhYlBadXBjRUFBCnE3a2pQeEJKdlBoU2RvbjBrVEJDSllkOE5ycGhGeFpaRHVxR1M0Y2pwSXI4Q0luZnVVQzdicmQ5VUM0clVvMUYKNyszNk1TRFZmK250QTlsQXpzSFN3MG1Ed1JpQUwxbkFMVVBEWkZsRTYrSlJWVHlBRm9tWjh1a1VwM1NxbVNXYQpyWWFqdDNRU2dDTzRDNFQ0WEV6UGZISVZJWXJ1U1hzejkyTGRiVFVLbVdUNThrc3JJQWtFS3hUZXVGb0FxNHI1CktlQ1pJdWFtVVl5cHdqZXZWSGg2NFBjR3krcml2UTlENk9MYnIzckdiYWtpMEJjdzdkQ2tqSUlCMitpNE9kdUIKcFZSK1Q1bmVmeGd6SmVRZm1lSGZZZ3FUc21hczZxcmMKLS0tLS1FTkQgQ0VSVElGSUNBVEUgUkVRVUVTVC0tLS0tCg==
+  signerName: kubernetes.io/kube-apiserver-client
+  expirationSeconds: 86400  # one day
+  usages:
+  - client auth
+
+
+kubectl run nginx-resolver --image=nginx
+kubectl expose pod nginx-resolver --name=nginx-resolver-service --port=80 --target-port=80 --type=ClusterIP
+
+Create CKA folder to store nginx.svc and nginx.pod:
+
+mkdir /root/CKA
+
+To create a pod test-nslookup. Test that you are able to look up the service and pod names from within the cluster:
+
+kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service
+kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup nginx-resolver-service > /root/CKA/nginx.svc
+
+Get the IP of the nginx-resolver pod and replace the dots(.) with hyphon(-) which will be used below.
+
+kubectl get pod nginx-resolver -o wide
+kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <P-O-D-I-P.default.pod> > /root/CKA/nginx.pod
+
+
+
+
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: web-gateway
+  namespace: cka5673
+spec:
+  gatewayClassName: kodekloud
+  listeners:
+    - name: https
+      protocol: HTTPS
+      port: 443
+      hostname: kodekloud.com
+      tls:
+        certificateRefs:
+          - name: kodekloud-tls
+
+
+
+
+
+Solve this question on: ssh cluster4-controlplane
+
+
+Utilize the official Calico definition file, available at:
+
+https://raw.githubusercontent.com/projectcalico/calico/v3.29.3/manifests/tigera-operator.yaml
+
+to deploy the Calico CNI on the cluster.
+
+Make sure to configure the CIDR to 172.17.0.0/16
+
+After the CNI installation, verify that pods can successfully communicate.
+
+Custom Definitions for calico can be retrieved via:
+
+curl https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/custom-resources.yaml -O
+
+Solution
+SSH into the cluster4-controlplane host
+ssh cluster4-controlplane
+
+1. Install the Calico CNI
+Install the operator on your cluster:
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/tigera-operator.yaml
+
+Download the custom resources necessary to configure Calico to set the CIDR to 172.17.0.0/16 and set the encapsulation method to VXLAN:
+curl https://raw.githubusercontent.com/projectcalico/calico/v3.29.2/manifests/custom-resources.yaml -O
+
+Below is the structure of the final configuration:
+
+# This section includes base Calico installation configuration.
+# For more information, see: https://docs.tigera.io/calico/latest/reference/installation/api#operator.tigera.io/v1.Installation
+apiVersion: operator.tigera.io/v1
+kind: Installation
+metadata:
+  name: default
+spec:
+  # Configures Calico networking.
+  calicoNetwork:
+    ipPools:
+    - name: default-ipv4-ippool
+      blockSize: 26
+      cidr: 172.17.0.0/16
+      encapsulation: VXLAN
+      natOutgoing: Enabled
+      nodeSelector: all()
+
+---
+
+# This section configures the Calico API server.
+# For more information, see: https://docs.tigera.io/calico/latest/reference/installation/api#operator.tigera.io/v1.APIServer
+apiVersion: operator.tigera.io/v1
+kind: APIServer
+metadata:
+  name: default
+spec: {}
+
+Apply the manifest by running the following command:
+kubectl create -f custom-resources.yaml
+
+Verify Calico installation in your cluster.
+watch kubectl get pods -n calico-system
+
+2. Test the pod-to-pod communication.
+Run an nginx image:
+kubectl run web-app --image nginx
+
+Retrieve the IP address of the pod:
+kubectl get pod web-app -o jsonpath='{.status.podIP}'
+
+Test the connection:
+kubectl run test --rm -it -n kube-public --image=jrecord/nettools --restart=Never -- curl <IP>
+
+
+
+kubectl describe replicasets backend-api-7977bfdbd5
+
+The issue is due to ResourceQuota limitations.
+The namespace has a memory limit of 300Mi, and the deployment is exceeding it.
+requests.memory=128Mi, used: requests.memory=256Mi, limited: requests.memory=300Mi
+Warning  FailedCreate  Error creating: pods "backend-api-7977bfdbd5-hpcjw" is forbidden: exceeded quota: cpu-mem-quota, 
+requested: requests.memory=128Mi, used: requests.memory=256Mi, limited: requests.memory=300Mi
+
+3, Modify the Deployment to Fit Within the ResourceQuota
+Edit the deployment and reduce memory requests:
+
+kubectl edit deployment backend-api -n default
+
+Modify the resources section:
+
+resources:
+  requests:
+    cpu: "50m"   # Reduced from 100m to 50m
+    memory: "90Mi"   # Reduced from 128Mi to 90Mi (Fits within quota)
+  limits:
+    cpu: "150m"   
+    memory: "150Mi"

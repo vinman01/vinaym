@@ -1,0 +1,18 @@
+DataSync Completed in ISE, Check SSH & device configuration , Contact ttcramersupport@hsbc.com if any AD login Issue
+GBSY1GJ1SL802->1 records successfully added...
+
+Data Good in ISE:
+ISE_Action	Cramer name	CramerIP	ISE_Hostname	ISE_IP	ISE_TACACSKey	ISE_RadiusKey	ISE_Model	ISE_Location	ISE_Ownership
+All Good in ISE	GBSYCRF1RW009	128.12.99.99/32	GBSYCRF1RW009	128.12.99.99	ci***co	N/***/A	Cisco NEXUS 9000 Series	GB#Data Centre	
+
+
+DataSync Completed in ISE, Check SSH & device configuration , Contact ttcramersupport@hsbc.com if any AD login Issue
+GBSYGDCAFS460-461->1 records successfully updated...
+
+
+Data Good in ISE:
+ISE_Action	Cramer name	CramerIP	ISE_Hostname	ISE_IP	ISE_TACACSKey	ISE_RadiusKey	ISE_Model	ISE_Location	ISE_Ownership
+All Good in ISE	GBWDC113SF002	128.168.253.12/32	GBWDC113SF002	128.168.253.12	ci***co	N/***/A	Cisco APIC Controller	GB#Data Centre	
+
+DataSync Completed in ISE, Check SSH & device configuration , Contact ttcramersupport@hsbc.com if any AD login Issue
+GBWDC123SL701->1 records successfully added...

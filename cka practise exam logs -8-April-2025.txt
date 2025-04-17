@@ -1,0 +1,320 @@
+https://www.itexamreview.com/articles/2024-new-cka-exam-free-sample-questions-to-practice-q16-q38/#gjson
+https://www.actual4test.com/CKA_examcollection.html#gjson
+https://www.actual4test.com/exam/CKA-questions#gjson
+https://www.pass4success.com/linux-foundation/cka/dumps
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: np-backend
+  namespace: project-snake
+spec:
+  podSelector:
+    matchLabels:
+      app: backend
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          run: db1
+    ports:
+    - protocol: TCP
+      port: 1111
+  - to:
+    - podSelector:
+        matchLabels:
+          run: db2
+    ports:
+    - protocol: TCP
+      port: 2222
+
+ backend Pod 
+
+project-snake
+
+
+connect to db1-pod Pods on port 1111
+connect to db2-pod Pods on port 2222
+
+
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pv-volume
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi
+  storageClassName: csi-hostpath-sc
+
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: restore-pvc
+spec:
+  storageClassName: csi-hostpath-sc
+  dataSource:
+    name: new-snapshot-test
+    kind: VolumeSnapshot
+    apiGroup: snapshot.storage.k8s.io
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-server
+spec:
+ volumes:
+ - name: pv-volume
+   persistentVolumeClaim:
+     claimName: pv-volume
+ containers:
+  - name: web-server
+    image: nginx
+    volumeMounts:
+    - mountPath: "/usr/share/nginx/html "
+      name: pv-volume
+
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: csi-hostpath-sc
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "false"
+provisioner: rancher.io/local-path
+allowVolumeExpansion: true
+
+
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshotClass
+metadata:
+  name: csi-hostpath-sc
+driver: hostpath.csi.k8s.io
+deletionPolicy: Delete
+parameters:
+
+
+
+k run webtool --image=httpd --dry-run=client -o yaml > webtools-node1-static-pod.yaml
+
+  kubectl create ingress ping --rule="hi=svc1:5678"
+
+ kubectl create ingress ping  -n ping-internal --rule="/hi=hi:5678"
+
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ping
+  namespaces: ping-internal 
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /hi
+        pathType: Prefix
+        backend:
+          service:
+            name: hi
+            port:
+              number: 5678
+
+
+
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds-kusc00201
+  namespace: kube-system
+  labels:
+    name: ds-kusc00201
+spec:
+  selector:
+    matchLabels:
+      name: ds-kusc00201
+  template:
+    metadata:
+      labels:
+        name: ds-kusc00201
+    spec:
+      tolerations:
+      # these tolerations are to have the daemonset runnable on control plane nodes
+      # remove them if your control plane nodes should not run pods
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: ds-kusc00201
+        image: nginx
+
+
+
+kubectl create deployment ds-kusc00201 --image=nginx --replicas=1 --dry-run=client-o yaml > ds-kusc00201.yaml
+kubectl create deployment ds-kusc00201 --image=nginx --replicas=1 --dry-run=client-o yaml > ds-kusc00201.yaml
+
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: app-data
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteMany
+  storageClassName: shared
+  hostPath:
+    path: "/srv/app-data"
+
+
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: app-data
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: shared
+
+
+
+cat hungry-bear-pod.yaml 
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: hungry-bear
+  name: hungry-bear
+spec:
+  volumes:
+  - name: vol-log
+    emptyDir: {}
+  containers:
+  - image: alpine
+    name: checker
+    command: [ "bin/sh", "-c", "if [ -f /workdir/calm.txt ]; then sleep 10000; else exit l; fi"]
+    volumeMounts:
+    - name: vol-log
+      mountPath: /workdir
+  initContainers:
+  - image: alpine
+    name: create
+    command: [ "bin/sh", "-c", "touch /workdir/calm.txt" ]
+    volumeMounts:
+    - name: vol-log
+      mountPath: /workdir
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
+
+
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-specific-ip-only
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: web-app
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - ipBlock:
+        cidr: 192.168.1.10/32
+    - ipBlock:
+        cidr: 192.168.1.20/32
+
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: statefulset-svc
+  labels:
+    app: statefulset-svc
+spec:
+  ports:
+  - port: 80
+    name: my-statefulset
+  clusterIP: None
+  selector:
+    app: statefulset-svc
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: statefulset-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: statefulset-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-statefulset
+spec:
+  selector:
+    matchLabels:
+      app: statefulset-svc # has to match .spec.template.metadata.labels
+  serviceName: "statefulset-svc"
+  replicas: 3
+  minReadySeconds: 10 # by default is 0
+  template:
+    metadata:
+      labels:
+        app: statefulset-svc # has to match .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      volumes:
+      - name: statefulset-vol
+        persistentVolumeClaim:
+          claimName: statefulset-pvc
+      containers:
+      - name: statefulset-pod
+        image: nginx
+        ports:
+        - containerPort: 80
+          name: my-statefulset
+        volumeMounts:
+        - name: statefulset-vol
+          mountPath: /workdir

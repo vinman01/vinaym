@@ -1,0 +1,82 @@
+---
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: highest-user-priority
+value: 1000
+globalDefault: false
+description: "This priority class should be used for XYZ service pods only."
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-logger
+  namespace: priority
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: busybox-logger
+  template:
+    metadata:
+      labels:
+        app: busybox-logger
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        args:
+        - /bin/sh
+        - -c
+        - "while true; do echo Logging; sleep 5; done"
+
+
+kubectl patch deployment -n priority busybox-logger -p '{"spec":{"template":{"spec":{"priorityClassName":"high-priority"}}}}'
+
+
+
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name:  local-path
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: rancher.io/local-path
+volumeBindingMode: WaitForFirstConsumer
+
+
+kubectl create secret tls tls-secret \
+--cert=web-server.crt \
+--key=web-server.key
+kubectl get secret tls-secret
+
+kubectl create secret tls web-tls --cert=web-server.crt --key=web-server.key
+
+
+openssl req -x509 -nodes -days 365 \
+  -newkey rsa:2048 \
+  -keyout web-server.key \
+  -out web-server.crt \
+  -subj "/CN=web-server"
+
+openssl req -x509 -new -nodes -key ca.key -subj "/CN=${MASTER_IP}" -days 10000 -out ca.crt
+
+
+
+
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: web-gateway
+spec:
+  gatewayClassName: nginx
+  listeners:
+  - name: https
+    protocol: HTTPS
+    port: 443
+    hostname: gateway.web.k8s.local
+    tls:
+      mode: Terminate
+      certificateRefs:
+       - kind: Secret
+         name: web-secret
